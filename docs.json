@@ -1,0 +1,2666 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Adib API",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:8600/",
+            "description": "OpenApi host"
+        }
+    ],
+    "paths": {
+        "/Attachment/{ACK}/dl?filename={filename}": {
+            "get": {
+                "tags": [
+                    "File"
+                ],
+                "summary": "Enrolled Courses",
+                "description": "Get user's enrolled courses",
+                "operationId": "download",
+                "parameters": [
+                    {
+                        "name": "ACK",
+                        "in": "path",
+                        "description": "ACK",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "filename",
+                        "in": "path",
+                        "description": "File name",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Binary file",
+                        "content": {
+                            "application/octet-stream": {
+                                "schema": {
+                                    "type": "string",
+                                    "format": "binary"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error: Bad request. When required parameters were not supplied."
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/C/changeUser/{userId}": {
+            "get": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Change active user",
+                "description": "Change active user",
+                "operationId": "changeActiveUser",
+                "parameters": [
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "description": "target user id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns a message",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "response",
+                                    "properties": {
+                                        "message": {
+                                            "$ref": "#/components/schemas/ResponseModel"
+                                        },
+                                        "ums": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error: Bad request. When required parameters were not supplied."
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/C/myFamily": {
+            "get": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "My Family Members",
+                "description": "Get list of my family",
+                "operationId": "getMyFamilyList",
+                "responses": {
+                    "200": {
+                        "description": "Returns my family members",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "response",
+                                    "properties": {
+                                        "message": {
+                                            "$ref": "#/components/schemas/ResponseModel"
+                                        },
+                                        "result": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/UserModel"
+                                            }
+                                        },
+                                        "ums": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error: Bad request. When required parameters were not supplied."
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/C/addToFamily?Mobile={name}": {
+            "get": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "AddToFamily",
+                "description": "AddToFamily",
+                "operationId": "addToFamily",
+                "parameters": [
+                    {
+                        "name": "mobile",
+                        "in": "path",
+                        "description": "mobile",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "response",
+                                    "properties": {
+                                        "message": {
+                                            "$ref": "#/components/schemas/ResponseModel"
+                                        },
+                                        "result": {
+                                            "$ref": "#/components/schemas/UserModel"
+                                        },
+                                        "ums": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error: Bad request. When required parameters were not supplied."
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/C/addToFamilyByTag?Tag={tag}": {
+            "get": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "AddToFamilyByTag",
+                "description": "AddToFamilyByTag",
+                "operationId": "addToFamilyByTag",
+                "parameters": [
+                    {
+                        "name": "tag",
+                        "in": "path",
+                        "description": "tag",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "response",
+                                    "properties": {
+                                        "message": {
+                                            "$ref": "#/components/schemas/ResponseModel"
+                                        },
+                                        "result": {
+                                            "$ref": "#/components/schemas/UserModel"
+                                        },
+                                        "ums": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error: Bad request. When required parameters were not supplied."
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/C/remFromFamily/{userId}": {
+            "delete": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "RemoveFromFamily",
+                "description": "Remove member from family",
+                "operationId": "removeFromFamily",
+                "parameters": [
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "description": "User id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "response",
+                                    "properties": {
+                                        "message": {
+                                            "$ref": "#/components/schemas/ResponseModel"
+                                        },
+                                        "ums": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error: Bad request. When required parameters were not supplied."
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/C/myCourses/": {
+            "get": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Enrolled Courses",
+                "description": "Get user's enrolled courses",
+                "operationId": "getMyCourses",
+                "responses": {
+                    "200": {
+                        "description": "Returns courses array",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "response",
+                                    "properties": {
+                                        "message": {
+                                            "$ref": "#/components/schemas/ResponseModel"
+                                        },
+                                        "result": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/CourseModel"
+                                            }
+                                        },
+                                        "ums": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error: Bad request. When required parameters were not supplied."
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/C/xyz": {
+            "get": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "My xyz",
+                "description": "Get list of xyz",
+                "operationId": "xyz",
+                "responses": {
+                    "200": {
+                        "description": "Returns my xyz",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "response",
+                                    "properties": {
+                                        "message": {
+                                            "$ref": "#/components/schemas/ResponseModel"
+                                        },
+                                        "result": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/CourseModel"
+                                            }
+                                        },
+                                        "ums": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error: Bad request. When required parameters were not supplied."
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/C/enrollCourse/{courseId}": {
+            "get": {
+                "tags": [
+                    "Course"
+                ],
+                "summary": "Enroll course",
+                "description": "Enroll to the target course",
+                "operationId": "enroll",
+                "parameters": [
+                    {
+                        "name": "courseId",
+                        "in": "path",
+                        "description": "target course id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "response",
+                                    "properties": {
+                                        "message": {
+                                            "$ref": "#/components/schemas/ResponseModel"
+                                        },
+                                        "ums": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error: Bad request. When required parameters were not supplied."
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/C/removeCourse/{courseId}": {
+            "get": {
+                "tags": [
+                    "Course"
+                ],
+                "summary": "Remove course",
+                "description": "Remove from the target course",
+                "operationId": "removeCourse",
+                "parameters": [
+                    {
+                        "name": "courseId",
+                        "in": "path",
+                        "description": "target course id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "response",
+                                    "properties": {
+                                        "message": {
+                                            "$ref": "#/components/schemas/ResponseModel"
+                                        },
+                                        "ums": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error: Bad request. When required parameters were not supplied."
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/C/popularCourses": {
+            "get": {
+                "tags": [
+                    "Course"
+                ],
+                "summary": "Popular Courses",
+                "description": "Get list of popular courses",
+                "operationId": "getPopularCourses",
+                "responses": {
+                    "200": {
+                        "description": "Returns pupular courses",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error: Bad request. When required parameters were not supplied."
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/C/courseCategories": {
+            "get": {
+                "tags": [
+                    "Course"
+                ],
+                "summary": "Course Categories",
+                "description": "Get the list of categories which course are defined in them",
+                "operationId": "getCourseCategories",
+                "responses": {
+                    "200": {
+                        "description": "Returns courses categories",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "response",
+                                    "properties": {
+                                        "message": {
+                                            "$ref": "#/components/schemas/ResponseModel"
+                                        },
+                                        "result": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/CategoryModel"
+                                            }
+                                        },
+                                        "ums": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error: Bad request. When required parameters were not supplied."
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/C/categoryCourses/{categoryId}": {
+            "get": {
+                "tags": [
+                    "Category"
+                ],
+                "summary": "Category Courses",
+                "description": "Get the list of courses in a category",
+                "operationId": "getCategoryCourses",
+                "parameters": [
+                    {
+                        "name": "categoryId",
+                        "in": "path",
+                        "description": "target category id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns courses of a category",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "response",
+                                    "properties": {
+                                        "message": {
+                                            "$ref": "#/components/schemas/ResponseModel"
+                                        },
+                                        "result": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/CourseModel"
+                                            }
+                                        },
+                                        "ums": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error: Bad request. When required parameters were not supplied."
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/C/ageCategoryCourses/{ageCategoryId}": {
+            "get": {
+                "tags": [
+                    "Category"
+                ],
+                "summary": "Category Courses",
+                "description": "Get the list of courses in a category",
+                "operationId": "getAgeCategoryCourses",
+                "parameters": [
+                    {
+                        "name": "ageCategoryId",
+                        "in": "path",
+                        "description": "target category id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns courses of an age category",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "response",
+                                    "properties": {
+                                        "message": {
+                                            "$ref": "#/components/schemas/ResponseModel"
+                                        },
+                                        "result": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/CourseModel"
+                                            }
+                                        },
+                                        "ums": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error: Bad request. When required parameters were not supplied."
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/C/ageCategory/{ageCategoryId}": {
+            "get": {
+                "tags": [
+                    "AgeCategory"
+                ],
+                "summary": "Age Category Details",
+                "description": "Get age category by id",
+                "operationId": "getAgeCategoryById",
+                "parameters": [
+                    {
+                        "name": "ageCategoryId",
+                        "in": "path",
+                        "description": "target age category id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns an age category",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "response",
+                                    "properties": {
+                                        "message": {
+                                            "$ref": "#/components/schemas/ResponseModel"
+                                        },
+                                        "result": {
+                                            "$ref": "#/components/schemas/AgeCategoryModel"
+                                        },
+                                        "ums": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error: Bad request. When required parameters were not supplied."
+                    }
+                }
+            }
+        },
+        "/C/courseList?categoryID={categoryId}": {
+            "get": {
+                "tags": [
+                    "Course"
+                ],
+                "summary": "Course list",
+                "description": "Get courses list",
+                "operationId": "getCourseList",
+                "parameters": [
+                    {
+                        "name": "categoryId",
+                        "in": "path",
+                        "description": "target category id",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns courses array",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "response",
+                                    "properties": {
+                                        "message": {
+                                            "$ref": "#/components/schemas/ResponseModel"
+                                        },
+                                        "result": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/CourseModel"
+                                            }
+                                        },
+                                        "ums": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error: Bad request. When required parameters were not supplied."
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/C/categorizedCourseList": {
+            "get": {
+                "tags": [
+                    "Course"
+                ],
+                "summary": "Categorized Course list",
+                "description": "Get courses list in categories",
+                "operationId": "getCategorizedCourseList",
+                "responses": {
+                    "200": {
+                        "description": "Returns courses array",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "response",
+                                    "properties": {
+                                        "message": {
+                                            "$ref": "#/components/schemas/ResponseModel"
+                                        },
+                                        "result": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "ID": {
+                                                        "type": "integer"
+                                                    },
+                                                    "Count": {
+                                                        "type": "integer"
+                                                    },
+                                                    "Title": {
+                                                        "type": "string"
+                                                    },
+                                                    "Records": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        },
+                                        "ums": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error: Bad request. When required parameters were not supplied."
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/C/search/{phrase}/{index}/{limit}": {
+            "get": {
+                "tags": [
+                    "Lesson"
+                ],
+                "summary": "Search",
+                "description": "Search",
+                "operationId": "Search",
+                "parameters": [
+                    {
+                        "name": "phrase",
+                        "in": "path",
+                        "description": "phrase",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "index",
+                        "in": "path",
+                        "description": "index",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "path",
+                        "description": "limit",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns sections array",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "response",
+                                    "properties": {
+                                        "message": {
+                                            "$ref": "#/components/schemas/ResponseModel"
+                                        },
+                                        "result": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/SearchModel"
+                                            }
+                                        },
+                                        "ums": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error: Bad request. When required parameters were not supplied."
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/C/course/{courseId}": {
+            "get": {
+                "tags": [
+                    "Course"
+                ],
+                "summary": "Course Details",
+                "description": "Get details of a certain course",
+                "operationId": "getCourseById",
+                "parameters": [
+                    {
+                        "name": "courseId",
+                        "in": "path",
+                        "description": "target course id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns course object",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "response",
+                                    "properties": {
+                                        "message": {
+                                            "$ref": "#/components/schemas/ResponseModel"
+                                        },
+                                        "result": {
+                                            "$ref": "#/components/schemas/CourseModel"
+                                        },
+                                        "ums": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error: Bad request. When required parameters were not supplied."
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/C/lesson/{lessonId}": {
+            "get": {
+                "tags": [
+                    "Lesson"
+                ],
+                "summary": "Course Details",
+                "description": "Get details of a certain course",
+                "operationId": "getLessonById",
+                "parameters": [
+                    {
+                        "name": "lessonId",
+                        "in": "path",
+                        "description": "target lesson id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns lesson object",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "response",
+                                    "properties": {
+                                        "message": {
+                                            "$ref": "#/components/schemas/ResponseModel"
+                                        },
+                                        "result": {
+                                            "$ref": "#/components/schemas/LessonModel"
+                                        },
+                                        "ums": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error: Bad request. When required parameters were not supplied."
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/C/category/{categoryId}": {
+            "get": {
+                "tags": [
+                    "Category"
+                ],
+                "summary": "Category details",
+                "description": "Get category by id",
+                "operationId": "getCategoryById",
+                "parameters": [
+                    {
+                        "name": "categoryId",
+                        "in": "path",
+                        "description": "target category id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns lesson object",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "response",
+                                    "properties": {
+                                        "message": {
+                                            "$ref": "#/components/schemas/ResponseModel"
+                                        },
+                                        "result": {
+                                            "$ref": "#/components/schemas/CategoryModel"
+                                        },
+                                        "ums": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error: Bad request. When required parameters were not supplied."
+                    }
+                }
+            }
+        },
+        "/C/course/{courseId}/sections": {
+            "get": {
+                "tags": [
+                    "Course"
+                ],
+                "summary": "Course Sections",
+                "description": "Get sections of a certain course",
+                "operationId": "getCourseSections",
+                "parameters": [
+                    {
+                        "name": "courseId",
+                        "in": "path",
+                        "description": "target course id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns sections array",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "response",
+                                    "properties": {
+                                        "message": {
+                                            "$ref": "#/components/schemas/ResponseModel"
+                                        },
+                                        "result": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/SectionModel"
+                                            }
+                                        },
+                                        "ums": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error: Bad request. When required parameters were not supplied."
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/C/course/{courseId}/publicSections": {
+            "get": {
+                "tags": [
+                    "Course"
+                ],
+                "summary": "Course Public Sections",
+                "description": "Get public sections of a certain course",
+                "operationId": "getCoursePublicSections",
+                "parameters": [
+                    {
+                        "name": "courseId",
+                        "in": "path",
+                        "description": "target course id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns sections array",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "response",
+                                    "properties": {
+                                        "message": {
+                                            "$ref": "#/components/schemas/ResponseModel"
+                                        },
+                                        "result": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/SectionModel"
+                                            }
+                                        },
+                                        "ums": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error: Bad request. When required parameters were not supplied."
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/C/course/{courseId}/{sectionId}/lessons": {
+            "get": {
+                "tags": [
+                    "Section"
+                ],
+                "summary": "Section's lessons",
+                "description": "Get lessons of a certain course section",
+                "operationId": "getLessons",
+                "parameters": [
+                    {
+                        "name": "courseId",
+                        "in": "path",
+                        "description": "target course id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "sectionId",
+                        "in": "path",
+                        "description": "target section id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns lessons array",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "response",
+                                    "properties": {
+                                        "message": {
+                                            "$ref": "#/components/schemas/ResponseModel"
+                                        },
+                                        "result": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/LessonModel"
+                                            }
+                                        },
+                                        "ums": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error: Bad request. When required parameters were not supplied."
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/C/course/{courseId}/{sectionId}/publicLessons": {
+            "get": {
+                "tags": [
+                    "Section"
+                ],
+                "summary": "Section's lessons",
+                "description": "Get lessons of a certain course section",
+                "operationId": "getPublicLessons",
+                "parameters": [
+                    {
+                        "name": "courseId",
+                        "in": "path",
+                        "description": "target course id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "sectionId",
+                        "in": "path",
+                        "description": "target section id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns lessons array",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "response",
+                                    "properties": {
+                                        "message": {
+                                            "$ref": "#/components/schemas/ResponseModel"
+                                        },
+                                        "result": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/LessonModel"
+                                            }
+                                        },
+                                        "ums": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error: Bad request. When required parameters were not supplied."
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/C/course/{courseId}/{sectionId}/{lessonId}/contents": {
+            "get": {
+                "tags": [
+                    "Lesson"
+                ],
+                "summary": "Lesson's contents",
+                "description": "Get lesson's contents",
+                "operationId": "getLessonContent",
+                "parameters": [
+                    {
+                        "name": "courseId",
+                        "in": "path",
+                        "description": "target course id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "sectionId",
+                        "in": "path",
+                        "description": "target section id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "lessonId",
+                        "in": "path",
+                        "description": "target lesson id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns lesson content array",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "response",
+                                    "properties": {
+                                        "message": {
+                                            "$ref": "#/components/schemas/ResponseModel"
+                                        },
+                                        "result": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/ContentModel"
+                                            }
+                                        },
+                                        "ums": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error: Bad request. When required parameters were not supplied."
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/C/course/{courseId}/{sectionId}/{lessonId}/publicContents": {
+            "get": {
+                "tags": [
+                    "Lesson"
+                ],
+                "summary": "Lesson's contents",
+                "description": "Get lesson's contents",
+                "operationId": "getPublicLessonContent",
+                "parameters": [
+                    {
+                        "name": "courseId",
+                        "in": "path",
+                        "description": "target course id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "sectionId",
+                        "in": "path",
+                        "description": "target section id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "lessonId",
+                        "in": "path",
+                        "description": "target lesson id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns lesson content array",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "response",
+                                    "properties": {
+                                        "message": {
+                                            "$ref": "#/components/schemas/ResponseModel"
+                                        },
+                                        "result": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/ContentModel"
+                                            }
+                                        },
+                                        "ums": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error: Bad request. When required parameters were not supplied."
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/Setting/division": {
+            "get": {
+                "tags": [
+                    "Setting"
+                ],
+                "summary": "Province List",
+                "description": "Get list of provinces",
+                "operationId": "getProvinceList",
+                "responses": {
+                    "200": {
+                        "description": "Returns Province array",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "response",
+                                    "properties": {
+                                        "message": {
+                                            "$ref": "#/components/schemas/ResponseModel"
+                                        },
+                                        "result": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/DivisionModel"
+                                            }
+                                        },
+                                        "ums": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error: Bad request. When required parameters were not supplied."
+                    }
+                }
+            }
+        },
+        "/Setting/division?Province={provinceId}": {
+            "get": {
+                "tags": [
+                    "Setting"
+                ],
+                "summary": "City List",
+                "description": "Get list of cities",
+                "operationId": "getCityList",
+                "parameters": [
+                    {
+                        "name": "provinceId",
+                        "in": "path",
+                        "description": "target province id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns City array",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "response",
+                                    "properties": {
+                                        "message": {
+                                            "$ref": "#/components/schemas/ResponseModel"
+                                        },
+                                        "result": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/DivisionModel"
+                                            }
+                                        },
+                                        "ums": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error: Bad request. When required parameters were not supplied."
+                    }
+                }
+            }
+        },
+        "/C/course/{tag}": {
+            "get": {
+                "tags": [
+                    "Course"
+                ],
+                "summary": "Course Details by tag",
+                "description": "Get details of a certain course",
+                "operationId": "getCourseByTag",
+                "parameters": [
+                    {
+                        "name": "tag",
+                        "in": "path",
+                        "description": "target course tag",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns course object",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "response",
+                                    "properties": {
+                                        "message": {
+                                            "$ref": "#/components/schemas/ResponseModel"
+                                        },
+                                        "result": {
+                                            "$ref": "#/components/schemas/CourseModel"
+                                        },
+                                        "ums": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error: Bad request. When required parameters were not supplied."
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/User/profile": {
+            "get": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "User  Profile",
+                "description": "Get User Profile",
+                "operationId": "getProfile",
+                "responses": {
+                    "200": {
+                        "description": "Returns my User",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "response",
+                                    "properties": {
+                                        "message": {
+                                            "$ref": "#/components/schemas/ResponseModel"
+                                        },
+                                        "result": {
+                                            "$ref": "#/components/schemas/UserModel"
+                                        },
+                                        "ums": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error: Bad request. When required parameters were not supplied."
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Set Profile",
+                "description": "Set Profile",
+                "operationId": "setProfile",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "data": {
+                                        "type": "object"
+                                    },
+                                    "reference": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "Name": "Jessica",
+                                    "Birthdate": "2008-10-22",
+                                    "Family": "Smith",
+                                    "CityID": 12345678
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Returns",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "response",
+                                    "properties": {
+                                        "message": {
+                                            "$ref": "#/components/schemas/ResponseModel"
+                                        },
+                                        "ums": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error: Bad request. When required parameters were not supplied."
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/Login/register?Mobile={mobile}&Name={name}&Family={family}&BirthDate={birthdate}&CityID={cityId}": {
+            "get": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Register",
+                "description": "Register",
+                "operationId": "register",
+                "parameters": [
+                    {
+                        "name": "mobile",
+                        "in": "path",
+                        "description": "mobile number",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "name",
+                        "in": "path",
+                        "description": "name",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "family",
+                        "in": "path",
+                        "description": "family",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "birthdate",
+                        "in": "path",
+                        "description": "birthdate",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "cityId",
+                        "in": "path",
+                        "description": "cityId",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "response",
+                                    "properties": {
+                                        "message": {
+                                            "$ref": "#/components/schemas/ResponseModel"
+                                        },
+                                        "ums": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error: Bad request. When required parameters were not supplied."
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/Login/register_2?Name={name}&Family={family}&BirthDate={birthdate}&CityID={cityId}": {
+            "get": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "RegisterTag",
+                "description": "RegisterTag",
+                "operationId": "registerTag",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "path",
+                        "description": "name",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "family",
+                        "in": "path",
+                        "description": "family",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "birthdate",
+                        "in": "path",
+                        "description": "birthdate",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "cityId",
+                        "in": "path",
+                        "description": "cityId",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "response",
+                                    "properties": {
+                                        "message": {
+                                            "$ref": "#/components/schemas/ResponseModel"
+                                        },
+                                        "result": {
+                                            "$ref": "#/components/schemas/UserModel"
+                                        },
+                                        "ums": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error: Bad request. When required parameters were not supplied."
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/Login/emailRegister?Email={email}&Password={password}&Name={name}&Family={family}&Birthdate={birthdate}&CityID={cityId}": {
+            "get": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "EmailRegister",
+                "description": "EmailRegister",
+                "operationId": "emailRegister",
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "path",
+                        "description": "email address",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "password",
+                        "in": "path",
+                        "description": "password",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "name",
+                        "in": "path",
+                        "description": "name",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "family",
+                        "in": "path",
+                        "description": "family",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "birthdate",
+                        "in": "path",
+                        "description": "birthdate",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "cityId",
+                        "in": "path",
+                        "description": "City ID",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "response",
+                                    "properties": {
+                                        "message": {
+                                            "$ref": "#/components/schemas/ResponseModel"
+                                        },
+                                        "ums": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error: Bad request. When required parameters were not supplied."
+                    }
+                }
+            }
+        },
+        "/Login/signup?Mobile={mobile}": {
+            "get": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Signup",
+                "description": "Signup",
+                "operationId": "login",
+                "parameters": [
+                    {
+                        "name": "mobile",
+                        "in": "path",
+                        "description": "mobile number",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "response",
+                                    "properties": {
+                                        "message": {
+                                            "$ref": "#/components/schemas/ResponseModel"
+                                        },
+                                        "ums": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error: Bad request. When required parameters were not supplied."
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/Login/verify?Mobile={mobile}&Verify={code}": {
+            "get": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Verification",
+                "description": "Get courses list",
+                "operationId": "verify",
+                "parameters": [
+                    {
+                        "name": "mobile",
+                        "in": "path",
+                        "description": "mobile number",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "code",
+                        "in": "path",
+                        "description": "verification code",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "response",
+                                    "properties": {
+                                        "result": {
+                                            "properties": {
+                                                "ACK": {
+                                                    "type": "string"
+                                                },
+                                                "Bearer": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "message": {
+                                            "$ref": "#/components/schemas/ResponseModel"
+                                        },
+                                        "ums": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error: Bad request. When required parameters were not supplied."
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/C/sliders": {
+            "get": {
+                "tags": [
+                    "Slider"
+                ],
+                "summary": "slides",
+                "description": "Get home page slides",
+                "operationId": "getSlides",
+                "responses": {
+                    "200": {
+                        "description": "Returns array of slides",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "response",
+                                    "properties": {
+                                        "message": {
+                                            "$ref": "#/components/schemas/ResponseModel"
+                                        },
+                                        "result": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/SliderModel"
+                                            }
+                                        },
+                                        "ums": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error: Bad request. When required parameters were not supplied."
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "AgeCategoryModel": {
+                "title": "AgeCategory Model Schema",
+                "description": "AgeCategory Model",
+                "required": [
+                    "Title"
+                ],
+                "properties": {
+                    "ID": {
+                        "description": "AgeCategory id",
+                        "type": "integer"
+                    },
+                    "Title": {
+                        "description": "AgeCategory Title",
+                        "type": "string"
+                    },
+                    "From": {
+                        "description": "From Age",
+                        "type": "integer"
+                    },
+                    "To": {
+                        "description": "To Age",
+                        "type": "integer"
+                    }
+                },
+                "type": "object"
+            },
+            "CategoryModel": {
+                "title": "Category Model Schema",
+                "description": "Category Model",
+                "required": [
+                    "Title"
+                ],
+                "properties": {
+                    "ID": {
+                        "description": "Category's id",
+                        "type": "integer"
+                    },
+                    "Title": {
+                        "description": "Category's Title",
+                        "type": "string"
+                    },
+                    "Private": {
+                        "description": "Category's Privacy",
+                        "type": "string"
+                    },
+                    "Priority": {
+                        "description": "Category's Priority",
+                        "type": "integer"
+                    }
+                },
+                "type": "object"
+            },
+            "ContentModel": {
+                "title": "Content Model Schema",
+                "description": "Content Model",
+                "required": [
+                    "Title"
+                ],
+                "properties": {
+                    "ID": {
+                        "description": "Content's id",
+                        "type": "integer"
+                    },
+                    "LessonID": {
+                        "description": "Content lessonId",
+                        "type": "integer"
+                    },
+                    "ContentTypeID": {
+                        "description": "Content TypeId",
+                        "type": "integer"
+                    },
+                    "Title": {
+                        "description": "Content's Title",
+                        "type": "string"
+                    },
+                    "Text": {
+                        "description": "Content's Text",
+                        "type": "string"
+                    },
+                    "FileName": {
+                        "description": "Content's fileName",
+                        "type": "string"
+                    },
+                    "Private": {
+                        "description": "Content's privacy",
+                        "type": "integer"
+                    },
+                    "Order": {
+                        "description": "Content's order",
+                        "type": "integer"
+                    },
+                    "Lesson": {
+                        "$ref": "#/components/schemas/LessonModel"
+                    },
+                    "ContentType": {
+                        "$ref": "#/components/schemas/ContentTypeModel"
+                    }
+                },
+                "type": "object"
+            },
+            "ContentTypeModel": {
+                "title": "ContentType Model Schema",
+                "description": "ContentType Model",
+                "required": [
+                    "Title"
+                ],
+                "properties": {
+                    "ID": {
+                        "description": "ContentType id",
+                        "type": "integer"
+                    },
+                    "Title": {
+                        "description": "ContentType Title",
+                        "type": "string"
+                    },
+                    "TitleFa": {
+                        "description": "Persian Title",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "CourseModel": {
+                "title": "Course Model Schema",
+                "description": "Course Model",
+                "required": [
+                    "Title"
+                ],
+                "properties": {
+                    "ID": {
+                        "description": "Course id",
+                        "type": "integer"
+                    },
+                    "Title": {
+                        "description": "Course Title",
+                        "type": "string"
+                    },
+                    "Draft": {
+                        "description": "Draft",
+                        "type": "integer"
+                    },
+                    "Capacity": {
+                        "description": "Number of users who can join the course",
+                        "type": "integer"
+                    },
+                    "Active": {
+                        "description": "Active status of course",
+                        "type": "integer"
+                    },
+                    "AgeCategoryID": {
+                        "description": "Age category id",
+                        "type": "integer"
+                    },
+                    "Cover": {
+                        "description": "Cover image id",
+                        "type": "string"
+                    },
+                    "Description": {
+                        "description": "Description",
+                        "type": "string"
+                    },
+                    "EndDateFa": {
+                        "description": "Persian End Date",
+                        "type": "string"
+                    },
+                    "StartDateFa": {
+                        "description": "Persian Start Date",
+                        "type": "string"
+                    },
+                    "LessonCount": {
+                        "description": "Number of course lessons",
+                        "type": "integer"
+                    },
+                    "EnrolledCount": {
+                        "description": "Number of course users",
+                        "type": "integer"
+                    },
+                    "Enrolled": {
+                        "description": "Enrollment status of the current user",
+                        "type": "integer"
+                    },
+                    "AgeCategory": {
+                        "$ref": "#/components/schemas/AgeCategoryModel"
+                    },
+                    "InfoList": {
+                        "description": "More inforamtion about the course",
+                        "properties": {
+                            "ID": {
+                                "type": "integer"
+                            },
+                            "CourseID": {
+                                "type": "integer"
+                            },
+                            "Type": {
+                                "type": "string",
+                                "enum": [
+                                    "text",
+                                    "tell",
+                                    "url"
+                                ]
+                            },
+                            "Title": {
+                                "type": "string"
+                            },
+                            "Description": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "Link": {
+                        "description": "The Link of the course",
+                        "type": "string"
+                    },
+                    "NewLessons": {
+                        "description": "New lessons for current user",
+                        "type": "integer"
+                    },
+                    "Private": {
+                        "description": "Privacy of the course",
+                        "type": "integer"
+                    },
+                    "Tag": {
+                        "description": "Tag",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "DivisionModel": {
+                "title": "Division Model Schema",
+                "description": "Division Model",
+                "properties": {
+                    "ID": {
+                        "description": "Division's id",
+                        "type": "integer"
+                    },
+                    "Type": {
+                        "description": "Division's Type",
+                        "type": "string"
+                    },
+                    "Title": {
+                        "description": "Division's Title",
+                        "type": "string"
+                    },
+                    "ParentID": {
+                        "description": "Division's ParentID",
+                        "type": "integer"
+                    },
+                    "LinkID": {
+                        "description": "Division's LinkID",
+                        "type": "integer"
+                    }
+                },
+                "type": "object"
+            },
+            "LessonModel": {
+                "title": "Lesson Model Schema",
+                "description": "Lesson Model",
+                "required": [
+                    "Title"
+                ],
+                "properties": {
+                    "ID": {
+                        "description": "Lesson's id",
+                        "type": "integer"
+                    },
+                    "Title": {
+                        "description": "Lesson's title",
+                        "type": "string"
+                    },
+                    "Description": {
+                        "description": "Lesson's description",
+                        "type": "string"
+                    },
+                    "CourseId": {
+                        "description": "Lesson's course id",
+                        "type": "integer"
+                    },
+                    "SectionId": {
+                        "description": "Lesson's section id",
+                        "type": "integer"
+                    },
+                    "Course": {
+                        "$ref": "#/components/schemas/CourseModel"
+                    },
+                    "Section": {
+                        "$ref": "#/components/schemas/SectionModel"
+                    },
+                    "Public": {
+                        "description": "Lesson's privacy",
+                        "type": "integer"
+                    },
+                    "Date": {
+                        "description": "Lesson's date",
+                        "type": "string"
+                    },
+                    "Ordering": {
+                        "description": "Lesson's Ordering",
+                        "type": "integer"
+                    }
+                },
+                "type": "object"
+            },
+            "ResponseModel": {
+                "title": "Response Model Schema",
+                "description": "Response Model",
+                "properties": {
+                    "umsg": {
+                        "description": "user message",
+                        "type": "string"
+                    },
+                    "dmsg": {
+                        "description": "developer message",
+                        "type": "string"
+                    },
+                    "code": {
+                        "description": "response status code",
+                        "type": "string"
+                    },
+                    "link": {
+                        "description": "link",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "SearchModel": {
+                "title": "Search Model Schema",
+                "description": "Search Model",
+                "properties": {
+                    "ID": {
+                        "description": "Lesson id",
+                        "type": "integer"
+                    },
+                    "Title": {
+                        "description": "Lesson Title",
+                        "type": "string"
+                    },
+                    "Date": {
+                        "description": "Lesson Date",
+                        "type": "string"
+                    },
+                    "Description": {
+                        "description": "Lesson Description",
+                        "type": "string"
+                    },
+                    "ContentTitle": {
+                        "description": "Content Title",
+                        "type": "string"
+                    },
+                    "ContentText": {
+                        "description": "Content Text",
+                        "type": "string"
+                    },
+                    "SectionID": {
+                        "description": "Section ID",
+                        "type": "integer"
+                    },
+                    "SectionTitle": {
+                        "description": "Section Title",
+                        "type": "string"
+                    },
+                    "SectionDescription": {
+                        "description": "Section Description",
+                        "type": "string"
+                    },
+                    "CourseID": {
+                        "description": "Course ID",
+                        "type": "integer"
+                    },
+                    "CourseTitle": {
+                        "description": "Course Title",
+                        "type": "string"
+                    },
+                    "CourseDescription": {
+                        "description": "Course Description",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "SectionModel": {
+                "title": "Section Model Schema",
+                "description": "Section Model",
+                "required": [
+                    "Title"
+                ],
+                "properties": {
+                    "ID": {
+                        "description": "Section's id",
+                        "type": "integer"
+                    },
+                    "Title": {
+                        "description": "Section's Title",
+                        "type": "string"
+                    },
+                    "CourseID": {
+                        "description": "Section's CourseId",
+                        "type": "integer"
+                    },
+                    "Description": {
+                        "description": "Section's description",
+                        "type": "string"
+                    },
+                    "ExerciseCount": {
+                        "description": "Section's exercise count",
+                        "type": "integer"
+                    },
+                    "LessonCount": {
+                        "description": "Section's lessons count",
+                        "type": "integer"
+                    },
+                    "ExamCount": {
+                        "description": "Section's exams count",
+                        "type": "integer"
+                    },
+                    "NewLessons": {
+                        "description": "Section's new lessons",
+                        "type": "integer"
+                    }
+                },
+                "type": "object"
+            },
+            "SliderModel": {
+                "title": "Slider Model Schema",
+                "description": "Slider Model",
+                "properties": {
+                    "ID": {
+                        "description": "Slider's id",
+                        "type": "integer"
+                    },
+                    "Title": {
+                        "description": "Slider's Title",
+                        "type": "string"
+                    },
+                    "Type": {
+                        "description": "Slider's CourseId",
+                        "type": "string"
+                    },
+                    "Description": {
+                        "description": "Slider's description",
+                        "type": "string"
+                    },
+                    "Link": {
+                        "description": "Slider's link",
+                        "type": "string"
+                    },
+                    "Banner": {
+                        "description": "Slider's banner",
+                        "type": "string"
+                    },
+                    "HitCount": {
+                        "description": "Slider's hit count",
+                        "type": "integer"
+                    }
+                },
+                "type": "object"
+            },
+            "UserModel": {
+                "title": "User Model Schema",
+                "description": "User Model",
+                "properties": {
+                    "ID": {
+                        "description": "User's id",
+                        "type": "integer"
+                    },
+                    "Name": {
+                        "description": "User's Name",
+                        "type": "string"
+                    },
+                    "Family": {
+                        "description": "User's Family",
+                        "type": "string"
+                    },
+                    "Email": {
+                        "description": "User's Email",
+                        "type": "string"
+                    },
+                    "Mobile": {
+                        "description": "User's mobile",
+                        "type": "string"
+                    },
+                    "BirthDate": {
+                        "description": "User's birthdate",
+                        "type": "string"
+                    },
+                    "Password": {
+                        "description": "User's password",
+                        "type": "string"
+                    },
+                    "ItsMe": {
+                        "description": "User's ItsMe",
+                        "type": "boolean"
+                    },
+                    "Enable": {
+                        "description": "User's enable",
+                        "type": "integer"
+                    },
+                    "CityID": {
+                        "description": "User's city id",
+                        "type": "integer"
+                    },
+                    "CityName": {
+                        "description": "User's city name",
+                        "type": "integer"
+                    },
+                    "Age": {
+                        "description": "User's age",
+                        "type": "integer"
+                    },
+                    "TAG": {
+                        "description": "User's tag",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "name": "bearerAuth",
+                "in": "header",
+                "bearerFormat": "JWT",
+                "scheme": "bearer"
+            }
+        }
+    }
+}
