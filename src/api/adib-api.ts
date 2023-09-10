@@ -531,6 +531,7 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
         ...params,
       }),
   };
+
   c = {
     /**
      * @description Change active user
