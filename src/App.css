@@ -40,3 +40,37 @@
 .read-the-docs {
   color: #888;
 }
+
+.courselist{
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  
+}
+
+.course{
+  width: 90%;
+  background-color: rgb(255, 255, 255);
+  margin-top: 10px;
+  border-radius: 3%;
+  box-shadow: 0 0 35px rgba(8, 128, 187, 0.996);
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  text-align: center;
+  overflow-x: scroll;
+}
+
+.recordstyle{
+  width: 150px;
+  height: 250px;
+}
+
+.recordstyle img{
+  width: 145px;
+  height: 190px
+}
+
+.titlestyle{
+  direction: rtl;
+}
