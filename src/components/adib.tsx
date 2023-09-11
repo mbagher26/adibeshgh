@@ -15,10 +15,27 @@ export default function Adib() {
 
 
     useEffect(() => {
-        // test();
+        getCoursePublicSections();
+        CourseCategories();
+        
         category();
+       
     }, [])
 
+    
+
+
+    function CourseCategories(){
+        api.c.getCourseCategories().then((res) =>{
+
+            console.log('result:',res.data.result);
+
+        }).catch((error) => {
+
+            console.error('Error:', error)
+        })
+
+    }
 
     function category() {
 
@@ -35,7 +52,15 @@ export default function Adib() {
         })
     }
 
-
+    function getCoursePublicSections(){
+        api.c.getCoursePublicSections().then((res) =>{
+            console.log(res.da)
+        })
+    }
+    
+    function returnPictureUrl(cover:string){
+        return 'https://api.adibeshgh.com/Attachment/courseCover?filename=' + cover
+    }
 
     return (
 
@@ -48,7 +73,7 @@ export default function Adib() {
                     courselist.map((item, index) =>
                         <div className="courseslist" key={index} >
 
-                            <p className="titlestyle">{item.Title},{item.Count}</p>
+                            <p className="titlestyle">{item.Title},{item.ID},{item.Count}</p>
                             <div className="course">
                                 
                                {item.Records?.split('|||').map((record) =>(
@@ -57,7 +82,7 @@ export default function Adib() {
                                         <a href={JSON.parse(record).cover}>
 
                                             <img  alt={JSON.parse(record).title}
-                                            src="https://api.adibeshgh.com/Attachment/courseCover?filename=crs_20_bK2XvsEq.jpg"
+                                            src={returnPictureUrl(JSON.parse(record).cover)}
                                             />
                                             <div>{JSON.parse(record).title}</div>
 
