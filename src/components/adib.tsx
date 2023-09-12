@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react"
 import { Api} from "../api/adib-api"
 
+
+
+export const api = new Api({ baseUrl: "https://api.adibeshgh.com" })
+
 export default function Adib() {
 
 
@@ -11,21 +15,19 @@ export default function Adib() {
         Records?: string | undefined;
     }[]>([])
 
-    const api = new Api({ baseUrl: "https://api.adibeshgh.com" })
+
 
 
     useEffect(() => {
-        getCoursePublicSections();
-        CourseCategories();
         
+        CourseCategories();
         category();
        
     }, [])
 
     
-
-
     function CourseCategories(){
+        
         api.c.getCourseCategories().then((res) =>{
 
             console.log('result:',res.data.result);
@@ -52,15 +54,12 @@ export default function Adib() {
         })
     }
 
-    function getCoursePublicSections(){
-        api.c.getCoursePublicSections().then((res) =>{
-            console.log(res.da)
-        })
-    }
-    
+
     function returnPictureUrl(cover:string){
         return 'https://api.adibeshgh.com/Attachment/courseCover?filename=' + cover
     }
+
+    
 
     return (
 
@@ -74,12 +73,14 @@ export default function Adib() {
                         <div className="courseslist" key={index} >
 
                             <p className="titlestyle">{item.Title},{item.ID},{item.Count}</p>
+                            
                             <div className="course">
                                 
-                               {item.Records?.split('|||').map((record) =>(
+                               {
+                               item.Records?.split('|||').map((record) =>(
                                     <div className="recordstyle" key={JSON.parse(record).id}>
-                                    
-                                        <a href={JSON.parse(record).cover}>
+                                        {JSON.parse(record).id}
+                                        <a href="/coursepublicsection.tsx/">
 
                                             <img  alt={JSON.parse(record).title}
                                             src={returnPictureUrl(JSON.parse(record).cover)}
@@ -88,8 +89,9 @@ export default function Adib() {
 
                                         </a>
                                     </div>
-                               ))}
-                            
+                               ))
+                               }
+
                             </div>
                             
                         </div>
