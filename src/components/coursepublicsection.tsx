@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {api} from "./adib.tsx";
 
 
-export default function CoursePublicSections(){
 
+export default function CoursePublicSections(){
 
 
     const [coursepublic,setCoursepublic] = useState<{
@@ -20,9 +20,13 @@ export default function CoursePublicSections(){
       }[]>();
 
 
-   function getCoursePublicSections(){
+      useEffect(() =>{
+        getCoursePublicSections(1);
 
-    api.c.getCoursePublicSections(1).then((res) =>{
+      },[])
+   function getCoursePublicSections(id:number){
+
+    api.c.getCoursePublicSections(id).then((res) =>{
 
         console.log('coursepublicsection:',res.data.result)
         setCoursepublic(res.data.result);

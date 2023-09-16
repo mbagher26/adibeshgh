@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react"
-import { Api} from "../api/adib-api"
-
+import { Api} from "../api/adib-api";
 
 
 export const api = new Api({ baseUrl: "https://api.adibeshgh.com" })
@@ -14,8 +13,6 @@ export default function Adib() {
         Title?: string | undefined;
         Records?: string | undefined;
     }[]>([])
-
-
 
 
     useEffect(() => {
@@ -39,6 +36,7 @@ export default function Adib() {
 
     }
 
+
     function category() {
 
         api.c.getCategorizedCourseList().then((res) => {
@@ -59,19 +57,20 @@ export default function Adib() {
         return 'https://api.adibeshgh.com/Attachment/courseCover?filename=' + cover
     }
 
-    
 
-    return (
-
+    return( 
+       
         <section>
 
+
             <div>
-                <div>
                 
+                <div>
+                    
                     {
                     courselist.map((item, index) =>
                         <div className="courseslist" key={index} >
-
+        
                             <p className="titlestyle">{item.Title},{item.ID},{item.Count}</p>
                             
                             <div className="course">
@@ -80,13 +79,13 @@ export default function Adib() {
                                item.Records?.split('|||').map((record) =>(
                                     <div className="recordstyle" key={JSON.parse(record).id}>
                                         {JSON.parse(record).id}
-                                        <a href="/coursepublicsection.tsx/">
+                                        <a href=''>
 
                                             <img  alt={JSON.parse(record).title}
                                             src={returnPictureUrl(JSON.parse(record).cover)}
                                             />
                                             <div>{JSON.parse(record).title}</div>
-
+                                            
                                         </a>
                                     </div>
                                ))
