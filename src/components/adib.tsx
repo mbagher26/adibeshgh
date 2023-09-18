@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { Api} from "../api/adib-api";
-
+import { Link } from "react-router-dom";
 
 export const api = new Api({ baseUrl: "https://api.adibeshgh.com" })
 
@@ -79,14 +79,14 @@ export default function Adib() {
                                item.Records?.split('|||').map((record) =>(
                                     <div className="recordstyle" key={JSON.parse(record).id}>
                                         {JSON.parse(record).id}
-                                        <a href=''>
+                                        <Link to="/course">
 
-                                            <img  alt={JSON.parse(record).title}
+                                        <img  alt={JSON.parse(record).title}
                                             src={returnPictureUrl(JSON.parse(record).cover)}
                                             />
                                             <div>{JSON.parse(record).title}</div>
-                                            
-                                        </a>
+                                        </Link>
+
                                     </div>
                                ))
                                }
