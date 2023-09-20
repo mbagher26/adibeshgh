@@ -17,7 +17,7 @@ export default function Adib() {
 
     useEffect(() => {
         
-        CourseCategories();
+        // CourseCategories();
         category();
        
     }, [])
@@ -79,7 +79,8 @@ export default function Adib() {
                                item.Records?.split('|||').map((record) =>(
                                     <div className="recordstyle" key={JSON.parse(record).id}>
                                         {JSON.parse(record).id}
-                                        <Link to="/course">
+
+                                        <Link state={{data:JSON.parse(record).id}} to="/course:id">
 
                                         <img  alt={JSON.parse(record).title}
                                             src={returnPictureUrl(JSON.parse(record).cover)}

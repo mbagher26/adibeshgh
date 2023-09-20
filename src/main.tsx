@@ -7,13 +7,19 @@ import * as ReactDOM from "react-dom";
 
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
+
+
 ReactDOM.render(
 
   <Router>
     <Routes>
       <Route path='/' element={<Adib />} />
       <Route path='/home' element={<Navigate replace to="/" />} />
-      <Route path='/course' element={<CoursePublicSections />} />
+
+      <Route path='/course:id' element={<CoursePublicSections />}>
+        <Route path=':id'  />
+      </Route>
+
     </Routes>
   </Router>,
 

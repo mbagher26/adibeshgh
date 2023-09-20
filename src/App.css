@@ -74,3 +74,12 @@
 .titlestyle{
   direction: rtl;
 }
+
+
+.coursepublic{
+
+  height: 150px;
+  width: 220px;
+  display: inline-block;
+
+}
