@@ -21,7 +21,24 @@ export default function CoursePublicSections(){
         NewLessons?: number | undefined,
         
       }[]>();
-      const [coursesection,setCoursesection] = useState<>();
+      const [coursesection,setCoursesection] = useState<{
+        /** Section's id */
+        ID?: number | undefined;
+        /** Section's Title */
+        Title: string;
+        /** Section's CourseId */
+        CourseID?: number | undefined;
+        /** Section's description */
+        Description?: string | undefined;
+        /** Section's exercise count */
+        ExerciseCount?: number | undefined;
+        /** Section's lessons count */
+        LessonCount?: number | undefined;
+        /** Section's exams count */
+        ExamCount?: number | undefined;
+        /** Section's new lessons */
+        NewLessons?: number | undefined; 
+      }[]>();
 
       useEffect(() =>{
         getCoursePublicSections(location.state.data);
@@ -48,7 +65,7 @@ export default function CoursePublicSections(){
         console.error('Error:',error);
     }
     );
-    ))
+    
    }
 
    return(
