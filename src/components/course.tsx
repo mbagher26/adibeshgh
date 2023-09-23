@@ -83,6 +83,18 @@ export default function Course() {
 
     }
 
+
+    function getCoursePublicSections(id:number){
+        api.c.getCoursePublicSections(id).then((res) =>{
+    
+            console.log('coursepublicsection:',res.data.result);
+            
+            setCoursepublic(res.data.result);
+        }).catch((error) =>{
+            console.error('Error:',error);
+        })
+       }
+       
     return (
         <div style={{ direction: 'rtl' }}>
             {
