@@ -79,6 +79,7 @@ export default function Course() {
 
     useEffect(() => {
         Course(location.state.data);
+        getCoursePublicSections(location.state.data);
     }, [])
 
 
