@@ -1,6 +1,6 @@
 import Adib from './components/adib';
 import CoursePublicSections from './components/coursepublicsection';
-import CourseById from './components/course';
+import Course from './components/course';
 import "./App.css";
 import CourseSection from './components/coursesections';
 import  ReactDOM  from 'react-dom/client';
@@ -21,7 +21,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: ":courseId",
-        element: <CoursePublicSections />,
+        element: <CourseSection />,
       },
     ],
   },
