@@ -85,15 +85,19 @@
 }
 
 .coursedata{
-  display: inline-flex ;
+  display: flex;
   direction: rtl;
   
 }
 
 .divcourse{
   background-color: azure;
-  width: 200px;
-  height: 500px;
+  width: 400px;
+  height: 1000px;
   
 }
 
+.maincontainer{
+  display: flex;
+  direction: rtl;
+}
