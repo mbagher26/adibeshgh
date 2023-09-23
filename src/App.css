@@ -83,3 +83,17 @@
   display: inline-block;
 
 }
+
+.coursedata{
+  display: inline-flex ;
+  direction: rtl;
+  
+}
+
+.divcourse{
+  background-color: azure;
+  width: 200px;
+  height: 500px;
+  
+}
+
