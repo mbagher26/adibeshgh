@@ -47,7 +47,7 @@ export default function CoursePublicSections(){
     <div>
 
         <p>cousrse public section page</p>
-        {/* {
+        {
             coursepublic?.map((item) =>
                 <div>
                     <p>courseid:{item.CourseID}</p>
@@ -70,7 +70,7 @@ export default function CoursePublicSections(){
                      
                 </div>
             )
-        } */}
+        }
     </div>
    )
 }
