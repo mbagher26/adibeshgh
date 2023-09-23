@@ -64,7 +64,18 @@ export default function Course() {
 
     const location = useLocation();
     const [course, setCourse] = useState<CourseModel>();
+    const [coursepublic,setCoursepublic] = useState<{
 
+        ID?: number | undefined,
+        Title: string | undefined,
+        CourseID?: number | undefined,
+        Description?: string | undefined,
+        ExerciseCount?: number | undefined,
+        LessonCount?: number | undefined;
+        ExamCount?: number | undefined,
+        NewLessons?: number | undefined,
+        
+      }[]>();
 
     useEffect(() => {
         Course(location.state.data);
@@ -94,7 +105,7 @@ export default function Course() {
             console.error('Error:',error);
         })
        }
-       
+
     return (
         <div style={{ direction: 'rtl' }}>
             {
