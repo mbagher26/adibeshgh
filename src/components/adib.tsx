@@ -22,19 +22,7 @@ export default function Adib() {
        
     }, [])
 
-    
-    function CourseCategories(){
-        
-        api.c.getCourseCategories().then((res) =>{
 
-            console.log('result:',res.data.result);
-
-        }).catch((error) => {
-
-            console.error('Error:', error)
-        })
-
-    }
 
 
     function category() {
@@ -80,7 +68,7 @@ export default function Adib() {
                                     <div className="recordstyle" key={JSON.parse(record).id}>
                                         {JSON.parse(record).id}
 
-                                        <Link state={{data:JSON.parse(record).id}} to="/course:id">
+                                        <Link state={{data:JSON.parse(record).id}} to="/course">
 
                                         <img  alt={JSON.parse(record).title}
                                             src={returnPictureUrl(JSON.parse(record).cover)}
