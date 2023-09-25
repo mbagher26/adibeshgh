@@ -102,3 +102,12 @@
   display: flex;
   direction: rtl;
 }
+
+
+
+.divStyle{
+  height: 750px;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+}
