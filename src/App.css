@@ -111,3 +111,8 @@
   justify-content: center;
   background-size: cover;
 }
+
+.header-div{
+  position: unset;
+
+}
