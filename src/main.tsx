@@ -1,5 +1,4 @@
 import Adib from './components/adib';
-import CoursePublicSections from './components/coursepublicsection';
 import Course from './components/course';
 import "./App.css";
 import CourseSection from './components/coursesections';
@@ -25,7 +24,6 @@ const router = createBrowserRouter([
       },
     ],
   },
-
 ]);
 
 
