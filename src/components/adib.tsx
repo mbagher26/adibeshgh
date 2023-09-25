@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react"
-import { Api} from "../api/adib-api";
+import { Api } from "../api/adib-api";
 import { Link } from "react-router-dom";
+import { Slide } from "react-slideshow-image";
+import 'react-slideshow-image/dist/styles.css'
 
 export const api = new Api({ baseUrl: "https://api.adibeshgh.com" })
 
@@ -30,25 +32,25 @@ export default function Adib() {
         Banner?: string;
         /** Slider's hit count */
         HitCount?: number;
-      }
+    }
 
-    const [slid,setSlid] = useState<SliderModel[]>();
+    const [slid, setSlid] = useState<SliderModel[]>();
 
     useEffect(() => {
-           
+
         category();
         slides();
 
-    },[])
+    }, [])
 
-    
-    function slides(){
+
+    function slides() {
 
         api.c.getSlides().then((res) => {
-            console.log('slid:',res.data.result);
+            console.log('slid:', res.data.result);
             setSlid(res.data.result);
         })
-            
+
     }
 
 
@@ -57,8 +59,8 @@ export default function Adib() {
         api.c.getCategorizedCourseList().then((res) => {
 
             console.log(res.data.result);
-            if(res.data.result){
-            setCourselist(res.data.result);
+            if (res.data.result) {
+                setCourselist(res.data.result);
             }
 
         }).catch((error) => {
@@ -68,49 +70,65 @@ export default function Adib() {
     }
 
 
-    function returnPictureUrl(cover:string){
+    function returnPictureUrl(cover: string | undefined) {
         return 'https://api.adibeshgh.com/Attachment/courseCover?filename=' + cover
     }
 
 
-    return( 
-       
+    return (
+
         <section>
 
 
             <div>
-                
-                <div>
-                    
-                    {
-                    courselist.map((item, index) =>
-                        <div className="courseslist" key={index} >
-        
-                            <p className="titlestyle">{item.Title},{item.ID},{item.Count}</p>
-                            
-                            <div className="course">
+                <div>   
+                    <Slide>
+                        {slid?.map((item) => (
+
+                            <div key={item.ID}>
                                 
-                               {
-                               item.Records?.split('|||').map((record) =>(
-                                    <div className="recordstyle" key={JSON.parse(record).id}>
-                                        {JSON.parse(record).id}
-
-                                        <Link state={{data:JSON.parse(record).id}} to="/course">
-
-                                        <img  alt={JSON.parse(record).title}
-                                            src={returnPictureUrl(JSON.parse(record).cover)}
-                                            />
-                                            <div>{JSON.parse(record).title}</div>
-                                        </Link>
-
-                                    </div>
-                               ))
-                               }
+                                <div className="divStyle" style={{
+                                    backgroundImage: `url(${'https://api.adibeshgh.com/Attachment/courseCover?filename=' + item.Banner})`  
+                                }}>
+                                    
+                                </div>
 
                             </div>
-                            
-                        </div>
-                    )
+
+                        ))}
+                    </Slide>                
+                </div>
+                <div>
+
+                    {
+                        courselist.map((item, index) =>
+                            <div className="courseslist" key={index} >
+
+                                <p className="titlestyle">{item.Title},{item.ID},{item.Count}</p>
+
+                                <div className="course">
+
+                                    {
+                                        item.Records?.split('|||').map((record) => (
+                                            <div className="recordstyle" key={JSON.parse(record).id}>
+                                                {JSON.parse(record).id}
+
+                                                <Link state={{ data: JSON.parse(record).id }} to="/course">
+
+                                                    <img alt={JSON.parse(record).title}
+                                                        src={returnPictureUrl(JSON.parse(record).cover)}
+                                                    />
+                                                    <div>{JSON.parse(record).title}</div>
+                                                </Link>
+
+                                            </div>
+                                        ))
+                                    }
+
+                                </div>
+
+                            </div>
+                        )
                     }
 
                 </div>
