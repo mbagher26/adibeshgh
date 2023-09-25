@@ -44,6 +44,9 @@ export default function Adib() {
     }, [])
 
 
+
+
+
     function slides() {
 
         api.c.getSlides().then((res) => {
@@ -78,9 +81,19 @@ export default function Adib() {
     return (
 
         <section>
-
-
             <div>
+                <div className="header-div">
+                    <Link to=''>درباره ما</Link>
+                    <Link to=''>جستجو</Link>
+                    <Link to=''>رادیوادیب</Link>
+                    <Link to='/'>خانه</Link>
+                </div>
+
+                <div>
+                    <Link to='' >فروشگاه</Link>
+                    <Link to='' >رادیو ادیب</Link>
+                </div>
+
                 <div>   
                     <Slide>
                         {slid?.map((item) => (
