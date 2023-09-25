@@ -17,12 +17,19 @@ export default function Adib() {
 
     useEffect(() => {
         
-        // CourseCategories();
+        
         category();
-       
+        sidbar();
     }, [])
 
 
+    function sidbar(){
+        api.c.getSlides().then((res) => {
+            console.log('sid:',res.data.result);
+        })
+            
+        
+    }
 
 
     function category() {
