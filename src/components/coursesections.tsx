@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import {api} from "./adib.tsx";
+import { useLocation } from "react-router-dom";
 
 export default function CourseSection(){
 
@@ -15,14 +16,15 @@ export default function CourseSection(){
         NewLessons?: number | undefined; 
     }[]>();
 
-
+    const location = useLocation();
+    console.log('loca:',location.state.data)
         useEffect(()=>{
-            getCourseSections(1);
+            getCourseSections(location.state.data);
         },[])
 
 
     function getCourseSections(courseId:number){
-        
+
         api.c.getCourseSections(courseId).then((res) =>{
             console.log('coursesection:',res.data.result);
             setCoursesection(res.data.result);
