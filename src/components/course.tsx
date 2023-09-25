@@ -3,6 +3,7 @@ import { api } from './adib.tsx';
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
+import CourseSection from './coursesections.tsx';
 export default function Course() {
 
 
@@ -114,7 +115,7 @@ export default function Course() {
 
 
                 <div>
-                    <img alt={course?.Title} src={course?.Cover ? returncover(course.Cover) : ''} width='145' height='230' />
+                    <img alt={course?.Title} src={course?.Cover ? returncover(course.Cover) : ''} width='145' height='200' />
                     <h1>{course?.Title}</h1>
                     <p>{course?.Description}</p>
                 </div>
@@ -161,11 +162,11 @@ export default function Course() {
 
             </div>
 
-            <div>
+            <div className='divcourse'>
                 {coursepublic?.map((item) =>
                     <div>
 
-                        <button className="coursepublic">
+                        <Link state={location.state.data} to={':courseId'} className="coursepublic">
 
                             <h2>{item.Title}</h2>
 
@@ -175,14 +176,11 @@ export default function Course() {
                                 <p>{item.LessonCount} </p>
                             </div>
 
-                        </button>
-
+                        </Link>
+                        <Outlet />
                     </div>
                 )}
             </div>
-
-
-
 
         </div>
     )
