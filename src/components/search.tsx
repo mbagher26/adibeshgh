@@ -33,7 +33,7 @@ interface SearchModel {
 import Loading from './Loading.tsx';
 export default function Search(){
 
-    const [resultsearch,setResultsearch] = useState<SearchModel[]>([]);
+    const [resultsearch,setResultsearch] = useState<SearchModel[]|undefined>([]);
     const [loading,setLoading] = useState<boolean>(false);
 
     function handelClick(){
@@ -54,19 +54,20 @@ export default function Search(){
 
 
     return(
-        <>
-            
+        <>           
             <input type='text'  name='phrase'/>
             <input type='button' value='GET' onClick={search}/>
-            {loading?<Loading/>:
-            resultsearch.map((item) => 
+            <br/>
+            {loading?<Loading/>:            
+                resultsearch?.map((item) => 
                 <div>{item.Title}</div>
             )}
-            
         </>
     )
 
 }
+
+
 
 
 
