@@ -36,9 +36,7 @@ export default function Search(){
     const [resultsearch,setResultsearch] = useState<SearchModel[]|undefined>([]);
     const [loading,setLoading] = useState<boolean>(false);
 
-    function handelClick(){
-        search();
-    }
+
 
 
     function search(){
