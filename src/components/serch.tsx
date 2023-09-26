@@ -48,6 +48,12 @@ export default function Search(){
         })
     }
 
+    return(
+        <>
+            <input type='text' value='data' />
+            <button onClick={handelsearch}>search</button>
+        </>
+    )
 }
 
 
