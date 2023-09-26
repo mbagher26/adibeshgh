@@ -2,7 +2,35 @@ import { useEffect, useState } from 'react';
 import {api} from './adib.tsx';
 
 
-const [resultsearch,setResultsearch] = useState();
+interface SearchModel {
+    /** Lesson id */
+    ID?: number;
+    /** Lesson Title */
+    Title?: string;
+    /** Lesson Date */
+    Date?: string;
+    /** Lesson Description */
+    Description?: string;
+    /** Content Title */
+    ContentTitle?: string;
+    /** Content Text */
+    ContentText?: string;
+    /** Section ID */
+    SectionID?: number;
+    /** Section Title */
+    SectionTitle?: string;
+    /** Section Description */
+    SectionDescription?: string;
+    /** Course ID */
+    CourseID?: number;
+    /** Course Title */
+    CourseTitle?: string;
+    /** Course Description */
+    CourseDescription?: string;
+  }
+
+
+const [resultsearch,setResultsearch] = useState<SearchModel[]>();
 
 export default function Search(){
 
@@ -19,5 +47,9 @@ export default function Search(){
             setResultsearch(res.data.result);
         })
     }
+
 }
+
+
+
 
