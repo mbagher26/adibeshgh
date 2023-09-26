@@ -5,6 +5,8 @@ import CourseSection from './components/coursesections';
 import  ReactDOM  from 'react-dom/client';
 import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom';
 import React from 'react';
+import Search from './components/search';
+
 const router = createBrowserRouter([
   {
     path:'/',
@@ -24,6 +26,10 @@ const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path:'/search',
+    element:<Search />,
+  }
 ]);
 
 

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import {api} from './adib.tsx';
 
 
@@ -30,30 +30,42 @@ interface SearchModel {
   }
 
 
-const [resultsearch,setResultsearch] = useState<SearchModel[]>();
-
+import Loading from './Loading.tsx';
 export default function Search(){
 
+    const [resultsearch,setResultsearch] = useState<SearchModel[]>([]);
+    const [loading,setLoading] = useState<boolean>(false);
 
-    useEffect(() =>{
+    function handelClick(){
         search();
-    },[])
+    }
 
 
     function search(){
-
-        api.c.search({phrase,index,limit}:{phrase:String,index:Number,limit:Number}).then((res) => {
+        const phraseInput = (document.getElementsByName('phrase')[0] as HTMLInputElement).value;
+        setLoading(true)
+        api.c.search(phraseInput, 0, 10).then((res) => {
 
             setResultsearch(res.data.result);
+            setLoading(false);
+            console.log('search:',res.data.result)
         })
     }
 
+
     return(
         <>
-            <input type='text' value='data' />
-            <button onClick={handelsearch}>search</button>
+            
+            <input type='text'  name='phrase'/>
+            <input type='button' value='GET' onClick={search}/>
+            {loading?<Loading/>:
+            resultsearch.map((item) => 
+                <div>{item.Title}</div>
+            )}
+            
         </>
     )
+
 }
 
 
