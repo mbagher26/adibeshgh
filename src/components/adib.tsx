@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Slide } from "react-slideshow-image";
 import 'react-slideshow-image/dist/styles.css'
 
+
 export const api = new Api({ baseUrl: "https://api.adibeshgh.com" })
 
 export default function Adib() {
@@ -82,12 +83,7 @@ export default function Adib() {
 
         <section>
             <div>
-                <div className="header-div">
-                    <Link to=''>درباره ما</Link>
-                    <Link to=''>جستجو</Link>
-                    <Link to=''>رادیوادیب</Link>
-                    <Link to='/'>خانه</Link>
-                </div>
+
 
                 <div>
                     <Link to='' >فروشگاه</Link>
