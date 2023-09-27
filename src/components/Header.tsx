@@ -6,16 +6,16 @@ export default function Header(){
         <nav>
             <ul>
                 <li>
-                    <Link to=''>درباره ما</Link>
+                    <Link to='/about'>درباره ما</Link>
                 </li>
                 <li>
-                    <Link to=''>خانه</Link>
+                    <Link to='/home'>خانه</Link>
                 </li>
                 <li>
-                    <Link to=''>جستحو</Link>
+                    <Link to='/search'>جستحو</Link>
                 </li>
                 <li>
-                    <Link to=''>رادیوادیب</Link>
+                    <Link to='/radio'>رادیوادیب</Link>
                 </li>
             </ul>
         </nav>
