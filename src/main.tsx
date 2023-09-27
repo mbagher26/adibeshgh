@@ -1,12 +1,12 @@
-import Adib from './components/adib';
-import Course from './components/course';
+import Adib from './components/pages/adib';
+import Course from './components/pages/course';
 import "./App.css";
-import CourseSection from './components/coursesections';
+import CourseSection from './components/pages/coursesections';
 import ReactDOM from 'react-dom/client';
 import {BrowserRouter ,createBrowserRouter, Navigate } from 'react-router-dom';
 import React from 'react';
-import Search from './components/search';
-import About from './components/about';
+import Search from './components/pages/search';
+import About from './components/pages/about';
 import Header from './components/Header';
 import App from './App';
 
