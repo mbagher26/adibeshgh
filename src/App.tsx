@@ -1,13 +1,11 @@
 
-import { Route, RouterProvider, Routes ,createBrowserRouter, Navigate} from 'react-router-dom';
+import { Route, Routes , Navigate} from 'react-router-dom';
 import './App.css';
 import Header from './components/Header';
 import Adib from './components/pages/adib';
 import Course from './components/pages/course';
-import CourseSection from './components/pages/coursesections';
 import Search from './components/pages/search';
 import About from './components/pages/about';
-import React from 'react';
 
 
 function App() {
@@ -19,9 +17,11 @@ function App() {
       </div>
       <div>
         <Routes>
-          <Route path=''/>
-
-           
+          <Route path='/' element={<Adib/>}/>
+          <Route path='/home'  element={<Navigate replace to='/'/>} />
+          <Route path='/about' element={<About/>}/>
+          <Route path='/search' element={<Search/>}/>
+          <Route path='/course' element={<Course/>}/>          
         </Routes>       
       </div>
     </>
@@ -29,4 +29,7 @@ function App() {
 }
 
 export default App
+
+
+
 
