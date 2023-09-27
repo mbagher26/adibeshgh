@@ -1,24 +1,30 @@
-import { Link } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
+import './Header.css'
 
 export default function Header(){
     
     return(
-        <nav>
+        <nav >
+            <NavLink  to='/' className="title">
+                ادیب عشق
+            </NavLink>
             <ul>
                 <li>
-                    <Link to='/about'>درباره ما</Link>
+                    <NavLink to='/about'>درباره ما</NavLink>
                 </li>
                 <li>
-                    <Link to='/home'>خانه</Link>
+                    <NavLink to='/contact'>تماس با ما</NavLink>
                 </li>
                 <li>
-                    <Link to='/search'>جستحو</Link>
+                    <NavLink to='/search'>جستحو</NavLink>
                 </li>
                 <li>
-                    <Link to='/radio'>رادیوادیب</Link>
+                    <NavLink to='/radio'>رادیوادیب</NavLink>
                 </li>
             </ul>
         </nav>
     )
 }
+
+
 
