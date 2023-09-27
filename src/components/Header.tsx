@@ -3,12 +3,22 @@ import { Link } from "react-router-dom"
 export default function Header(){
     
     return(
-        <>
-            <Link to='/search'>جستجو</Link>
-            <Link to='/about'>درباره ما</Link>
-            <Link to='/radio'>رادیوادیب</Link>
-            <Link to='/home'>خانه</Link>
-        </>
+        <nav>
+            <ul>
+                <li>
+                    <Link to=''>درباره ما</Link>
+                </li>
+                <li>
+                    <Link to=''>خانه</Link>
+                </li>
+                <li>
+                    <Link to=''>جستحو</Link>
+                </li>
+                <li>
+                    <Link to=''>رادیوادیب</Link>
+                </li>
+            </ul>
+        </nav>
     )
 }
 
