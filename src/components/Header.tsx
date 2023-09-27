@@ -22,6 +22,7 @@ export default function Header(){
                     <NavLink to='/radio'>رادیوادیب</NavLink>
                 </li>
             </ul>
+            <NavLink to='/login'>ورود</NavLink>
         </nav>
     )
 }
