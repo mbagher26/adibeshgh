@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Api } from "../api/adib-api";
+import { Api } from "../../api/adib-api";
 import { Link } from "react-router-dom";
 import { Slide } from "react-slideshow-image";
 import 'react-slideshow-image/dist/styles.css'

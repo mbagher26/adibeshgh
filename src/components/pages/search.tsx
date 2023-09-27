@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import {api} from './adib.tsx';
+import {api} from './adib.js';
 
 
 interface SearchModel {
@@ -30,7 +30,7 @@ interface SearchModel {
   }
 
 
-import Loading from './Loading.tsx';
+import Loading from './Loading.js';
 export default function Search(){
 
     const [resultsearch,setResultsearch] = useState<SearchModel[]|undefined>([]);

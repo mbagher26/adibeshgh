@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import {api} from "./adib.tsx";
+import {api} from "./adib.js";
 import { useLocation } from "react-router-dom";
 
 export default function CourseSection(){

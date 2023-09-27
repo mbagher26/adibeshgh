@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
-import { api } from './adib.tsx';
+import { api } from './adib.js';
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
-import CourseSection from './coursesections.tsx';
+import CourseSection from './coursesections.js';
 export default function Course() {
 
 
