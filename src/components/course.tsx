@@ -164,7 +164,7 @@ export default function Course() {
 
             <div className='divcourse'>
                 {coursepublic?.map((item) =>
-                    <div>
+                    <div key={item.ID}>
 
                         <Link state={location.state.data} to={':courseId'} className="coursepublic">
 
