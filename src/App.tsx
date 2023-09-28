@@ -6,7 +6,8 @@ import Adib from './components/pages/adib';
 import Course from './components/pages/course';
 import Search from './components/pages/search';
 import About from './components/pages/about';
-
+import Login from './components/pages/Login';
+import "./Login.css";
 
 function App() {
 
@@ -21,7 +22,8 @@ function App() {
           <Route path='/home'  element={<Navigate replace to='/'/>} />
           <Route path='/about' element={<About/>}/>
           <Route path='/search' element={<Search/>}/>
-          <Route path='/course' element={<Course/>}/>          
+          <Route path='/course' element={<Course/>}/>
+          <Route path='/login' element={<Login/>}/>          
         </Routes>       
       </div>
     </>
