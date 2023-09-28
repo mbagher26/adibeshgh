@@ -5,11 +5,13 @@ export default function Login(){
 
         api.login.login(mobile:String).then((res) =>{
             console.log(res);
-        });
+        }).catch((error) =>{
+            console.error("ERROR:",error);
+        })
     }
     return(
         <>
-        
+
         </>
     )
 }
