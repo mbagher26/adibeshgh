@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import {api} from "./adib.tsx"
+import {api} from "./adib.tsx";
+import { useEffect } from "react";
 export default function Login(){
 
     function Mobilelogin(){
@@ -10,6 +11,10 @@ export default function Login(){
             console.error("ERROR:",error);
         })
     }
+
+    useEffect(() =>{
+        
+    },[])
     return(
         <>
             <div>
