@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 import './Header.css'
 
 export default function Header(){
@@ -22,7 +22,9 @@ export default function Header(){
                     <NavLink to='/radio'>رادیوادیب</NavLink>
                 </li>
             </ul>
-            <NavLink to='/login'>ورود</NavLink>
+            <NavLink to='/login' className="loginkey">
+                ورود
+            </NavLink>
         </nav>
     )
 }
