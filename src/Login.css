@@ -1,0 +1,19 @@
+.sidbarlogin{
+    display: grid;
+    margin-top: 5rem;
+    align-items: center;
+    margin-right: 3rem;
+}
+
+.sidbarlogin img{
+    margin-right: 1rem;
+}
+.container{
+    display: flex;
+    direction: rtl;
+}
+
+.imagelogin{
+    margin-right: 25rem;
+    margin-top: 5rem;
+}
