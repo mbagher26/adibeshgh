@@ -51,12 +51,10 @@ export default function Publiclessens(){
                         
                         <p>{response.Description}</p>
                         <p>{response.Title}</p>
-  
+                        <hr/>
                     </div>
                 )}
             </div>
         </>
     )  
 }
-
-
