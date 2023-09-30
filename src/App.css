@@ -41,23 +41,17 @@
   color: #888;
 }
 
-.courselist{
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  
+.courseslist{
+  direction: rtl;
 }
 
 .course{
-  width: 90%;
-  background-color: rgb(255, 255, 255);
-  border-radius: 3%;
-  box-shadow: 0 0 35px rgba(8, 128, 187, 0.996);
+  width: 10000;
+  box-shadow: 0 0 35px rgba(8, 89, 187, 0.996);
   display: flex;
   justify-content: center;
   align-self: center;
   text-align: center;
-  overflow-x: scroll;
 }
 
 .recordstyle{
@@ -110,7 +104,12 @@
   direction: rtl;
 }
 
-
+.titlestyle{
+  display: inline-flex;
+  direction: rtl;
+  background-color:rgb(60, 57, 219);
+  width: 1280px;
+}
 
 .divStyle{
   height: 750px;
