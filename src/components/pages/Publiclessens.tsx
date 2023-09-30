@@ -1,8 +1,34 @@
 import { useLocation } from 'react-router-dom';
 import { api } from './adib.js';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function Publiclessens(){
+
+    interface LessonModel {
+        /** Lesson's id */
+        ID?: number;
+        /** Lesson's title */
+        Title: string;
+        /** Lesson's description */
+        Description?: string;
+        /** Lesson's course id */
+        CourseId?: number;
+        /** Lesson's section id */
+        SectionId?: number;
+        /** Course Model */
+        Course?: CourseModel;
+        /** Section Model */
+        Section?: SectionModel;
+        /** Lesson's privacy */
+        Public?: number;
+        /** Lesson's date */
+        Date?: string;
+        /** Lesson's Ordering */
+        Ordering?: number;
+      }
+
+
+    const [publiclessens,setPubliclessens] = useState<LessonModel[]>();
 
     const location = useLocation();
     console.log('2id:',location.state);
@@ -17,12 +43,26 @@ export default function Publiclessens(){
         
         api.c.getPublicLessons(courseId,sectionId).then((res) =>{
             console.log('publiclessens:',res.data.result);
+            setPubliclessens(res.data.result);
         })
     }
     return(
         <>
-            <p>thiis is public lessens</p>
+            
+            <div>
+                {publiclessens?.map((response) =>
+                    <div>
+                        
+                        <p>{response.Description}</p>
+                        <p>{response.Title}</p>
+  
+                    </div>
+                    
+                    
+                )}
+            </div>
         </>
-    )
-    
+    )  
 }
+
+
