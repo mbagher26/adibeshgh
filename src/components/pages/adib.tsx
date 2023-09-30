@@ -103,7 +103,6 @@ export default function Adib() {
                                 </div>
 
                             </div>
-
                         ))}
                     </Slide>                
                 </div>
@@ -113,7 +112,11 @@ export default function Adib() {
                         courselist.map((item, index) =>
                             <div className="courseslist" key={index} >
 
-                                <p className="titlestyle">{item.Title},{item.ID},{item.Count}</p>
+                                <div className="titlestyle">
+                                    <p>{item.Title}</p>
+                                    <p>{item.ID}</p>
+                                    <p>{item.Count}</p>
+                                </div>
 
                                 <div className="course">
 
