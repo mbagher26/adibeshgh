@@ -7,7 +7,7 @@ import Course from './components/pages/course';
 import Search from './components/pages/search';
 import About from './components/pages/about';
 import Login from './components/pages/Login';
-import CourseSection from './components/pages/coursesections';
+import Publiclessens from './components/pages/Publiclessens';
 import "./Login.css";
 
 function App() {
@@ -24,8 +24,9 @@ function App() {
           <Route path='/about' element={<About/>}/>
           <Route path='/search' element={<Search/>}/>
           <Route path='/course' element={<Course/>}>
-            <Route path=':courseId' element={<CourseSection/>}/>
+            
           </Route>
+          <Route path='/courseId' element={<Publiclessens/>}/>
           <Route path='/login' element={<Login/>}/>          
         </Routes>       
       </div>
