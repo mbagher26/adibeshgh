@@ -28,7 +28,7 @@ export default function Publiclessens(){
     const [publiclessens,setPubliclessens] = useState<LessonModel[]>();
 
     const location = useLocation();
-    console.log('2id:',location.state);
+    
     const courseId = location.state[0];
     const sectionId = location.state[1];
 
@@ -44,8 +44,7 @@ export default function Publiclessens(){
         })
     }
     return(
-        <>
-            
+        <> 
             <div>
                 {publiclessens?.map((response) =>
                     <div>
@@ -54,8 +53,6 @@ export default function Publiclessens(){
                         <p>{response.Title}</p>
   
                     </div>
-                    
-                    
                 )}
             </div>
         </>
