@@ -71,31 +71,38 @@
   height: 190px
 }
 
-.titlestyle{
-  direction: rtl;
+.coursepublic{
+  height: 125px;
+  width: 300px;
+  display: block;
+  background-color: aqua;
 }
 
-
-.coursepublic{
-
-  height: 150px;
-  width: 300px;
-  display: inline-block;
-  background-color: aqua;
-  margin-top: 10px;
+.buttonlink{
+  display: block;
+  background-color: blue;
+  color: white;
+  width: 12rem;
+  margin-right: 4rem;
 }
 
 .coursedata{
   display: flex;
   direction: rtl;
-  
+  margin: 0.2rem;
+}
+
+.buttonstyle{
+  margin: 0.3rem;
+  min-width: 90px;
+  max-width: 150px;
+  height: 25px;
 }
 
 .divcourse{
   background-color: azure;
-  width: 300px;
-  height: 1000px;
-  
+  width: 350px;
+  height: 100px;
 }
 
 .maincontainer{
