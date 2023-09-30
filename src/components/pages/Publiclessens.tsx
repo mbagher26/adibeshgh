@@ -16,9 +16,6 @@ export default function Publiclessens(){
         /** Lesson's section id */
         SectionId?: number;
         /** Course Model */
-        Course?: CourseModel;
-        /** Section Model */
-        Section?: SectionModel;
         /** Lesson's privacy */
         Public?: number;
         /** Lesson's date */
