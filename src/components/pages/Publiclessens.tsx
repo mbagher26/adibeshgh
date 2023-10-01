@@ -45,11 +45,11 @@ export default function Publiclessens(){
     }
     return(
         <> 
-            <div>
+            <div className='divcontainer'>
                 {publiclessens?.map((response) =>
-                    <div>
+                    <div className='publiclessens'>
                         
-                        <p>{response.Description}</p>
+                        <p style={{direction:'rtl'}}>{response.Description}</p>
                         <p>{response.Title}</p>
                         <hr/>
                     </div>
