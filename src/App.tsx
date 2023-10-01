@@ -23,7 +23,7 @@ function App() {
           <Route path='/home'  element={<Navigate replace to='/'/>} />
           <Route path='/about' element={<About/>}/>
           <Route path='/search' element={<Search/>}/>
-          <Route path='/course' element={<Course/>}>
+          <Route path='/course/:courseId' element={<Course/>}>
           
             <Route path=':courseId/section/:sectionId' element={<Publiclessens/>}/>
             
