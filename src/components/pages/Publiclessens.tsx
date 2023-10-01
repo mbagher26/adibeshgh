@@ -1,4 +1,5 @@
-import { useLocation } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+// import { useLocation } from 'react-router-dom';
 import { api } from './adib.js';
 import { useEffect, useState } from 'react';
 
@@ -24,21 +25,23 @@ export default function Publiclessens(){
         Ordering?: number;
       }
 
-
     const [publiclessens,setPubliclessens] = useState<LessonModel[]>();
 
-    const location = useLocation();
-    
-    const courseId = location.state[0];
-    const sectionId = location.state[1];
+    const {courseId,sectionId} = useParams();
+    const CourseId:number = Number(courseId);
+    const SectionId:number = Number(sectionId);
+    console.log({courseId,sectionId});
 
+    const ssss = useParams();
     useEffect(()=>{
-        Publiclessens({courseId,sectionId});
-    },[])
-
-    function Publiclessens({courseId,sectionId}:{courseId:number,sectionId:number}){
+        Publiclessens({CourseId,SectionId})
+    },[SectionId,CourseId])
+    console.log('sss',ssss);
+    
+    
+    function Publiclessens({CourseId,SectionId}:{CourseId:number,SectionId:number}){
         
-        api.c.getPublicLessons(courseId,sectionId).then((res) =>{
+        api.c.getPublicLessons(CourseId,SectionId).then((res) =>{
             console.log('publiclessens:',res.data.result);
             setPubliclessens(res.data.result);
         })
@@ -47,8 +50,7 @@ export default function Publiclessens(){
         <> 
             <div className='divcontainer'>
                 {publiclessens?.map((response) =>
-                    <div className='publiclessens'>
-                        
+                    <div className='publiclessens'>                     
                         <p style={{direction:'rtl'}}>{response.Description}</p>
                         <p>{response.Title}</p>
                         <hr/>
@@ -58,3 +60,5 @@ export default function Publiclessens(){
         </>
     )  
 }
+
+
