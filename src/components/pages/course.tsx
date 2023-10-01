@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { api } from './adib.js';
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 export default function Course() {
 
 
@@ -164,8 +165,7 @@ export default function Course() {
                 {coursepublic?.map((item) =>
                     <div key={item.ID}>
 
-                        <Link state={[location.state.data,item.ID]} to={'/courseId'} className="coursepublic">
-
+                        <Link state={[location.state.data,item.ID]} to={':courseId'}>
                             <div>
 
                                 <h2>{item.Title}</h2>
@@ -175,13 +175,14 @@ export default function Course() {
                                 <p>{item.LessonCount} </p>
 
                             </div>
-
-                        </Link>
-                        
+                        </Link> 
+                                               
                     </div>
                 )}
             </div>
-
+            <div>
+                <Outlet/>
+            </div>
         </div>
     )
 }
