@@ -158,3 +158,17 @@
     transform: rotate(360deg);
   }
 }
+
+.publiclessens{
+  width: 90rem;
+  height: 3.5rem;
+  display: flex;
+  font-size: medium;
+  background-color: aliceblue;
+}
+
+.divcontainer{
+  margin-top: 1.3rem;
+  margin-right: 10rem;
+  background-color: aqua;
+}
