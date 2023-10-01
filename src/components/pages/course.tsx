@@ -165,9 +165,11 @@ export default function Course() {
                 {coursepublic?.map((item) =>
                     <div key={item.ID}>
 
-                        <Link state={[location.state.data,item.ID]} to={':courseId'}>
-                            <div>
 
+                        <Link  to={`${course?.ID}/section/${item.ID}`} className='coursepublic'>
+                            
+                            <div>
+                                
                                 <h2>{item.Title}</h2>
 
                                 <p>{item.Description}</p>
@@ -176,7 +178,7 @@ export default function Course() {
 
                             </div>
                         </Link> 
-                                               
+
                     </div>
                 )}
             </div>
