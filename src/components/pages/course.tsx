@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { api } from './adib.js';
 import { Link } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
 export default function Course() {
 
@@ -62,7 +62,8 @@ export default function Course() {
         Tag?: string;
     }
 
-    const location = useLocation();
+    const {courseId} = useParams();
+    const CourseId:number = Number(courseId);
     const [course, setCourse] = useState<CourseModel>();
     const [coursepublic, setCoursepublic] = useState<{
 
@@ -78,13 +79,13 @@ export default function Course() {
     }[]>();
 
     useEffect(() => {
-        Course(location.state.data);
-        getCoursePublicSections(location.state.data);
-    }, [])
+        Course(CourseId);
+        getCoursePublicSections(CourseId);
+    }, [CourseId])
 
 
-    function Course(courseId: number) {
-        api.c.getCourseById(courseId).then((res) => {
+    function Course(CourseId: number) {
+        api.c.getCourseById(CourseId).then((res) => {
             console.log('coursebyid:', res.data.result);
             setCourse(res.data.result);
         })
@@ -96,8 +97,8 @@ export default function Course() {
     }
 
 
-    function getCoursePublicSections(id: number) {
-        api.c.getCoursePublicSections(id).then((res) => {
+    function getCoursePublicSections(CourseId: number) {
+        api.c.getCoursePublicSections(CourseId).then((res) => {
 
             console.log('coursepublicsection:', res.data.result);
 
