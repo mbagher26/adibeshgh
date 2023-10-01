@@ -125,7 +125,7 @@ export default function Adib() {
                                             <div className="recordstyle" key={JSON.parse(record).id}>
                                                 {JSON.parse(record).id}
 
-                                                <Link state={{ data: JSON.parse(record).id }} to="/course">
+                                                <Link to={`/course/${JSON.parse(record).id}`}>
 
                                                     <img alt={JSON.parse(record).title}
                                                         src={returnPictureUrl(JSON.parse(record).cover)}
