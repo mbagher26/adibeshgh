@@ -50,7 +50,7 @@ export default function Publiclessens(){
         <> 
             <div className='divcontainer'>
                 {publiclessens?.map((response) =>
-                    <div className='publiclessens'>                     
+                    <div key={response.ID} className='publiclessens'>                     
                         <p style={{direction:'rtl'}}>{response.Description}</p>
                         <p>{response.Title}</p>
                         <hr/>
