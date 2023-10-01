@@ -25,7 +25,7 @@ function App() {
           <Route path='/search' element={<Search/>}/>
           <Route path='/course' element={<Course/>}>
           
-            <Route path=':courseId' element={<Publiclessens/>}/>
+            <Route path=':courseId/section/:sectionId' element={<Publiclessens/>}/>
             
           </Route>
           <Route path='/login' element={<Login/>}/>          
