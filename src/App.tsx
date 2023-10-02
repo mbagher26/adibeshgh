@@ -25,7 +25,7 @@ function App() {
           <Route path='/search' element={<Search/>}/>
           <Route path='/course/:courseId' element={<Course/>}>
           
-            <Route path=':courseId/section/:sectionId' element={<Publiclessens/>}/>
+            <Route path='section/:sectionId' element={<Publiclessens/>}/>
             
           </Route>
           <Route path='/login' element={<Login/>}/>          
@@ -36,7 +36,4 @@ function App() {
 }
 
 export default App
-
-
-
 
