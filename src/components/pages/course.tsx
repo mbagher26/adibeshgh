@@ -183,7 +183,7 @@ export default function Course() {
                     </div>
                 )}
             </div>
-            <div>
+            <div className='divoutlet'>
                 <Outlet/>
             </div>
         </div>
