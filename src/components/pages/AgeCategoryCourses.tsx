@@ -15,6 +15,7 @@ export default function AgeCategoryCourses(){
     }
     return(
         <>
+            <p>this is page Agecategory</p>
         </>
     )
     
