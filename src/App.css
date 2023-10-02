@@ -164,11 +164,18 @@
   height: 3.5rem;
   display: flex;
   font-size: medium;
-  background-color: aliceblue;
 }
 
 .divcontainer{
   margin-top: 1.3rem;
   margin-right: 1rem;
   background-color: aqua;
+  margin: 0.1rem;
+}
+
+.divoutlet{
+  margin-top: 1.3rem;
+  background-color: bisque;
+  width: 49.9rem;
+  max-height: 34.5rem;
 }
