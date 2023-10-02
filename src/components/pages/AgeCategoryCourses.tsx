@@ -1,5 +1,6 @@
 import { api } from './adib.js';
 import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 export default function AgeCategoryCourses(){
 
@@ -58,11 +59,14 @@ export default function AgeCategoryCourses(){
         /** Tag */
         Tag?: string;
       }
-
+    
+    const {categoryId} = useParams();
+    const CategoryId:number = Number(categoryId);
+    console.log({CategoryId});
     const [courses,setCourses] = useState<CourseModel[]>();
 
     useEffect(() =>{
-        AgeCategoryCourses(6);
+        AgeCategoryCourses(CategoryId);
     },[])
 
     function AgeCategoryCourses(AgeCategoryId:number){
@@ -78,6 +82,7 @@ export default function AgeCategoryCourses(){
             {
                 courses?.map((course) =>{
                     <div>
+                        {course.Tag}
                         <p>{course.Title}</p>
                         <p>{course.Description}</p>
                     </div>                    
