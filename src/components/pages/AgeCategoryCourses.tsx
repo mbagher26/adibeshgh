@@ -84,7 +84,6 @@ export default function AgeCategoryCourses(){
 
                   courses?.map((course) =>
                      <div>
-                        {course.Tag}
                          <p>{course.Title}</p>
                          <p>{course.Description}</p>
                      </div>                    
