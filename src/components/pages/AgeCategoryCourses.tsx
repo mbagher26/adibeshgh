@@ -64,7 +64,7 @@ export default function AgeCategoryCourses(){
     const CategoryId:number = Number(categoryId);
     console.log({CategoryId});
     const [courses,setCourses] = useState<CourseModel[]>();
-
+    
     useEffect(() =>{
         AgeCategoryCourses(CategoryId);
     },[])
@@ -80,13 +80,16 @@ export default function AgeCategoryCourses(){
         <>
             <p>this is page Agecategory</p>
             {
-                courses?.map((course) =>{
-                    <div>
+             
+
+                  courses?.map((course) =>
+                     <div>
                         {course.Tag}
-                        <p>{course.Title}</p>
-                        <p>{course.Description}</p>
-                    </div>                    
-                })
+                         <p>{course.Title}</p>
+                         <p>{course.Description}</p>
+                     </div>                    
+                 )
+             
             }
         </>
     )
