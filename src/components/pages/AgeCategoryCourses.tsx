@@ -31,7 +31,16 @@ export default function AgeCategoryCourses(){
         /** Enrollment status of the current user */
         Enrolled?: number;
         /** AgeCategory Model */
-        AgeCategory?: AgeCategoryModel;
+        AgeCategory?: {
+            /** AgeCategory id */
+            ID?: number;
+            /** AgeCategory Title */
+            Title: string;
+            /** From Age */
+            From?: number;
+            /** To Age */
+            To?: number;
+          };
         /** More inforamtion about the course */
         InfoList?: {
           ID?: number;
@@ -76,5 +85,5 @@ export default function AgeCategoryCourses(){
             }
         </>
     )
-
+    
 }
