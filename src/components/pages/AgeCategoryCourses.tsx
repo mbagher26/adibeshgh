@@ -1,6 +1,7 @@
 import { api } from './adib.js';
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams,Link } from 'react-router-dom';
+
 
 export default function AgeCategoryCourses(){
 
@@ -82,19 +83,18 @@ export default function AgeCategoryCourses(){
     }
     return(
         <>
-            <p>this is page Agecategory</p>
             {
              
 
                   courses?.map((course) =>
-                     <div className='divcourses'>
+                     <Link to='' className='divcourses'>
                         <img src={ReturnPictuerUrl(course.Cover)}/>
-                        <div>
-                            <h5>{course.Title}</h5>
-                            <h6>{course.Description}</h6>
+                        <div className='divcontact'>
+                            <p>{course.Title}</p>
+                            <p>{course.Description}</p>
                         </div>
                          
-                     </div>                    
+                     </Link>                    
                  )
              
             }
