@@ -180,3 +180,14 @@
   min-height: 0rem;
   max-height: 34.5rem;
 }
+
+.divcourses{
+  direction: rtl;
+  display: flex;
+}
+
+.divcourses img{
+  width: 7rem;
+  margin-left: 1rem;
+  margin-top: 0.1rem;
+}
