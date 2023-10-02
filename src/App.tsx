@@ -8,6 +8,8 @@ import Search from './components/pages/search';
 import About from './components/pages/about';
 import Login from './components/pages/Login';
 import Publiclessens from './components/pages/Publiclessens';
+import AgeCategoryCourses from './components/pages/AgeCategoryCourses';
+
 import "./Login.css";
 
 function App() {
@@ -28,7 +30,8 @@ function App() {
             <Route path='section/:sectionId' element={<Publiclessens/>}/>
             
           </Route>
-          <Route path='/login' element={<Login/>}/>          
+          <Route path='/login' element={<Login/>}/>
+          <Route path='/ageCategoryCourses' element={<AgeCategoryCourses/>}/>          
         </Routes>       
       </div>
     </>
