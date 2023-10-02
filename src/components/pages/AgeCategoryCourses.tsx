@@ -87,10 +87,13 @@ export default function AgeCategoryCourses(){
              
 
                   courses?.map((course) =>
-                     <div>
+                     <div className='divcourses'>
                         <img src={ReturnPictuerUrl(course.Cover)}/>
-                         <h5>{course.Title}</h5>
-                         <h6>{course.Description}</h6>
+                        <div>
+                            <h5>{course.Title}</h5>
+                            <h6>{course.Description}</h6>
+                        </div>
+                         
                      </div>                    
                  )
              
