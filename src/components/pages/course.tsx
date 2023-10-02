@@ -167,7 +167,7 @@ export default function Course() {
                     <div key={item.ID}>
 
 
-                        <Link  to={`${course?.ID}/section/${item.ID}`} className='coursepublic'>
+                        <Link  to={`section/${item.ID}`} className='coursepublic'>
                             
                             <div>
                                 
