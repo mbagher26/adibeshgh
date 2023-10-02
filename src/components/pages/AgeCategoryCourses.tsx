@@ -1,9 +1,9 @@
 import { api } from './adib.js';
 import { useEffect, useState } from 'react';
-import { useParams,Link } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 
-export default function AgeCategoryCourses(){
+export default function AgeCategoryCourses() {
 
     interface CourseModel {
         /** Course id */
@@ -42,14 +42,14 @@ export default function AgeCategoryCourses(){
             From?: number;
             /** To Age */
             To?: number;
-          };
+        };
         /** More inforamtion about the course */
         InfoList?: {
-          ID?: number;
-          CourseID?: number;
-          Type?: "text" | "tell" | "url";
-          Title?: string;
-          Description?: string;
+            ID?: number;
+            CourseID?: number;
+            Type?: "text" | "tell" | "url";
+            Title?: string;
+            Description?: string;
         };
         /** The Link of the course */
         Link?: string;
@@ -59,46 +59,46 @@ export default function AgeCategoryCourses(){
         Private?: number;
         /** Tag */
         Tag?: string;
-      }
-    
-    const {categoryId} = useParams();
-    const CategoryId:number = Number(categoryId);
-    console.log({CategoryId});
-    const [courses,setCourses] = useState<CourseModel[]>();
-    
-    useEffect(() =>{
+    }
+
+    const { categoryId } = useParams();
+    const CategoryId: number = Number(categoryId);
+    console.log({ CategoryId });
+    const [courses, setCourses] = useState<CourseModel[]>();
+
+    useEffect(() => {
         AgeCategoryCourses(CategoryId);
-    },[])
+    }, [])
 
-    function AgeCategoryCourses(AgeCategoryId:number){
+    function AgeCategoryCourses(AgeCategoryId: number) {
 
-        api.c.getAgeCategoryCourses(AgeCategoryId).then((res) =>{
+        api.c.getAgeCategoryCourses(AgeCategoryId).then((res) => {
             console.log(res.data.result);
             setCourses(res.data.result);
         })
     }
 
-    function ReturnPictuerUrl(cover:string|undefined){
+    function ReturnPictuerUrl(cover: string | undefined) {
         return 'https://api.adibeshgh.com/Attachment/courseCover?filename=' + cover
     }
-    return(
+    return (
         <>
             {
-             
 
-                  courses?.map((course) =>
-                     <Link to='' className='divcourses'>
-                        <img src={ReturnPictuerUrl(course.Cover)}/>
+
+                courses?.map((course) =>
+                    <Link to='' className='divcourses'>
+                        <img src={ReturnPictuerUrl(course.Cover)} />
                         <div className='divcontact'>
                             <p>{course.Title}</p>
                             <p>{course.Description}</p>
                         </div>
-                         
-                     </Link>                    
-                 )
-             
+
+                    </Link>
+                )
+
             }
         </>
     )
-    
+
 }
