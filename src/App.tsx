@@ -31,7 +31,7 @@ function App() {
             
           </Route>
           <Route path='/login' element={<Login/>}/>
-          <Route path='/ageCategoryCourses' element={<AgeCategoryCourses/>}/>          
+          <Route path='/ageCategoryCourses/:categoryId' element={<AgeCategoryCourses/>}/>          
         </Routes>       
       </div>
     </>
