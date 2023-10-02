@@ -13,5 +13,9 @@ export default function AgeCategoryCourses(){
             console.log(res.data.result);
         })
     }
+    return(
+        <>
+        </>
+    )
     
 }
