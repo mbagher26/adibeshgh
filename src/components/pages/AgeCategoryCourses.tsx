@@ -76,6 +76,10 @@ export default function AgeCategoryCourses(){
             setCourses(res.data.result);
         })
     }
+
+    function ReturnPictuerUrl(cover:string|undefined){
+        return 'https://api.adibeshgh.com/Attachment/courseCover?filename=' + cover
+    }
     return(
         <>
             <p>this is page Agecategory</p>
@@ -84,7 +88,7 @@ export default function AgeCategoryCourses(){
 
                   courses?.map((course) =>
                      <div>
-                        <img src={course.Cover}/>
+                        <img src={ReturnPictuerUrl(course.Cover)}/>
                          <h5>{course.Title}</h5>
                          <h6>{course.Description}</h6>
                      </div>                    
