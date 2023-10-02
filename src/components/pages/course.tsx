@@ -146,13 +146,13 @@ export default function Course() {
                 <br />
 
                 <div className='coursedata'>
-                    <button className='buttonstyle'>{course?.AgeCategory?.Title}</button>
-                    <button style={{backgroundColor:'greenyellow'}} className='buttonstyle'>عمومی</button>
-                    <button className='buttonstyle'>روابط عمومی</button>
+                    <Link to={`/ageCategoryCourses/${course?.AgeCategory?.ID}`} className='buttonstyle'>{course?.AgeCategory?.Title}</Link>
+                    <Link to='' style={{backgroundColor:'greenyellow'}} className='buttonstyle'>عمومی</Link>
+                    <Link to='' className='buttonstyle'>روابط عمومی</Link>
                 </div>
                 <br />
                 <div className='coursedata'>
-                    <button className='buttonstyle'>عضویت</button>
+                    <Link to='' className='buttonstyle'>عضویت</Link>
                 </div>
 
                 <div>
