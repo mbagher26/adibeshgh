@@ -117,7 +117,9 @@ export default function Course() {
 
     return (
         <div className='maincontainer'>
-
+            <div className='publickrelation'>
+                {status===true && (<Publicrelation/>)}
+            </div>
             <div className='divcourse'>
 
 
@@ -168,9 +170,7 @@ export default function Course() {
                     </Link>
                 </div>
             </div>
-            <div>
-                {status===true ? (<Publicrelation/>) : (<Course/>)}
-            </div>
+
 
             <div className='divcourse'>
                 {coursepublic?.map((item) =>
@@ -196,6 +196,7 @@ export default function Course() {
             <div className='divoutlet'>
                 <Outlet/>
             </div>
+
         </div>
     )
 }
