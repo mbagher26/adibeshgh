@@ -118,6 +118,22 @@ export default function Course() {
     function handelclose(){
         setStatus(false);
     }
+
+    function Publicrelation(){
+
+        return(
+            <>
+                <div>
+                    <p>روابط عمومی</p>
+                    <div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus atque magni quis exercitationem explicabo iste velit ex at inventore iusto, ea sint assumenda! Fugiat in aut, excepturi voluptatibus nesciunt suscipit?</p>
+                        <button onClick={handelclose}>بستن</button>
+                    </div>
+                </div>
+            </>
+        )
+    }
+    
     return (
         <div className='maincontainer'>
             <div className='publickrelation'>
@@ -204,18 +220,4 @@ export default function Course() {
     )
 }
 
-export function Publicrelation(){
-
-    return(
-        <>
-            <div>
-                <p>روابط عمومی</p>
-                <div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus atque magni quis exercitationem explicabo iste velit ex at inventore iusto, ea sint assumenda! Fugiat in aut, excepturi voluptatibus nesciunt suscipit?</p>
-                    <button onClick={handelclose}>بستن</button>
-                </div>
-            </div>
-        </>
-    )
-}
 
