@@ -115,6 +115,9 @@ export default function Course() {
         setStatus(true);
     }
 
+    function handelclose(){
+        setStatus(false);
+    }
     return (
         <div className='maincontainer'>
             <div className='publickrelation'>
