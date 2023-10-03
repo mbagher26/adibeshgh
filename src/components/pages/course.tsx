@@ -148,7 +148,7 @@ export default function Course() {
                 <div className='coursedata'>
                     <Link to={`/ageCategoryCourses/${course?.AgeCategory?.ID}`} className='buttonstyle'>{course?.AgeCategory?.Title}</Link>
                     <Link to='' style={{backgroundColor:'greenyellow'}} className='buttonstyle'>عمومی</Link>
-                    <Link to='' className='buttonstyle'>روابط عمومی</Link>
+                    <button className='buttonstyle'>روابط عمومی</button>
                 </div>
                 <br />
                 <div className='coursedata'>
