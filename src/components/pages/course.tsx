@@ -108,6 +108,11 @@ export default function Course() {
         })
     }
 
+
+    function handelclick(){
+        setStatus(true);
+    }
+
     return (
         <div className='maincontainer'>
 
@@ -148,7 +153,7 @@ export default function Course() {
                 <div className='coursedata'>
                     <Link to={`/ageCategoryCourses/${course?.AgeCategory?.ID}`} className='buttonstyle'>{course?.AgeCategory?.Title}</Link>
                     <Link to='' style={{backgroundColor:'greenyellow'}} className='buttonstyle'>عمومی</Link>
-                    <button className='buttonstyle'>روابط عمومی</button>
+                    <button onClick={handelclick} className='buttonstyle'>روابط عمومی</button>
                 </div>
                 <br />
                 <div className='coursedata'>
