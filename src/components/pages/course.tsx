@@ -209,6 +209,7 @@ export function Publicrelation(){
                 <p>روابط عمومی</p>
                 <div>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus atque magni quis exercitationem explicabo iste velit ex at inventore iusto, ea sint assumenda! Fugiat in aut, excepturi voluptatibus nesciunt suscipit?</p>
+                    <button onClick={handelclose}>بستن</button>
                 </div>
             </div>
         </>
