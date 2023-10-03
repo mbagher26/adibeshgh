@@ -3,6 +3,7 @@ import { api } from './adib.js';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
+
 export default function Course() {
 
 
@@ -80,12 +81,12 @@ export default function Course() {
     }[]>();
 
     useEffect(() => {
-        Course(CourseId);
+        CourseById(CourseId);
         getCoursePublicSections(CourseId);
     }, [CourseId])
 
 
-    function Course(CourseId: number) {
+    function CourseById(CourseId: number) {
         api.c.getCourseById(CourseId).then((res) => {
             console.log('coursebyid:', res.data.result);
             setCourse(res.data.result);
@@ -167,6 +168,9 @@ export default function Course() {
                     </Link>
                 </div>
             </div>
+            <div>
+                {status===true ? (<Publicrelation/>) : (<Course/>)}
+            </div>
 
             <div className='divcourse'>
                 {coursepublic?.map((item) =>
@@ -196,5 +200,17 @@ export default function Course() {
     )
 }
 
+export function Publicrelation(){
 
+    return(
+        <>
+            <div>
+                <p>روابط عمومی</p>
+                <div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus atque magni quis exercitationem explicabo iste velit ex at inventore iusto, ea sint assumenda! Fugiat in aut, excepturi voluptatibus nesciunt suscipit?</p>
+                </div>
+            </div>
+        </>
+    )
+}
 
