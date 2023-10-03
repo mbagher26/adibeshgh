@@ -62,6 +62,7 @@ export default function Course() {
         Tag?: string;
     }
 
+    const [status,setStatus] = useState<boolean>();
     const {courseId} = useParams();
     const CourseId:number = Number(courseId);
     const [course, setCourse] = useState<CourseModel>();
