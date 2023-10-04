@@ -3,7 +3,7 @@ import { api } from './adib.js';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
-
+import Publicrelation from './Publicrelation.js';
 export default function Course() {
 
 
@@ -112,33 +112,14 @@ export default function Course() {
 
 
     function handelclick(){
-        setStatus(true);
+        setStatus(!status);
     }
 
-    function handelclose(){
-        setStatus(false);
-    }
 
-    function Publicrelation(){
-
-        return(
-            <>
-                <div>
-                    <p>روابط عمومی</p>
-                    <div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus atque magni quis exercitationem explicabo iste velit ex at inventore iusto, ea sint assumenda! Fugiat in aut, excepturi voluptatibus nesciunt suscipit?</p>
-                        <button onClick={handelclose}>بستن</button>
-                    </div>
-                </div>
-            </>
-        )
-    }
     
     return (
         <div className='maincontainer'>
-            <div className='publickrelation'>
-                {status===true && (<Publicrelation/>)}
-            </div>
+
             <div className='divcourse'>
 
 
@@ -177,6 +158,7 @@ export default function Course() {
                     <Link to={`/ageCategoryCourses/${course?.AgeCategory?.ID}`} className='buttonstyle'>{course?.AgeCategory?.Title}</Link>
                     <Link to='' style={{backgroundColor:'greenyellow'}} className='buttonstyle'>عمومی</Link>
                     <button onClick={handelclick} className='buttonstyle'>روابط عمومی</button>
+                    {status && <Publicrelation/>}
                 </div>
                 <br />
                 <div className='coursedata'>
