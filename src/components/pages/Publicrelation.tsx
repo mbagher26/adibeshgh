@@ -1,11 +1,8 @@
-
-
 export default function Publicrelation(){
 
     return(
         <>
             <div className='fatherrelation'>
-                {/* <div className='bgClick'></div> */}
                 <div className='publickrelation'>
                     <p>روابط عمومی</p>
                     <div>
