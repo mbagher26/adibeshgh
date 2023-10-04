@@ -198,10 +198,9 @@
 }
 
 .fatherrelation{
-  z-index: 10;
   background-color: #888;
-  /* width: 500px; */
-  /* height: 400px; */
+  width: 330px;
+  height: 30px;
 }
 
 .bgClick {
