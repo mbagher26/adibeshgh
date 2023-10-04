@@ -123,8 +123,7 @@ export default function Adib() {
                                     {
                                         item.Records?.split('|||').map((record) => (
                                             <div className="recordstyle" key={JSON.parse(record).id}>
-                                                {JSON.parse(record).id}
-
+                                            
                                                 <Link to={`/course/${JSON.parse(record).id}`}>
 
                                                     <img alt={JSON.parse(record).title}
