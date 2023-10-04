@@ -124,7 +124,7 @@ export default function Course() {
 
 
                 <div style={{ marginTop: '1.1rem' }}>
-                    <img alt={course?.Title} src={course?.Cover ? returncover(course.Cover) : ''} width='145' height='200' />
+                    <img alt={course?.Title} src={course?.Cover ? returncover(course.Cover) : ''} width='160' height='160' />
                     <div>
                         <h1>{course?.Title}</h1>
                         <p>{course?.Description}</p>
@@ -158,9 +158,14 @@ export default function Course() {
                     <Link to={`/ageCategoryCourses/${course?.AgeCategory?.ID}`} className='buttonstyle'>{course?.AgeCategory?.Title}</Link>
                     <Link to='' style={{backgroundColor:'greenyellow'}} className='buttonstyle'>عمومی</Link>
                     <button onClick={handelclick} className='buttonstyle'>روابط عمومی</button>
-                    {status && <Publicrelation/>}
+                    
+                
                 </div>
                 <br />
+                <div>
+                        {status && <Publicrelation/>}
+                </div>
+                <br/>
                 <div className='coursedata'>
                     <Link to='' className='buttonstyle'>عضویت</Link>
                 </div>
