@@ -22,7 +22,7 @@ nav{
 .logo{
     width: 5px;
     height: 5px;
-    margin: 30px 0px 20px ;
+    margin: 30px  50px 20px ;
     background-image: url('http://adibeshgh.com/assets/logo.7df3b54d.svg');
     background-size: 100%;
     background-repeat: no-repeat;
@@ -38,20 +38,23 @@ nav div input{
     border-radius: 5px;
 }
 
-div .menu{
-    display: flex ;
-    position: absolute;
-    right: 10rem;
-    flex-direction: column ;
+.menu{
+    display: flex;
+    /* position: absolute; */
+    flex-direction: column;
     justify-content: space-between;
     width: 3.25rem;
     height: 3rem;
-    background-color: rgb(245, 253, 8);
+    margin: 10px 50px 10px 1178px;
 }
 
-nav .menu span{
+Nav div span{
     height: 0.4rem;
     width: 100%;
-    background-color: rgb(2, 16, 29);
-    border-radius: 0rem;
+    background-color: rgb(255, 252, 255);
+    border-radius: 0.2rem;
+}
+
+.navmenu{
+    background-color: rgb(6, 6, 144);
 }
