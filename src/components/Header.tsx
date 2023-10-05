@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom"
 import './Header.css'
-
+import Search from "./pages/search"
 export default function Header(){
     
     return(
@@ -20,6 +20,10 @@ export default function Header(){
                     <NavLink to='/radio'>رادیوادیب</NavLink>
                 </li>
             </ul>
+
+            <div>
+                <Search/>
+            </div>
 
             <NavLink  to='/' className="logo">
                 <img src="http://adibeshgh.com/assets/logo.7df3b54d.svg" />
