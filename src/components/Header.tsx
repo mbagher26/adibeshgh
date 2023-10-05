@@ -8,7 +8,7 @@ export default function Header(){
     return(
         <nav >
             <NavLink to='/login' className="loginkey">
-                ورود
+                <p>ثبت نام|ورود</p>
             </NavLink>
 
             {/* <div>
