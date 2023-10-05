@@ -11,17 +11,6 @@ export default function Header(){
                 ورود
             </NavLink>
 
-            <ul>
-                <li>
-                    <NavLink to='/about'>درباره ما</NavLink>
-                </li>
-                <li>
-                    <NavLink to='/contact'>تماس با ما</NavLink>
-                </li>
-                <li>
-                    <NavLink to='/radio'>رادیوادیب</NavLink>
-                </li>
-            </ul>
             {/* <div>
                 <input type="text" name="phrase"/>
                 <input type="button" value='جستجو' onClick={handelSearchClick} />
