@@ -8,9 +8,11 @@ export default function Header(){
     return(
         <nav >
             <NavLink to='/login' className="loginkey">
-                <p>ثبت نام|ورود</p>
+                ثبت نام|ورود
             </NavLink>
-
+            <div>
+                <p>شماره تماس: ۰۳۵-۸۶۵۴۵۵۶۷</p>
+            </div>
             {/* <div>
                 <input type="text" name="phrase"/>
                 <input type="button" value='جستجو' onClick={handelSearchClick} />
