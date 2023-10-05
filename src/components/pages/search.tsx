@@ -54,7 +54,7 @@ export default function Search(){
     return(
         <>           
             <input type='text'  name='phrase'/>
-            <input type='button' value='GET' onClick={search}/>
+            <input type='button' value='جستجو' onClick={search}/>
             <br/>
             {loading?<Loading/>:            
                 resultsearch?.map((item) => 
