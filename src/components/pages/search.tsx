@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import {api} from './adib.js';
-
+import Loading from './Loading.js';
 
 interface SearchModel {
     /** Lesson id */
@@ -29,14 +29,10 @@ interface SearchModel {
     CourseDescription?: string;
   }
 
-
-import Loading from './Loading.js';
 export default function Search(){
 
     const [resultsearch,setResultsearch] = useState<SearchModel[]|undefined>([]);
     const [loading,setLoading] = useState<boolean>(false);
-
-
 
 
     function search(){
@@ -64,9 +60,3 @@ export default function Search(){
     )
 
 }
-
-
-
-
-
-
