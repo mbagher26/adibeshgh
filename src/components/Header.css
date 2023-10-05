@@ -6,9 +6,10 @@ nav{
 }
 
 .loginkey{
-    font-size: 2rem;
-    margin: 1rem;
-    margin-left: 3rem;
+    width: 90px;
+    height: 5px;
+    margin-top: 35px;
+    margin-left: 50px;
     font-weight: bold;
     text-decoration: wavy;
     color: rgb(250, 250, 255);
