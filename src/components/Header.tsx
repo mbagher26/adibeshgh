@@ -17,9 +17,6 @@ export default function Header(){
                     <NavLink to='/contact'>تماس با ما</NavLink>
                 </li>
                 <li>
-                    <NavLink to='/search'>جستحو</NavLink>
-                </li>
-                <li>
                     <NavLink to='/radio'>رادیوادیب</NavLink>
                 </li>
             </ul>
