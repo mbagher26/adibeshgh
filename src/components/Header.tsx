@@ -2,11 +2,11 @@ import { NavLink } from "react-router-dom"
 import './Header.css'
 import Search from "./pages/search";
 
-export default function Header(){
-    
+export default function Header() {
 
-    return(
-        <nav >
+
+    return (
+        <>        <nav >
             <NavLink to='/login' className="loginkey">
                 ثبت نام|ورود
             </NavLink>
@@ -18,12 +18,20 @@ export default function Header(){
                 <input type="button" value='جستجو' onClick={handelSearchClick} />
             </div> */}
             <div>
-                <Search/>
+                <Search />
             </div>
 
-            <NavLink  to='/' className="logo">
+            <NavLink to='/' className="logo">
             </NavLink>
+
         </nav>
+            <div className="menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </>
+
     )
 }
 
