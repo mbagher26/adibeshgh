@@ -22,7 +22,6 @@ export default function Header(){
             </div>
 
             <NavLink  to='/' className="logo">
-                <img src="http://adibeshgh.com/assets/logo.7df3b54d.svg" />
             </NavLink>
         </nav>
     )
