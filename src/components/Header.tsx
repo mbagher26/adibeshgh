@@ -6,30 +6,35 @@ export default function Header() {
 
 
     return (
-        <>        <nav >
+        <>        
+        <nav >
             <NavLink to='/login' className="loginkey">
                 ثبت نام|ورود
             </NavLink>
             <div>
                 <p>شماره تماس: ۰۳۵-۸۶۵۴۵۵۶۷</p>
             </div>
-            {/* <div>
-                <input type="text" name="phrase"/>
-                <input type="button" value='جستجو' onClick={handelSearchClick} />
-            </div> */}
+
             <div>
                 <Search />
             </div>
 
             <NavLink to='/' className="logo">
             </NavLink>
-            <div className="menu">
-                <span></span>
-                <span></span>
-                <span></span>
-                
-            </div>
+
         </nav>
+        <nav className="navmenu">
+            <NavLink to=''>
+                <p style={{color:'white'}}>دسته بندی</p>
+                <div className="menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        
+                </div>
+            </NavLink>
+                    </nav>
+            
         </>
     )
 }
