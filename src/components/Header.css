@@ -78,3 +78,7 @@ nav div {
     font-weight: bold;
     margin-top: 35px;
 }
+
+nav div input{
+    border-radius: 5px;
+}
