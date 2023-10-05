@@ -1,8 +1,10 @@
 import { NavLink } from "react-router-dom"
 import './Header.css'
-import Search from "./pages/search"
+import Search from "./pages/search";
+
 export default function Header(){
     
+
     return(
         <nav >
             <NavLink to='/login' className="loginkey">
@@ -20,7 +22,10 @@ export default function Header(){
                     <NavLink to='/radio'>رادیوادیب</NavLink>
                 </li>
             </ul>
-
+            {/* <div>
+                <input type="text" name="phrase"/>
+                <input type="button" value='جستجو' onClick={handelSearchClick} />
+            </div> */}
             <div>
                 <Search/>
             </div>
