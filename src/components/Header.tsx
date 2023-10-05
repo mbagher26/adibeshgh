@@ -23,15 +23,14 @@ export default function Header() {
 
             <NavLink to='/' className="logo">
             </NavLink>
-
-        </nav>
             <div className="menu">
                 <span></span>
                 <span></span>
                 <span></span>
+                
             </div>
+        </nav>
         </>
-
     )
 }
 
