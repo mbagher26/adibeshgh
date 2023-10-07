@@ -33,7 +33,7 @@ export default function Header() {
                         
                 </div>
             </NavLink>
-                    </nav>
+        </nav>
             
         </>
     )
