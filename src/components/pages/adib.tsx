@@ -93,7 +93,7 @@ export default function Adib() {
                     <Slide>
                         {slid?.map((item) => (
 
-                            <div key={item.ID}>
+                            
                                 
                                 <div className="divStyle" style={{
                                     backgroundImage: `url(${'https://api.adibeshgh.com/Attachment/courseCover?filename=' + item.Banner})`  
@@ -101,7 +101,7 @@ export default function Adib() {
                                     
                                 </div>
 
-                            </div>
+                            
                         ))}
                     </Slide>                
                 </div>
