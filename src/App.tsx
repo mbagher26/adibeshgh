@@ -9,13 +9,15 @@ import About from './components/pages/about';
 import Login from './components/pages/Login';
 import Publiclessens from './components/pages/Publiclessens';
 import AgeCategoryCourses from './components/pages/AgeCategoryCourses';
-
+import { Provider } from 'react-redux';
 import "./Login.css";
+import { store } from './store';
 
 function App() {
 
   return (
     <>
+    <Provider store={store}>
       <div>        
         <Header/>
       </div>
@@ -34,9 +36,9 @@ function App() {
           <Route path='/ageCategoryCourses/:categoryId' element={<AgeCategoryCourses/>}/>
         </Routes>       
       </div>
+      </Provider>
     </>
   )
 }
 
 export default App
-
