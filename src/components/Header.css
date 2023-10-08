@@ -67,10 +67,30 @@ nav button p{
     margin-bottom: 5px;
     font-size: x-large;
 }
+
 nav button{
     background-color: rgb(253, 253, 0);
     width: 100%;
 }
 
+.boxgrouping{
+    padding-top: 5px;
+    background-color: blue;
+    padding-bottom: 5px;
+    width: 370px;
+    float: right;
+}
 
-    
+.grouping-div{
+
+    display: flex;
+    direction: rtl;
+    margin: 10px;
+    background-color: cyan;
+    width: 350px;
+}
+
+.grouping-div link{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+   
