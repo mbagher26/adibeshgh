@@ -29,7 +29,7 @@ nav{
 }
 
 nav div {
-    color: aliceblue;
+    color: rgb(102, 157, 205);
     font-weight: bold;
     margin-top: 8px;
 }
@@ -48,13 +48,29 @@ nav div input{
     margin: 10px 50px 10px 1178px;
 }
 
-Nav div span{
+nav button div span{
     height: 0.4rem;
     width: 100%;
-    background-color: rgb(255, 252, 255);
+    background-color: rgb(140, 17, 255);
     border-radius: 0.2rem;
 }
 
-.navmenu{
-    background-color: rgb(6, 6, 144);
+nav button div{
+    margin-bottom: 90px;
 }
+
+nav button p{
+    color: black;
+    float: right;
+    margin-right: 35px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: x-large;
+}
+nav button{
+    background-color: rgb(253, 253, 0);
+    width: 100%;
+}
+
+
+    
