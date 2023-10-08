@@ -95,11 +95,11 @@ export default function Adib() {
 
                             
                                 
-                                <div className="divStyle" style={{
+                                <img className="divStyle" style={{
                                     backgroundImage: `url(${'https://api.adibeshgh.com/Attachment/courseCover?filename=' + item.Banner})`  
                                 }}>
                                     
-                                </div>
+                                </img>
 
                             
                         ))}
