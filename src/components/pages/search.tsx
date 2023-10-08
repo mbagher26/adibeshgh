@@ -2,38 +2,39 @@ import { useState } from 'react';
 import {api} from './adib.js';
 import Loading from './Loading.js';
 import {setSearchResult} from '../../searchSlice.js';
-import { useDispatch } from 'react-redux';
-
+import { useDispatch,useSelector } from 'react-redux';
+import { RootState } from '../../store.js';
 interface SearchModel {
     /** Lesson id */
-    ID?: number;
+    ID?: number |undefined;
     /** Lesson Title */
-    Title?: string;
+    Title?: string |undefined;
     /** Lesson Date */
-    Date?: string;
+    Date?: string |undefined;
     /** Lesson Description */
-    Description?: string;
+    Description?: string |undefined;
     /** Content Title */
-    ContentTitle?: string;
+    ContentTitle?: string |undefined;
     /** Content Text */
-    ContentText?: string;
+    ContentText?: string |undefined;
     /** Section ID */
-    SectionID?: number;
+    SectionID?: number |undefined;
     /** Section Title */
-    SectionTitle?: string;
+    SectionTitle?: string |undefined;
     /** Section Description */
-    SectionDescription?: string;
+    SectionDescription?: string |undefined;
     /** Course ID */
-    CourseID?: number;
+    CourseID?: number |undefined;
     /** Course Title */
-    CourseTitle?: string;
+    CourseTitle?: string |undefined;
     /** Course Description */
-    CourseDescription?: string;
-  }
+    CourseDescription?: string |undefined;
+}
 
 export default function Search(){
-    // const seaerhResultSelector = useSelector(searchResults);
+    
     const dispatch = useDispatch();
+    const Selector = useSelector((state:RootState)=> state.seatch);
 
     const [resultsearch,setResultsearch] = useState<SearchModel[]|undefined>([]);
     const [loading,setLoading] = useState<boolean>(false);
@@ -45,7 +46,8 @@ export default function Search(){
         api.c.search(phraseInput, 0, 10).then((res) => {
 
             setResultsearch(res.data.result);
-            dispatch(setSearchResult(res.data.result))
+            dispatch(setSearchResult(res.data.result));
+           
             setLoading(false);
             console.log('search:',res.data.result)
         })
@@ -57,12 +59,13 @@ export default function Search(){
         <>           
             <input type='text'  name='phrase'/>
             <input type='button' value='جستجو' onClick={search}/>
-            {/* {seaerhResultSelector} */}
+            {Selector.ID}
+            {Selector.Title}
             <br/>
-            {loading?<Loading/>:            
+            {/* {loading?<Loading/>:            
                 resultsearch?.map((item) => 
                 <div key={item.ID}>{item.Title}</div>
-            )}
+            )} */}
         </>
     )
 }
