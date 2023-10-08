@@ -59,8 +59,8 @@ export default function Search(){
         <>           
             <input type='text'  name='phrase'/>
             <input type='button' value='جستجو' onClick={search}/>
-            {Selector.ID}
-            {Selector.Title}
+            {/* {Selector.ID}
+            {Selector.Title} */}
             <br/>
             {/* {loading?<Loading/>:            
                 resultsearch?.map((item) => 
