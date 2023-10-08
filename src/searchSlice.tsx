@@ -25,16 +25,52 @@ export interface SearchResult {
         /** Course Description */
         CourseDescription?: string|undefined;
 }
+
+const initialState:SearchResult={
+ 
+    ID: undefined,
+    /** Lesson Title */
+    Title: "",
+    /** Lesson Date */
+    Date: "",
+    /** Lesson Description */
+    Description: "",
+    /** Content Title */
+    ContentTitle: "",
+    /** Content Text */
+    ContentText: "",
+    /** Section ID */
+    SectionID: undefined,
+    /** Section Title */
+    SectionTitle: undefined,
+    /** Section Description */
+    SectionDescription: "",
+    /** Course ID */
+    CourseID: undefined,
+    /** Course Title */
+    CourseTitle: "",
+    /** Course Description */
+    CourseDescription: "",
+}
 export const searchSlice = createSlice({
   name: 'search',
 
-  initialState: {
-    results: []
-  },
+  initialState,
 
   reducers: {
     setSearchResult: (state, action ) => {
-      state.results = action.payload;
+      state.ID = action.payload;
+      state.Title = action.payload;
+      state.Date = action.payload;
+      state.Description = action.payload;
+      state.ContentTitle = action.payload;
+      state.ContentText = action.payload;
+      state.SectionID = action.payload;
+      state.SectionTitle = action.payload;
+      state.SectionDescription = action.payload;
+      state.CourseID = action.payload;
+      state.CourseTitle = action.payload;
+      state.CourseDescription = action.payload;
     },
   }
 })
