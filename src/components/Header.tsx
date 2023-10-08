@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import './Header.css'
 import Search from "./pages/search";
 import { api } from './pages/adib.js';
@@ -72,15 +72,13 @@ export default function Header() {
                     </div>
                 </button>
             </nav>
-            {show && <div className="boxsearch">
+            {show && <div className="boxgrouping">
                 {
                     courselist.map((item) =>
-                        <div className="" key={item.ID} >
-                            <div className="titlestyle">
-                                <p>{item.Title}</p>
-                                <p>{item.ID}</p>
-                                <p>{item.Count}</p>
-                            </div>
+                        <div className="grouping-div" key={item.ID} >
+                            
+                                <Link to=''>{item.Title}</Link>
+                            
                         </div>
                     )
                 }
