@@ -14,7 +14,7 @@ nav{
     margin-left: 50px; */
     font-weight: bold;
     text-decoration: wavy;
-    color: rgb(250, 250, 255);
+    color: rgb(255, 255, 255);
     border-radius: 0.5rem;
     padding: 0.8rem; 
 }
@@ -29,7 +29,7 @@ nav{
 }
 
 nav div {
-    color: rgb(102, 157, 205);
+    color: rgb(255, 255, 255);
     font-weight: bold;
     margin-top: 8px;
 }
