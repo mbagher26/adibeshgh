@@ -84,6 +84,7 @@ export default function Header() {
                 }
             </div>
             }
+            <div className="clear"></div>
         </>
     )
 }
