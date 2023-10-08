@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import {api} from './adib.js';
 import Loading from './Loading.js';
+import {setSearchResult} from '../../searchSlice.js';
+import { useDispatch } from 'react-redux';
 
 interface SearchModel {
     /** Lesson id */
@@ -30,6 +32,8 @@ interface SearchModel {
   }
 
 export default function Search(){
+    // const seaerhResultSelector = useSelector(searchResults);
+    const dispatch = useDispatch();
 
     const [resultsearch,setResultsearch] = useState<SearchModel[]|undefined>([]);
     const [loading,setLoading] = useState<boolean>(false);
@@ -41,22 +45,24 @@ export default function Search(){
         api.c.search(phraseInput, 0, 10).then((res) => {
 
             setResultsearch(res.data.result);
+            dispatch(setSearchResult(res.data.result))
             setLoading(false);
             console.log('search:',res.data.result)
         })
     }
 
 
+
     return(
         <>           
             <input type='text'  name='phrase'/>
             <input type='button' value='جستجو' onClick={search}/>
+            {/* {seaerhResultSelector} */}
             <br/>
             {loading?<Loading/>:            
                 resultsearch?.map((item) => 
-                <div>{item.Title}</div>
+                <div key={item.ID}>{item.Title}</div>
             )}
         </>
     )
-
 }
