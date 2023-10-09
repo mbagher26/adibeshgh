@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react";
 import { Api } from "../../api/adib-api";
 import { Link } from "react-router-dom";
-import { Slide } from "react-slideshow-image";
-import 'react-slideshow-image/dist/styles.css'
-
+import SlideComponent from "./Slider";
 
 export const api = new Api({ baseUrl: "https://api.adibeshgh.com" })
 
@@ -17,44 +15,10 @@ export default function Adib() {
     }[]>([])
 
 
-    interface SliderModel {
-        /** Slider's id */
-        ID?: number;
-        /** Slider's Title */
-        Title?: string;
-        /** Slider's CourseId */
-        Type?: string;
-        /** Slider's description */
-        Description?: string;
-        /** Slider's link */
-        Link?: string;
-        /** Slider's banner */
-        Banner?: string;
-        /** Slider's hit count */
-        HitCount?: number;
-    }
-
-    const [slid, setSlid] = useState<SliderModel[]>();
-
     useEffect(() => {
 
         category();
-        slides();
-
     }, [])
-
-
-
-
-
-    function slides() {
-
-        api.c.getSlides().then((res) => {
-            console.log('slid:', res.data.result);
-            setSlid(res.data.result);
-        })
-
-    }
 
 
     function category() {
@@ -90,13 +54,7 @@ export default function Adib() {
                 </div>
 
                 <div>   
-                    <Slide>
-                        {slid?.map((item) => (
-        
-                                <img className="divStyle" src={returnPictureUrl(item.Banner)}/>
-    
-                        ))}
-                    </Slide>                
+                    <SlideComponent/>
                 </div>
                 <div>
 
