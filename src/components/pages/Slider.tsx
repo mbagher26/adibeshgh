@@ -1,4 +1,4 @@
-import React, { useEffect,useState } from "react";
+import { useEffect,useState } from "react";
 import Slider from "react-slick";
 import { api } from './adib.js';
 
@@ -64,3 +64,4 @@ export default function SlideComponent() {
       </div>
     );
 }
+
