@@ -55,17 +55,11 @@ export default function SlideComponent() {
       <div>
         <h2>Center Mode</h2>
         <Slider {...settings}>
-            {/* {slid?.map((item) =>
+            {slid?.map((item) =>
             <div>
-                <img src="" alt="" />
+                <img src={returnPictureUrl(item.Banner)} alt={item.Title} />
             </div>
-            )} */}
-          <div>
-            <img src="https://api.adibeshgh.com/Attachment/courseCover?filename=+" alt="" />
-          </div>
-          <div>
-            <h3>2</h3>
-          </div>
+            )}
         </Slider>
       </div>
     );
