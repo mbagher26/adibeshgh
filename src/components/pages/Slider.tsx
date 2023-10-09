@@ -1,8 +1,21 @@
-import React, { Component } from "react";
+import React, { useEffect,useState } from "react";
 import Slider from "react-slick";
+import { api } from './adib.js';
 
-export default class CenterMode extends Component {
-  render() {
+export default function Slider() {
+
+
+
+    function slides() {
+
+        api.c.getSlides().then((res) => {
+            console.log('slid:', res.data.result);
+            setSlid(res.data.result);
+        })
+
+    }
+
+  
     const settings = {
       className: "center",
       centerMode: true,
@@ -11,6 +24,7 @@ export default class CenterMode extends Component {
       slidesToShow: 1,
       speed: 500
     };
+
     return (
       <div>
         <h2>Center Mode</h2>
@@ -24,5 +38,4 @@ export default class CenterMode extends Component {
         </Slider>
       </div>
     );
-  }
 }
