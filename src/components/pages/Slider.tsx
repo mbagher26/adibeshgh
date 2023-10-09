@@ -1,6 +1,7 @@
 import { useEffect,useState } from "react";
 import Slider from "react-slick";
 import { api } from './adib.js';
+import 'Slider.css';
 
 export default function SlideComponent() {
 
@@ -42,6 +43,7 @@ export default function SlideComponent() {
         return 'https://api.adibeshgh.com/Attachment/courseCover?filename=' + cover
     }
 
+    
     const settings = {
         className: "slider variable-width",
         dots: true,
@@ -52,23 +54,20 @@ export default function SlideComponent() {
         variableWidth: true
     };
 
-
-
-
     return (
-      <div>
-        <p>variable-width</p>
-
-        <Slider {...settings}>
-            {slid?.map((item) =>
-                <div style={{width:'5px'}}>
-                    <p>{item.Banner}</p>
-                    <img src={returnPictureUrl(item.Banner)} alt={item.Title} />
-                </div>
-            )}
-        </Slider>
-
-      </div>
+        <div className="container">
+            <div className="slider">
+                <Slider {...settings}>
+                    {slid?.map((item) =>
+                        <div className="slide" key={item.ID}>
+                            <p>{item.Banner}</p>
+                            <img src={returnPictureUrl(item.Banner)} alt={item.Title} />
+                            <p className="slide-title">{item.Title}</p>
+                        </div>
+                    )}
+                </Slider>
+            </div>
+        </div>
     );
 }
 
