@@ -1,7 +1,8 @@
 import { useEffect,useState } from "react";
 import Slider from "react-slick";
 import { api } from './adib.js';
-import 'Slider.css';
+import './Slider.css';
+
 
 export default function SlideComponent() {
 
