@@ -111,14 +111,6 @@
   width: 1280px;
 }
 
-.divStyle{
-  height: 750px;
-  align-items: center;
-  justify-content: center;
-  background-size: cover;
-  margin-left: 50px;
-  margin-right: 50px;
-}
 
 .header-div{
   position: unset;
@@ -210,3 +202,4 @@
   z-index: 5;
   background-color: rgb(0, 0, 0, 0.5);
 }
+
