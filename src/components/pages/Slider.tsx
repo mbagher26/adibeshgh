@@ -43,25 +43,64 @@ export default function SlideComponent() {
     }
 
     const settings = {
-      className: "center",
-      centerMode: true,
-      infinite: true,
-      centerPadding: "60px",
-      slidesToShow: 1,
-      speed: 500
+        className: "slider variable-width",
+        dots: true,
+        infinite: true,
+        centerMode: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        variableWidth: true
     };
+
+
+
 
     return (
       <div>
-        <h2>Center Mode</h2>
+        <p>variable-width</p>
+
         <Slider {...settings}>
             {slid?.map((item) =>
-            <div>
-                <img src={returnPictureUrl(item.Banner)} alt={item.Title} />
-            </div>
+                <div style={{width:'5px'}}>
+                    <p>{item.Banner}</p>
+                    <img src={returnPictureUrl(item.Banner)} alt={item.Title} />
+                </div>
             )}
         </Slider>
+
       </div>
     );
 }
 
+// sld_19_JawjrjOz.png
+// sld_26_ydpriUg9.png
+
+
+    // let baner1 ="sld_19_JawjrjOz.png";
+    // let baner2 ="sld_26_ydpriUg9.png";
+
+
+
+//     <Slider> 
+
+//     <div style={{width:'250px'}}>
+//         <p>250</p>
+//         <img src={returnPictureUrl(baner2)}  />
+//     </div>
+
+//     <div style={{width:'130px'}}>
+//         <img src={returnPictureUrl(baner1)} />
+//         <p>130</p>
+//     </div>
+
+//     <div style={{width:'300px'}}>
+//         <img src={returnPictureUrl(baner2)}  />
+//         <p>300</p>
+//     </div>
+
+//     <div style={{width:'100px'}}>
+//         <img src={returnPictureUrl(baner1)} />
+//         <p>100</p>
+//     </div>
+    
+// </Slider>
