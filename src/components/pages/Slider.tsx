@@ -2,7 +2,7 @@ import React, { useEffect,useState } from "react";
 import Slider from "react-slick";
 import { api } from './adib.js';
 
-export default function Slider() {
+export default function SlideComponent() {
 
     interface SliderModel {
         /** Slider's id */
