@@ -38,7 +38,10 @@ export default function SlideComponent() {
 
     }
 
-  
+    function returnPictureUrl(cover: string | undefined) {
+        return 'https://api.adibeshgh.com/Attachment/courseCover?filename=' + cover
+    }
+
     const settings = {
       className: "center",
       centerMode: true,
@@ -52,6 +55,11 @@ export default function SlideComponent() {
       <div>
         <h2>Center Mode</h2>
         <Slider {...settings}>
+            {/* {slid?.map((item) =>
+            <div>
+                <img src="" alt="" />
+            </div>
+            )} */}
           <div>
             <img src="https://api.adibeshgh.com/Attachment/courseCover?filename=+" alt="" />
           </div>
