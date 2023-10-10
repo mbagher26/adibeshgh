@@ -12,7 +12,6 @@ import AgeCategoryCourses from './components/pages/AgeCategoryCourses';
 import { Provider } from 'react-redux';
 import "./Login.css";
 import { store } from './store';
-
 function App() {
 
   return (
