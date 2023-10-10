@@ -1,9 +1,9 @@
 import { useEffect,useState } from "react";
-import Slider from "react-slick";
 import { api } from './adib.js';
 // import './Slider.css';
-import "~slick-carousel/slick/slick.css"; 
-import "~slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
 export default function SlideComponent() {
 
@@ -54,23 +54,25 @@ export default function SlideComponent() {
         slidesToShow: 1,
         slidesToScroll: 1,
         variableWidth: true
-    };
+      };
 
     return (
-        <div className="container">
-            <div className="slider">
+        <>
             <Slider {...settings}>
-                    {slid?.map((item) =>
-                        <div className="slide" key={item.ID}>
-                            <p>{item.Title}</p>
-                            <img src={"https://api.adibeshgh.com/Attachment/courseCover?filename=+"+item.Banner} alt="" />
-                        </div>
-                    )}
+           
+ {slid?.map((item) =>
+    <div className="slide" key={item.ID}>
+        <p>{item.Title}</p>
+        <img src={"https://api.adibeshgh.com/Attachment/courseCover?filename=sld_26_ydpriUg9.png"}  />
+    </div>
+)}
             </Slider>
-            </div>
-        </div>
+        </>
     );
 }
+
+
+
 
 
 // sld_19_JawjrjOz.png
