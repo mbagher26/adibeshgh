@@ -19,13 +19,24 @@ export default function Adib() {
         Records?: string | undefined;
     }[]>([])
 
-    const settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 5,
-        slidesToScroll: 3
-      };
+    // const settings = {
+    //     dots: true,
+    //     infinite: true,
+    //     speed: 500,
+    //     slidesToShow: 4,
+    //     slidesToScroll: 2
+    //   };
+
+    function setSliderSettings(itemscount:number){
+        return{
+                dots: true,
+                infinite: true,
+                speed: 500,
+
+                slidesToShow: itemscount <4 ? 1 : 4 ,
+                slidesToScroll: 2
+              }
+    }
 
     useEffect(() => {
 
@@ -77,17 +88,15 @@ export default function Adib() {
                             <p>{item.Count}</p>
                         </div>
                         <div>
-                        <div style={{clear:'both'}}></div>
-
-                            <Slider {...settings}>
-                                {
+                            <div style={{clear:'both'}}></div>
+                            <Slider {...setSliderSettings(item.Records && item.Records.length || 0)}>
+                                {    
                                     item.Records?.split('|||').map((record) =>
+                                        <div className="slide-style" key={JSON.parse(record).id}>
 
-                                        <div key={JSON.parse(record).id}>
-                                                   
                                             <Link to={`/course/${JSON.parse(record).id}`}>
 
-                                                <img style={{width:'250px'}} alt={JSON.parse(record).title}
+                                                <img style={{width:'300px'}} alt={JSON.parse(record).title}
                                                     src={returnPictureUrl(JSON.parse(record).cover)}
                                                 />
                                                 <div>{JSON.parse(record).title}</div>
