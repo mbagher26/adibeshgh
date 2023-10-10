@@ -1,8 +1,9 @@
 import { useEffect,useState } from "react";
 import Slider from "react-slick";
 import { api } from './adib.js';
-import './Slider.css';
-
+// import './Slider.css';
+import "~slick-carousel/slick/slick.css"; 
+import "~slick-carousel/slick/slick-theme.css";
 
 export default function SlideComponent() {
 
@@ -58,19 +59,19 @@ export default function SlideComponent() {
     return (
         <div className="container">
             <div className="slider">
-                <Slider {...settings}>
+            <Slider {...settings}>
                     {slid?.map((item) =>
                         <div className="slide" key={item.ID}>
-                            <p>{item.Banner}</p>
-                            <img src={returnPictureUrl(item.Banner)} alt={item.Title} />
-                            <p className="slide-title">{item.Title}</p>
+                            <p>{item.Title}</p>
+                            <img src={"https://api.adibeshgh.com/Attachment/courseCover?filename=+"+item.Banner} alt="" />
                         </div>
                     )}
-                </Slider>
+            </Slider>
             </div>
         </div>
     );
 }
+
 
 // sld_19_JawjrjOz.png
 // sld_26_ydpriUg9.png
