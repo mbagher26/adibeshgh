@@ -59,13 +59,12 @@ export default function SlideComponent() {
     return (
         <>
             <Slider {...settings}>
-           
- {slid?.map((item) =>
-    <div className="slide" key={item.ID}>
-        <p>{item.Title}</p>
-        <img src={"https://api.adibeshgh.com/Attachment/courseCover?filename=sld_26_ydpriUg9.png"}  />
-    </div>
-)}
+                {slid?.map((item) =>
+                    <div style={{width: "1130px" ,height:"300"}} key={item.ID}>
+                         {/* <p>{item.Title}</p> */}
+                         <img style={{width: "1130px", height:"300"}} src={"https://api.adibeshgh.com/Attachment/courseCover?filename="+item.Banner}  />
+                    </div>
+                )}
             </Slider>
         </>
     );
