@@ -19,22 +19,15 @@ export default function Adib() {
         Records?: string | undefined;
     }[]>([])
 
-    // const settings = {
-    //     dots: true,
-    //     infinite: true,
-    //     speed: 500,
-    //     slidesToShow: 4,
-    //     slidesToScroll: 2
-    //   };
+
 
     function setSliderSettings(itemscount:number){
         return{
                 dots: true,
-                infinite: true,
+                infinite: false,
                 speed: 500,
-
-                slidesToShow: itemscount <4 ? 1 : 4 ,
-                slidesToScroll: 2
+                slidesToShow: itemscount <= 4 ? itemscount : 4 ,
+                slidesToScroll: 4
               }
     }
 
@@ -82,17 +75,15 @@ export default function Adib() {
                 {
                     courselist.map((item) =>
                     <>
-                        <div className="title-style">
+                        <div className="title-style" key={item.ID}>
                             <p>{item.Title}</p>
-                            <p>{item.ID}</p>
-                            <p>{item.Count}</p>
                         </div>
-                        <div>
+                        <div className="slider-style">
                             <div style={{clear:'both'}}></div>
                             <Slider {...setSliderSettings(item.Records && item.Records.length || 0)}>
                                 {    
                                     item.Records?.split('|||').map((record) =>
-                                        <div className="slide-style" key={JSON.parse(record).id}>
+                                        <div className="items-style" key={JSON.parse(record).id}>
 
                                             <Link to={`/course/${JSON.parse(record).id}`}>
 
