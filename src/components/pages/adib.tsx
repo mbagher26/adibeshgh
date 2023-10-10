@@ -2,6 +2,11 @@ import { useEffect, useState } from "react";
 import { Api } from "../../api/adib-api";
 import { Link } from "react-router-dom";
 import SlideComponent from "./Slider";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+
+
 
 export const api = new Api({ baseUrl: "https://api.adibeshgh.com" })
 
@@ -14,6 +19,13 @@ export default function Adib() {
         Records?: string | undefined;
     }[]>([])
 
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 5,
+        slidesToScroll: 3
+      };
 
     useEffect(() => {
 
@@ -47,16 +59,50 @@ export default function Adib() {
         <section>
             <div>
 
-
-                <div>
+                <div style={{margin:'10px'}}>
                     <Link to='' >فروشگاه</Link>
                     <Link to='' >رادیو ادیب</Link>
                 </div>
-
                 <div>   
                     <SlideComponent/>
                 </div>
-                <div>
+                <div style={{clear:'both'}}></div>
+                <>
+                {
+                    courselist.map((item) =>
+                    <>
+                        <div className="title-style">
+                            <p>{item.Title}</p>
+                            <p>{item.ID}</p>
+                            <p>{item.Count}</p>
+                        </div>
+                        <div>
+                        <div style={{clear:'both'}}></div>
+
+                            <Slider {...settings}>
+                                {
+                                    item.Records?.split('|||').map((record) =>
+
+                                        <div key={JSON.parse(record).id}>
+                                                   
+                                            <Link to={`/course/${JSON.parse(record).id}`}>
+
+                                                <img style={{width:'250px'}} alt={JSON.parse(record).title}
+                                                    src={returnPictureUrl(JSON.parse(record).cover)}
+                                                />
+                                                <div>{JSON.parse(record).title}</div>
+                                            </Link>
+
+                                        </div>
+                                    )
+                                }
+                            </Slider>
+                        </div>
+                    </>
+                    )
+                }
+                </>
+                {/* <div>
 
                     {
                         courselist.map((item, index) =>
@@ -92,7 +138,7 @@ export default function Adib() {
                         )
                     }
 
-                </div>
+                </div> */}
             </div>
         </section>
     )
