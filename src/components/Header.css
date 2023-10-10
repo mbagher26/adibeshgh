@@ -9,20 +9,19 @@ nav{
 .loginkey{
     width: 90px;
     height: 5px;
-    margin: 30px 0px 40px 50px ;
-    /* margin-top: 20px;
-    margin-left: 50px; */
+    margin: 30px 0px 40px 80px ;
     font-weight: bold;
-    text-decoration: wavy;
+    text-decoration: none;
     color: rgb(255, 255, 255);
     border-radius: 0.5rem;
-    padding: 0.8rem; 
+    padding: 1rem; 
+    background-color: blue;
 }
 
 .logo{
     width: 5px;
     height: 5px;
-    margin: 30px  50px 20px ;
+    margin: 30px  80px 20px ;
     background-image: url('http://adibeshgh.com/assets/logo.7df3b54d.svg');
     background-size: 100%;
     background-repeat: no-repeat;
@@ -40,12 +39,11 @@ nav div input{
 
 .menu{
     display: flex;
-    /* position: absolute; */
     flex-direction: column;
     justify-content: space-between;
     width: 3.25rem;
     height: 3rem;
-    margin: 10px 50px 10px 1178px;
+    margin: 10px 50px 10px 1148px;
 }
 
 nav button div span{
@@ -62,7 +60,7 @@ nav button div{
 nav button p{
     color: black;
     float: right;
-    margin-right: 35px;
+    margin-right: 65px;
     margin-top: 5px;
     margin-bottom: 5px;
     font-size: x-large;
