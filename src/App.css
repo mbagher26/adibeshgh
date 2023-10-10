@@ -203,10 +203,35 @@
   background-color: rgb(0, 0, 0, 0.5);
 }
 
-
+.parent-style{
+  padding-left: 80px;
+  padding-right: 80px;
+  /* justify-items: right; */
+  /* justify-content: right; */
+  background-color: #c49a9a;
+  /* display: grid; */
+}
 
 .title-style{
   float: right;
-  display: flex;
+  background-color: #fff;
 }
 
+.slider-style{
+  display: block;
+  align-items: right;
+  margin-left: 35px;
+  background-color: #000000;
+}
+
+.items-style{
+  /* margin-left: 135px; */
+  /* padding-right: 0px; */
+  /* margin-right: 0px; */
+  /* padding-left: 0px; */
+  /* float: right; */
+  background-color: antiquewhite;
+  /* justify-content: space-between; */
+}
+
+/* css-tricks.com */
