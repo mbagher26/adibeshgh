@@ -19,17 +19,24 @@ export default function Adib() {
         Records?: string | undefined;
     }[]>([])
 
+    const setting ={
+        dots: true,
+        infinite: false,
+        speed: 500,
+        slidesToShow: 4 ,
+        slidesToScroll: 4,
+        rtl:true
+      }
 
-
-    function setSliderSettings(itemscount:number){
-        return{
-                dots: true,
-                infinite: false,
-                speed: 500,
-                slidesToShow: itemscount <= 4 ? itemscount : 4 ,
-                slidesToScroll: 4
-              }
-    }
+    // function setSliderSettings(itemscount:number){
+    //     return{
+    //             dots: true,
+    //             infinite: false,
+    //             speed: 500,
+    //             slidesToShow: itemscount <= 4 ? itemscount : 4 ,
+    //             slidesToScroll: 4
+    //           }
+    // }
 
     useEffect(() => {
 
@@ -74,20 +81,23 @@ export default function Adib() {
                 <>
                 {
                     courselist.map((item) =>
-                    <>
+                    <div className="parent-style">
                         <div className="title-style" key={item.ID}>
                             <p>{item.Title}</p>
+
                         </div>
                         <div className="slider-style">
                             <div style={{clear:'both'}}></div>
-                            <Slider {...setSliderSettings(item.Records && item.Records.length || 0)}>
+                            {/* <Slider {...setSliderSettings(item.Records && item.Records.length || 0)}> */}
+                            <Slider {...setting}>
+
                                 {    
                                     item.Records?.split('|||').map((record) =>
                                         <div className="items-style" key={JSON.parse(record).id}>
 
                                             <Link to={`/course/${JSON.parse(record).id}`}>
 
-                                                <img style={{width:'300px'}} alt={JSON.parse(record).title}
+                                                <img style={{width:'270px'}} alt={JSON.parse(record).title}
                                                     src={returnPictureUrl(JSON.parse(record).cover)}
                                                 />
                                                 <div>{JSON.parse(record).title}</div>
@@ -98,7 +108,7 @@ export default function Adib() {
                                 }
                             </Slider>
                         </div>
-                    </>
+                    </div>
                     )
                 }
                 </>
