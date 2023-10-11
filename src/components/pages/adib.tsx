@@ -93,7 +93,7 @@ export default function Adib() {
 
                                 {    
                                     item.Records?.split('|||').map((record) =>
-                                        
+                                        <div key={JSON.parse(record).id}>
 
                                             <Link to={`/course/${JSON.parse(record).id}`}>
                                                 <div className="items-style">
@@ -103,7 +103,7 @@ export default function Adib() {
                                                     <div>{JSON.parse(record).title}</div>
                                                 </div>
                                             </Link>
-
+                                        </div>
                                        
                                     )
                                 }
