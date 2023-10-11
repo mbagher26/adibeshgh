@@ -236,8 +236,9 @@
 }
 
 .items-style div{
-  color: green;
+  color: rgb(0, 0, 0);
   background-color: greenyellow;
+  margin: 10px;
 }
 
 /* css-tricks.com */
