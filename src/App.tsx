@@ -2,6 +2,7 @@
 import { Route, Routes , Navigate} from 'react-router-dom';
 import './App.css';
 import Header from './components/Header';
+import Footer from './components/Footer';
 import Adib from './components/pages/adib';
 import Course from './components/pages/course';
 import Search from './components/pages/search';
@@ -34,6 +35,9 @@ function App() {
           <Route path='/login' element={<Login/>}/>
           <Route path='/ageCategoryCourses/:categoryId' element={<AgeCategoryCourses/>}/>
         </Routes>       
+      </div>
+      <div>
+        <Footer/>
       </div>
       </Provider>
     </>
