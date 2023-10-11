@@ -93,17 +93,18 @@ export default function Adib() {
 
                                 {    
                                     item.Records?.split('|||').map((record) =>
-                                        <div className="items-style" key={JSON.parse(record).id}>
+                                        // <div className="items-style" key={JSON.parse(record).id}>
 
                                             <Link to={`/course/${JSON.parse(record).id}`}>
-
-                                                <img style={{width:'270px'}} alt={JSON.parse(record).title}
-                                                    src={returnPictureUrl(JSON.parse(record).cover)}
-                                                />
-                                                <div>{JSON.parse(record).title}</div>
+                                                <div className="items-style">
+                                                    <img style={{width:'270px'}} alt={JSON.parse(record).title}
+                                                        src={returnPictureUrl(JSON.parse(record).cover)}
+                                                    />
+                                                    <div>{JSON.parse(record).title}</div>
+                                                </div>
                                             </Link>
 
-                                        </div>
+                                        // </div>
                                     )
                                 }
                             </Slider>
@@ -112,43 +113,6 @@ export default function Adib() {
                     )
                 }
                 </>
-                {/* <div>
-
-                    {
-                        courselist.map((item, index) =>
-                            <div className="courseslist" key={index} >
-
-                                <div className="titlestyle">
-                                    <p>{item.Title}</p>
-                                    <p>{item.ID}</p>
-                                    <p>{item.Count}</p>
-                                </div>
-
-                                <div className="course">
-
-                                    {
-                                        item.Records?.split('|||').map((record) => (
-                                            <div className="recordstyle" key={JSON.parse(record).id}>
-                                            
-                                                <Link to={`/course/${JSON.parse(record).id}`}>
-
-                                                    <img alt={JSON.parse(record).title}
-                                                        src={returnPictureUrl(JSON.parse(record).cover)}
-                                                    />
-                                                    <div>{JSON.parse(record).title}</div>
-                                                </Link>
-
-                                            </div>
-                                        ))
-                                    }
-
-                                </div>
-
-                            </div>
-                        )
-                    }
-
-                </div> */}
             </div>
         </section>
     )
