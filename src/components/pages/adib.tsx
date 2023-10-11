@@ -68,7 +68,7 @@ export default function Adib() {
     return (
 
         <section>
-            <div>
+            <div className="rtl-container" >
 
                 <div style={{margin:'10px'}}>
                     <Link to='' >فروشگاه</Link>
@@ -93,7 +93,7 @@ export default function Adib() {
 
                                 {    
                                     item.Records?.split('|||').map((record) =>
-                                        // <div className="items-style" key={JSON.parse(record).id}>
+                                        
 
                                             <Link to={`/course/${JSON.parse(record).id}`}>
                                                 <div className="items-style">
@@ -104,7 +104,7 @@ export default function Adib() {
                                                 </div>
                                             </Link>
 
-                                        // </div>
+                                       
                                     )
                                 }
                             </Slider>
