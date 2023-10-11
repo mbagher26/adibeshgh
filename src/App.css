@@ -205,11 +205,13 @@
 
 .parent-style{
   position: relative;
-
+  background-color: antiquewhite;
+  margin-top: 40px;
+  padding-right: 70px;
 }
 
 .rtl-container{
-  
+  direction: rtl;
 }
 
 .title-style{
@@ -220,14 +222,13 @@
 
 .slider-style{
   width: 1130px;
-  position: relative;
-  left: 80px;
+  left: 0px;
   margin-bottom: 50px;
 }
 
 .items-style{
- border-radius: 100%;
-
+  border-radius: 100%;
+  align-items: start;
 }
 
 .items-style img{
@@ -236,5 +237,7 @@
 
 .items-style div{
   color: green;
+  background-color: greenyellow;
 }
+
 /* css-tricks.com */
