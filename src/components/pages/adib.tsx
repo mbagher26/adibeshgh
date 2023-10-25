@@ -3,7 +3,7 @@ import { Api } from "../../api/adib-api";
 import { Link } from "react-router-dom";
 import SlideComponent from "./Slider";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 
@@ -19,14 +19,14 @@ export default function Adib() {
         Records?: string | undefined;
     }[]>([])
 
-    const setting ={
+    const setting = {
         dots: true,
         infinite: false,
         speed: 500,
-        slidesToShow: 4 ,
+        slidesToShow: 3,
         slidesToScroll: 4,
-        rtl:true
-      }
+        rtl: true
+    }
 
     // function setSliderSettings(itemscount:number){
     //     return{
@@ -70,48 +70,48 @@ export default function Adib() {
         <section>
             <div className="rtl-container" >
 
-                <div style={{margin:'10px'}}>
+                <div style={{ margin: '10px' }}>
                     <Link to='' >فروشگاه</Link>
                     <Link to='' >رادیو ادیب</Link>
                 </div>
-                <div>   
-                    <SlideComponent/>
+                <div>
+                    <SlideComponent />
                 </div>
-                <div style={{clear:'both'}}></div>
+                <div style={{ clear: 'both' }}></div>
                 <>
-                {
-                    courselist.map((item) =>
-                    <div className="parent-style">
-                        <div className="title-style" key={item.ID}>
-                            <p>{item.Title}</p>
+                    {
+                        courselist.map((item) =>
+                            <div className="parent-style">
+                                <div className="title-style" key={item.ID}>
+                                    <p>{item.Title}</p>
 
-                        </div>
-                        <div className="slider-style">
-                            <div style={{clear:'both'}}></div>
-                            {/* <Slider {...setSliderSettings(item.Records && item.Records.length || 0)}> */}
-                            <Slider {...setting}>
+                                </div>
+                                <div className="slider-style">
+                                    <div style={{ clear: 'both' }}></div>
+                                    {/* <Slider {...setSliderSettings(item.Records && item.Records.length || 0)}> */}
+                                    <Slider {...setting}>
 
-                                {    
-                                    item.Records?.split('|||').map((record) =>
-                                        <div key={JSON.parse(record).id}>
+                                        {
+                                            item.Records?.split('|||').map((record) =>
+                                                <div key={JSON.parse(record).id}>
 
-                                            <Link to={`/course/${JSON.parse(record).id}`}>
-                                                <div className="items-style">
-                                                    <img style={{width:'270px'}} alt={JSON.parse(record).title}
-                                                        src={returnPictureUrl(JSON.parse(record).cover)}
-                                                    />
-                                                    <div>{JSON.parse(record).title}</div>
+                                                    <Link to={`/course/${JSON.parse(record).id}`}>
+                                                        <div className="items-style">
+                                                            <img style={{ width: '270px' }} alt={JSON.parse(record).title}
+                                                                src={returnPictureUrl(JSON.parse(record).cover)}
+                                                            />
+                                                            <div>{JSON.parse(record).title}</div>
+                                                        </div>
+                                                    </Link>
                                                 </div>
-                                            </Link>
-                                        </div>
-                                       
-                                    )
-                                }
-                            </Slider>
-                        </div>
-                    </div>
-                    )
-                }
+
+                                            )
+                                        }
+                                    </Slider>
+                                </div>
+                            </div>
+                        )
+                    }
                 </>
             </div>
         </section>
