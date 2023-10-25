@@ -89,7 +89,7 @@ export default function AgeCategoryCourses() {
                 courses?.map((course) =>
                     <Link to={`/course/${course.ID}`} className='divcourses'>
                         <img src={ReturnPictuerUrl(course.Cover)} />
-                        <div className='divcontact'>
+                        <div>
                             <p>{course.Title}</p>
                             <p>{course.Description}</p>
                         </div>
