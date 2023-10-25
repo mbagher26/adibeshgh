@@ -1,11 +1,12 @@
 import { NavLink } from "react-router-dom";
-
+import "./Footer.css";
 export default function Footer(){
 
 
     return(
-        <>
-            <nav>
+        
+            <nav className="container">
+                
                 <NavLink to=''>
                     فروشگاه
                 </NavLink>
@@ -19,6 +20,6 @@ export default function Footer(){
                     قوانین
                 </NavLink>
             </nav>
-        </>
+        
     )
 }
