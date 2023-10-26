@@ -45,8 +45,8 @@ export default function Header() {
     }
     return (
         <>
-            <nav >
-                <section>
+            <nav>
+                <section className="header-top">
                     <NavLink to='/login' className="loginkey">
                         ثبت نام|ورود
                     </NavLink>
@@ -61,11 +61,6 @@ export default function Header() {
                     <NavLink to='/' className="logo">
                     </NavLink>
 
-
-
-
-
-
                     {show && <div className="boxgrouping">
                         {
                             courselist.map((item) =>
@@ -79,7 +74,7 @@ export default function Header() {
                     </div>
                     }
                 </section>
-                <section>
+                <section className="header-low">
                     <button onClick={handelclick}>
                         <p>دسته بندی</p>
                         <div className="menu">
@@ -93,6 +88,3 @@ export default function Header() {
         </>
     )
 }
-
-
-
