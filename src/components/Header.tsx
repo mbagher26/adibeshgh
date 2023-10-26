@@ -63,14 +63,7 @@ export default function Header() {
 
 
 
-                <button onClick={handelclick}>
-                    <p>دسته بندی</p>
-                    <div className="menu">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </button>
+
 
                 {show && <div className="boxgrouping">
                     {
@@ -85,6 +78,16 @@ export default function Header() {
                 </div>
                 }
                 <div className="clear"></div>
+                <nav>
+                    <button onClick={handelclick}>
+                        <p>دسته بندی</p>
+                        <div className="menu">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </button>
+                </nav>
             </nav>
         </>
     )
