@@ -46,37 +46,39 @@ export default function Header() {
     return (
         <>
             <nav >
-                <NavLink to='/login' className="loginkey">
-                    ثبت نام|ورود
-                </NavLink>
-                <div>
-                    <p>شماره تماس: ۰۳۵-۸۶۵۴۵۵۶۷</p>
-                </div>
+                <section>
+                    <NavLink to='/login' className="loginkey">
+                        ثبت نام|ورود
+                    </NavLink>
+                    <div>
+                        <p>شماره تماس: ۰۳۵-۸۶۵۴۵۵۶۷</p>
+                    </div>
 
-                <div>
-                    <Search />
-                </div>
+                    <div>
+                        <Search />
+                    </div>
 
-                <NavLink to='/' className="logo">
-                </NavLink>
-
-
-
+                    <NavLink to='/' className="logo">
+                    </NavLink>
 
 
 
-                {show && <div className="boxgrouping">
-                    {
-                        courselist.map((item) =>
-                            <div className="grouping-div" key={item.ID} >
 
-                                <Link to=''>{item.Title}</Link>
 
-                            </div>
-                        )
+
+                    {show && <div className="boxgrouping">
+                        {
+                            courselist.map((item) =>
+                                <div className="grouping-div" key={item.ID} >
+
+                                    <Link to=''>{item.Title}</Link>
+
+                                </div>
+                            )
+                        }
+                    </div>
                     }
-                </div>
-                }
+                </section>
                 <nav>
                     <button onClick={handelclick}>
                         <p>دسته بندی</p>
