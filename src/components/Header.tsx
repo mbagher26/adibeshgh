@@ -79,16 +79,16 @@ export default function Header() {
                     </div>
                     }
                 </section>
-                <nav>
-                    <button onClick={handelclick}>
-                        <p>دسته بندی</p>
-                        <div className="menu">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                    </button>
-                </nav>
+                <section>
+                        <button onClick={handelclick}>
+                            <p>دسته بندی</p>
+                            <div className="menu">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </button> 
+                </section>
             </nav>
         </>
     )
