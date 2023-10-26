@@ -77,7 +77,6 @@ export default function Header() {
                     }
                 </div>
                 }
-                <div className="clear"></div>
                 <nav>
                     <button onClick={handelclick}>
                         <p>دسته بندی</p>
