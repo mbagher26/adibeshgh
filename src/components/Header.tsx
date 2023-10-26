@@ -60,9 +60,9 @@ export default function Header() {
                 <NavLink to='/' className="logo">
                 </NavLink>
 
-            </nav>
+            
 
-            <nav>
+            
                 <button onClick={handelclick}>
                     <p>دسته بندی</p>
                     <div className="menu">
@@ -71,7 +71,7 @@ export default function Header() {
                         <span></span>
                     </div>
                 </button>
-            </nav>
+            
             {show && <div className="boxgrouping">
                 {
                     courselist.map((item) =>
@@ -85,6 +85,7 @@ export default function Header() {
             </div>
             }
             <div className="clear"></div>
+            </nav>
         </>
     )
 }
