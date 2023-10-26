@@ -46,31 +46,6 @@ nav div input{
     margin: 10px 50px 10px 1148px;
 }
 
-nav button div span{
-    height: 0.4rem;
-    width: 100%;
-    background-color: rgb(140, 17, 255);
-    border-radius: 0.2rem;
-}
-
-nav button div{
-    margin-bottom: 90px;
-}
-
-nav button p{
-    color: black;
-    float: right;
-    margin-right: 65px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    font-size: x-large;
-}
-
-nav button{
-    background-color: rgb(253, 253, 0);
-    width: 100%;
-}
-
 .boxgrouping{
     padding-top: 5px;
     background-color: blue;
