@@ -203,14 +203,14 @@
   background-color: rgb(0, 0, 0, 0.5);
 }
 
-.parent-style{
-  background-color: rgb(249, 226, 196);
-  
-}
-
 .rtl-container{
   direction: rtl;
 }
+
+.parent-style{
+  background-color: rgb(249, 226, 196);
+}
+
 
 .title-style{
   font-size: larger;
@@ -226,7 +226,6 @@
 
 .items-style{
   border-radius: 10%;
-  align-items: center;
 }
 
 .items-style img{
