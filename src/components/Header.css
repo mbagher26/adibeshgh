@@ -1,7 +1,7 @@
 
-nav{
-    align-items: center;
+nav{ 
     display: flex;
+    align-items: center;
     justify-content: space-between;
     background-color: rgb(16, 1, 28);
 }
@@ -54,6 +54,18 @@ nav div input{
     float: right;
 }
 
+button {
+    width: 85px;
+    height: 50px;
+    background-color: rgb(247, 255, 6);
+    border-radius: 10px #fff;
+}
+
+button p {
+    font-size: larger;
+    font-weight: bold;
+    margin-top: 11px;
+}
 .grouping-div{
 
     display: flex;
