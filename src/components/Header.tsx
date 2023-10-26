@@ -50,7 +50,7 @@ export default function Header() {
                     <NavLink to='/login' className="loginkey">
                         ثبت نام|ورود
                     </NavLink>
-                    <div>
+                    <div className="contact">
                         <p>شماره تماس: ۰۳۵-۸۶۵۴۵۵۶۷</p>
                     </div>
 
@@ -77,11 +77,11 @@ export default function Header() {
                 <section className="header-low">
                     <button onClick={handelclick}>
                         <p>دسته بندی</p>
-                        <div className="menu">
+                        {/* <div className="menu">
                             <span></span>
                             <span></span>
                             <span></span>
-                        </div>
+                        </div> */}
                     </button>
                 </section>
             </nav>
