@@ -204,10 +204,8 @@
 }
 
 .parent-style{
-  position: relative;
-  background-color: antiquewhite;
-  margin-top: 40px;
-  padding-right: 70px;
+  background-color: rgb(249, 226, 196);
+  
 }
 
 .rtl-container{
@@ -215,30 +213,29 @@
 }
 
 .title-style{
-  text-align: center;
   font-size: larger;
   color: rgb(38, 0, 255);
+  background-color: #000000;
 }
 
 .slider-style{
   width: 1130px;
-  left: 0px;
   margin-bottom: 50px;
+  background-color: #888;
 }
 
 .items-style{
-  border-radius: 100%;
-  align-items: start;
+  border-radius: 10%;
+  align-items: center;
 }
 
 .items-style img{
-  border-radius: 200%;
+  border-radius: 10%;
 }
 
 .items-style div{
   color: rgb(0, 0, 0);
   background-color: greenyellow;
-  margin: 10px;
 }
 
 /* css-tricks.com */
