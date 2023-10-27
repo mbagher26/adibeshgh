@@ -86,22 +86,29 @@
   margin: 0.2rem;
 }
 
+
+.maincontainer{
+  display: flex;
+  direction: rtl;
+  background-color: aliceblue;
+}
+
+.divcourse{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: scroll;
+  background-color: aliceblue;
+  min-width: 350px;
+  max-height: 510px;
+  border: 5px solid #d7d4d4;
+}
+
 .buttonstyle{
   margin: 0.3rem;
   min-width: 90px;
   max-width: 150px;
   height: 25px;
-}
-
-.divcourse{
-  background-color: azure;
-  min-width: 350px;
-  height: 100px;
-}
-
-.maincontainer{
-  display: flex;
-  direction: rtl;
 }
 
 .titlestyle{
@@ -169,10 +176,11 @@
 }
 
 .divoutlet{
-  margin-top: 1.3rem;
-  width: 36.1rem;
+  width: 550px;
   min-height: 0rem;
   max-height: 34.5rem;
+  border: 5px solid  #d7d4d4;
+  overflow-y: scroll;
 }
 
 .divcourses{
