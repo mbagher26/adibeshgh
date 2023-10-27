@@ -3,7 +3,8 @@ import {api} from './adib.js';
 import Loading from './Loading.js';
 import {setSearchResult} from '../../searchSlice.js';
 import { useDispatch,useSelector } from 'react-redux';
-import { RootState } from '../../store.js';
+import { RootState } from '../../store.ts';
+import '../../App.css';
 interface SearchModel {
     /** Lesson id */
     ID?: number |undefined;
@@ -34,7 +35,7 @@ interface SearchModel {
 export default function Search(){
     
     const dispatch = useDispatch();
-    const Selector = useSelector((state:RootState)=> state.seatch);
+    // const Selector = useSelector((state:RootState)=> state.seatch);
 
     const [resultsearch,setResultsearch] = useState<SearchModel[]|undefined>([]);
     const [loading,setLoading] = useState<boolean>(false);
@@ -62,10 +63,10 @@ export default function Search(){
             {/* {Selector.ID}
             {Selector.Title} */}
             <br/>
-            {/* {loading?<Loading/>:            
+            {loading?<Loading/>:            
                 resultsearch?.map((item) => 
                 <div key={item.ID}>{item.Title}</div>
-            )} */}
+            )}
         </>
     )
 }
