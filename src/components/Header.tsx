@@ -61,18 +61,7 @@ export default function Header() {
                     <NavLink to='/' className="logo">
                     </NavLink>
 
-                    {show && <div className="boxgrouping">
-                        {
-                            courselist.map((item) =>
-                                <div className="grouping-div" key={item.ID} >
 
-                                    <Link to=''>{item.Title}</Link>
-
-                                </div>
-                            )
-                        }
-                    </div>
-                    }
                 </section>
                 <section className="header-low">
                     <button onClick={handelclick}>
@@ -85,6 +74,19 @@ export default function Header() {
                     </button>
                 </section>
             </nav>
+            {show && <div className="boxgrouping">
+                {
+                    courselist.map((item) =>
+                        <div className="grouping-div" key={item.ID} >
+
+                            <Link to=''>{item.Title}</Link>
+
+                        </div>
+                    )
+                }
+            </div>
+            }
+            <div style={{clear:"both"}}></div>
         </>
     )
 }
