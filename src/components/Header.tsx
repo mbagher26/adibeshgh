@@ -77,9 +77,9 @@ export default function Header() {
             {show && <div className="boxgrouping">
                 {
                     courselist.map((item) =>
-                        <div className="grouping-div" key={item.ID} >
+                        <div className="grouping-div" key={item.ID}>
 
-                            <Link to=''>{item.Title}</Link>
+                            <Link className="link-title" to=''>{item.Title}</Link>
 
                         </div>
                     )
