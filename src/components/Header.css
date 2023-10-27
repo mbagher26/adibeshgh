@@ -76,8 +76,11 @@ button p {
     padding-top: 5px;
     background-color: blue;
     padding-bottom: 5px;
-    width: 370px;
+    width: 100%;
     float: right;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .grouping-div{
@@ -85,11 +88,15 @@ button p {
     direction: rtl;
     margin: 10px;
     background-color: cyan;
-    width: 350px;
+    width: 30%;
+    height: 25px;
+    border-radius: 10px; 
 }
 
-.grouping-div link{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+.link-title{
+    color: black;
+    margin: auto;
+    font-family: 'Franklin Gothic Medium', Arial;
 }
    
 .clear{
