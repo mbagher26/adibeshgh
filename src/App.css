@@ -230,6 +230,7 @@
 }
 
 .items-style img{
+  width: 270px;
   border-radius: 100%;
   margin: 20px auto;
 }
