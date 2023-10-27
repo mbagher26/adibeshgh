@@ -58,13 +58,7 @@ nav div input{
     margin: 10px 50px 10px 1148px;
 }
 
-.boxgrouping{
-    padding-top: 5px;
-    background-color: blue;
-    padding-bottom: 5px;
-    width: 370px;
-    float: right;
-}
+
 
 button {
     width: 100%;
@@ -77,8 +71,16 @@ button p {
     font-weight: bold;
     margin-top: 11px;
 }
-.grouping-div{
 
+.boxgrouping{
+    padding-top: 5px;
+    background-color: blue;
+    padding-bottom: 5px;
+    width: 370px;
+    float: right;
+}
+
+.grouping-div{
     display: flex;
     direction: rtl;
     margin: 10px;
