@@ -63,9 +63,9 @@ export default function Course() {
         Tag?: string;
     }
 
-    const [status,setStatus] = useState<boolean>();
-    const {courseId} = useParams();
-    const CourseId:number = Number(courseId);
+    const [status, setStatus] = useState<boolean>();
+    const { courseId } = useParams();
+    const CourseId: number = Number(courseId);
     const [course, setCourse] = useState<CourseModel>();
     const [coursepublic, setCoursepublic] = useState<{
 
@@ -111,12 +111,12 @@ export default function Course() {
     }
 
 
-    function handelclick(){
+    function handelclick() {
         setStatus(!status);
     }
 
 
-    
+
     return (
         <div className='maincontainer'>
 
@@ -156,16 +156,16 @@ export default function Course() {
 
                 <div className='coursedata'>
                     <Link to={`/ageCategoryCourses/${course?.AgeCategory?.ID}`} className='buttonstyle'>{course?.AgeCategory?.Title}</Link>
-                    <Link to='' style={{backgroundColor:'greenyellow'}} className='buttonstyle'>عمومی</Link>
+                    <Link to='' style={{ backgroundColor: 'greenyellow' }} className='buttonstyle'>عمومی</Link>
                     <button onClick={handelclick} className='buttonstyle'>روابط عمومی</button>
-                    
-                
+
+
                 </div>
                 <br />
                 <div>
-                        {status && <Publicrelation/>}
+                    {status && <Publicrelation />}
                 </div>
-                <br/>
+                <br />
                 <div className='coursedata'>
                     <Link to='' className='buttonstyle'>عضویت</Link>
                 </div>
@@ -181,12 +181,10 @@ export default function Course() {
             <div className='divcourse'>
                 {coursepublic?.map((item) =>
                     <div key={item.ID}>
+                        <Link to={`section/${item.ID}`} className='coursepublic'>
 
-
-                        <Link  to={`section/${item.ID}`} className='coursepublic'>
-                            
                             <div>
-                                
+
                                 <h2>{item.Title}</h2>
 
                                 <p>{item.Description}</p>
@@ -194,13 +192,13 @@ export default function Course() {
                                 <p>{item.LessonCount} </p>
 
                             </div>
-                        </Link> 
+                        </Link>
 
                     </div>
                 )}
             </div>
             <div className='divoutlet'>
-                <Outlet/>
+                <Outlet />
             </div>
 
         </div>
