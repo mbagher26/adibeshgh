@@ -7,14 +7,12 @@
 
     .loginkey {
         margin: auto;
-        order: 2;   
     }
     .contact {
         display: none;
     }
 
     .logo {
-        order: 1;
     }
 
     .search {        
