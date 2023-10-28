@@ -1,7 +1,8 @@
 @media(max-width : 500px){
     .header-top {
         display: flex;
-        flex-direction: column; 
+        flex-direction: row;
+        flex-wrap: wrap;
     }
 
     .loginkey {
