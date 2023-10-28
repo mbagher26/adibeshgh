@@ -53,7 +53,6 @@ export default function Publiclessens(){
                     <div key={response.ID} className='publiclessens'>                     
                         <p style={{direction:'rtl'}}>{response.Description}</p>
                         <p>{response.Title}</p>
-                        <hr/>
                     </div>
                 )}
             </div>
