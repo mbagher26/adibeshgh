@@ -54,7 +54,7 @@ export default function Header() {
                         <p>شماره تماس: ۰۳۵-۸۶۵۴۵۵۶۷</p>
                     </div>
 
-                    <div>
+                    <div className="search">
                         <Search />
                     </div>
 
