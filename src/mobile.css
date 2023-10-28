@@ -1,0 +1,14 @@
+@media(max-width : 500px){
+    .header-top {
+        display: flex;
+        flex-direction: column;   
+    }
+
+    .loginkey {
+        margin: auto;   
+    }
+    .contact {
+        font-size: small;
+    }
+    
+};
