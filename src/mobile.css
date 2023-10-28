@@ -1,14 +1,22 @@
 @media(max-width : 500px){
     .header-top {
         display: flex;
-        flex-direction: column;   
+        flex-direction: column; 
     }
 
     .loginkey {
-        margin: auto;   
+        margin: auto;
+        order: 2;   
     }
     .contact {
         display: none;
     }
 
+    .logo {
+        order: 1;
+    }
+
+    .search {
+        order: 3;
+    }
 };
