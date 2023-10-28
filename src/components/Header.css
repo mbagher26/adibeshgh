@@ -45,10 +45,6 @@ nav div {
     margin-top: 8px;
 }
 
-nav div input{
-    border-radius: 5px;
-}
-
 .menu{
     display: flex;
     flex-direction: column;
