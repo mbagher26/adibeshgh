@@ -73,15 +73,12 @@ button p {
     background-color: blue;
     padding-bottom: 5px;
     width: 100%;
-    float: right;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 }
 
 .grouping-div{
-    display: flex;
-    direction: rtl;
     margin: 10px;
     background-color: cyan;
     width: 30%;
@@ -91,7 +88,6 @@ button p {
 
 .link-title{
     color: black;
-    margin: auto;
     font-family: 'Franklin Gothic Medium', Arial;
 }
    
