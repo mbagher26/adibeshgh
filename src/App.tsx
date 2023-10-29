@@ -14,6 +14,8 @@ import { Provider } from 'react-redux';
 import "./Login.css";
 import { store } from './store';
 import './mobile.css';
+import './tablet.css';
+
 function App() {
 
   return (
