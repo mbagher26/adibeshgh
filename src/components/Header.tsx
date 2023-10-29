@@ -5,6 +5,8 @@ import { api } from './pages/adib.js';
 import { useEffect, useState } from "react";
 import '../mobile.css';
 import '../tablet.css';
+import '../normal.css';
+
 export default function Header() {
 
 
