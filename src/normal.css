@@ -40,4 +40,11 @@
     input[type=button] {
         width: 30%;
     }
+
+    /* for grouping دسته بندی */
+    .grouping-div {
+        width: 30%;
+        height: 50px;
+        border-radius: 30px;
+    }
 }
