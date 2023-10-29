@@ -3,8 +3,8 @@ import './Header.css'
 import Search from "./pages/search";
 import { api } from './pages/adib.js';
 import { useEffect, useState } from "react";
-import '../mobile.css'
-
+import '../mobile.css';
+import '../tablet.css';
 export default function Header() {
 
 
