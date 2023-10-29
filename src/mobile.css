@@ -4,6 +4,7 @@
         box-sizing: border-box;
     }
 
+    /* for header-top section */
     .header-top {
         display: flex;
         flex-direction: row;
@@ -47,4 +48,11 @@
         margin: 0;
         border-radius: 0 0 20px 20px;
     }
+
+    /* for grouping دسته بندی*/
+    
+    .grouping-div {
+        width: 100%
+    }
+
 };
