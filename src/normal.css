@@ -1,0 +1,13 @@
+@media(min-width: 769px) and (max-width: 1200px) {
+    *{
+        box-sizing: border-box;
+    }
+
+    .header-top {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    
+}
