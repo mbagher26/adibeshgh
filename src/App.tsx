@@ -15,7 +15,7 @@ import "./Login.css";
 import { store } from './store';
 import './mobile.css';
 import './tablet.css';
-
+import './normal.css';
 function App() {
 
   return (
