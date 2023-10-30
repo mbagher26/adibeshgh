@@ -237,19 +237,19 @@
 .slider-style{
   width: 87%;
   margin: auto;
-  background-color: #eee;
+  background-color: #88888894;
   border-radius: 10px;
 }
 
 .items-style{
-  width: 85%;
+  width: 90%;
   border-radius: 40px 40px 0 0;
-  background-color: #88888894;
+  background-color: #eee;
   margin: 10px auto;
 }
 
 .items-style img{
-  width: 100%;
+  width: 90%;
   border-radius: 100%;
   margin: 10px auto;
 }
