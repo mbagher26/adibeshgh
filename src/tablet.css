@@ -61,4 +61,10 @@
         width: 425px;
         height: 250px;
     }
-}
+    /* /////// */
+
+    .items-style{
+        width: 95%;
+        margin: 10px auto;
+    }
+};
