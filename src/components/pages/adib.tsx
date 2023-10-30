@@ -70,10 +70,6 @@ export default function Adib() {
         <section>
             <div className="rtl-container" >
 
-                <div style={{ margin: '10px' }}>
-                    <Link to='' >فروشگاه</Link>
-                    <Link to='' >رادیو ادیب</Link>
-                </div>
                 <div>
                     <SlideComponent />
                 </div>
