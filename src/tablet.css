@@ -51,4 +51,14 @@
         width: 47%;
         height: 45px;
     }
+
+    /* for slider */
+    .slider {
+        margin-bottom: 10px;
+    }
+
+    .slider img {
+        width: 425px;
+        height: 250px;
+    }
 }
