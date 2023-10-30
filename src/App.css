@@ -286,6 +286,7 @@ input[type=button] {
 }
 
 .slider img {
+  width: 1130px;
   padding: 0;
   margin: auto;
   object-fit: cover;
