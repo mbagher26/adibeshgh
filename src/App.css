@@ -228,27 +228,29 @@
 
 
 .title-style{
+  margin-top: 50px;
   font-size: large;
   font-weight: 900;
   color: rgb(38, 0, 255);
 }
 
 .slider-style{
-  width: 1130px;
+  width: 100%;
   margin: auto;
   background-color: #eee;
+  border-radius: 10px;
 }
 
 .items-style{
   border-radius: 40px 40px 0 0;
   background-color: #88888894;
-  margin: 0 50px 0 50px;
+  margin: 10px 50px;
 }
 
 .items-style img{
-  width: 270px;
+  width: 95%;
   border-radius: 100%;
-  margin: 20px auto;
+  margin: 10px auto;
 }
 
 .items-style div{
