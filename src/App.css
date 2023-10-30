@@ -228,7 +228,8 @@
 
 
 .title-style{
-  font-size: larger;
+  font-size: large;
+  font-weight: 900;
   color: rgb(38, 0, 255);
 }
 
