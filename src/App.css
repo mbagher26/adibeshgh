@@ -235,6 +235,7 @@
 .slider-style{
   width: 1130px;
   margin: auto;
+  background-color: #eee;
 }
 
 .items-style{
@@ -271,3 +272,21 @@ input[type=button] {
   font-weight: 900;
 }
 /* css-tricks.com */
+
+
+/* for slider */
+
+.slider {
+  /* margin: auto; */
+  width: 100%;
+  height: 620px;
+}
+
+.slider img {
+  margin: 0;
+  padding: 0;
+  margin: auto;
+  object-fit: cover;
+  width: 1130px;
+  height: 600px;
+}
