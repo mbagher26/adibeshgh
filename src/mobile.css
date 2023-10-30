@@ -63,4 +63,11 @@
     .slider img {
         width: 190px;
     }
+
+    /* ///////// */
+
+    .slider-style {
+        width: 100%;
+    }
+
 };
