@@ -235,20 +235,21 @@
 }
 
 .slider-style{
-  width: 100%;
+  width: 87%;
   margin: auto;
   background-color: #eee;
   border-radius: 10px;
 }
 
 .items-style{
+  width: 85%;
   border-radius: 40px 40px 0 0;
   background-color: #88888894;
-  margin: 10px 50px;
+  margin: 10px auto;
 }
 
 .items-style img{
-  width: 95%;
+  width: 100%;
   border-radius: 100%;
   margin: 10px auto;
 }
