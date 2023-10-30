@@ -55,4 +55,12 @@
         width: 100%
     }
 
+    /* for slider */
+    .slider {
+        margin-bottom: 10px;
+    }
+
+    .slider img {
+        width: 190px;
+    }
 };
