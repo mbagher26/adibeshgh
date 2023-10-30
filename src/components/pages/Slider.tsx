@@ -50,10 +50,10 @@ export default function SlideComponent() {
         className: "slider variable-width",
         dots: true,
         infinite: true,
-        centerMode: false,
+        centerMode: true,
         slidesToShow: 1,
         slidesToScroll: 1,
-        variableWidth: false
+        variableWidth: true
       };
 
     return (
