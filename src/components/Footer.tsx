@@ -4,7 +4,7 @@ export default function Footer(){
 
 
     return(
-        
+        <>
             <nav className="container">
                 
                 <NavLink to=''>
@@ -20,6 +20,7 @@ export default function Footer(){
                     قوانین
                 </NavLink>
             </nav>
-        
+            <p className="p-footer">تمامی حقوق مادی و معنوی این اثر محفوظ می باشد</p>
+        </>
     )
 }
