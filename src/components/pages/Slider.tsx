@@ -3,6 +3,7 @@ import { api } from './adib.js';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+import '../../mobile.css';
 
 export default function SlideComponent() {
 
@@ -49,19 +50,19 @@ export default function SlideComponent() {
         className: "slider variable-width",
         dots: true,
         infinite: true,
-        centerMode: true,
+        centerMode: false,
         slidesToShow: 1,
         slidesToScroll: 1,
-        variableWidth: true
+        variableWidth: false
       };
 
     return (
         <>
             <Slider {...settings}>
                 {slid?.map((item) =>
-                    <div style={{width: "1130px" ,height:"300"}} key={item.ID}>
+                    <div className="slider" key={item.ID}>
                          {/* <p>{item.Title}</p> */}
-                         <img style={{width: "1130px", height:"300"}} src={"https://api.adibeshgh.com/Attachment/courseCover?filename="+item.Banner}  />
+                         <img src={"https://api.adibeshgh.com/Attachment/courseCover?filename="+item.Banner}  />
                     </div>
                 )}
             </Slider>
