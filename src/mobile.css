@@ -66,8 +66,8 @@
 
     /* ///////// */
 
-    .slider-style {
-        width: 100%;
+    .items-style{
+        width: 95%;
+        margin: 10px auto; 
     }
-
 };
