@@ -47,4 +47,12 @@
         height: 50px;
         border-radius: 30px;
     }
+
+    /* for slider */
+    .slider {
+        margin-bottom: 25px;
+    }
+    .slider img {
+        width: 710px;
+    }
 }
