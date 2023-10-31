@@ -71,7 +71,6 @@
   background-color: blue;
   color: white;
   width: 12rem;
-  margin-right: 4rem;
 }
 
 .coursedata{
@@ -112,7 +111,6 @@
 }
 .buttonstyle{
   margin: 0.3rem;
-  min-width: 90px;
   max-width: 150px;
   height: 25px;
 }
