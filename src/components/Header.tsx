@@ -64,7 +64,7 @@ export default function Header() {
                     </NavLink>
                 </section>
                 <section className="header-low">
-                    <button onClick={handelclick}>
+                    <button className="grouping" onClick={handelclick}>
                         <p>دسته بندی</p>
                         {/* <div className="menu">
                             <span></span>
