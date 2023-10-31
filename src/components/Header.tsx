@@ -62,8 +62,6 @@ export default function Header() {
 
                     <NavLink to='/' className="logo">
                     </NavLink>
-
-
                 </section>
                 <section className="header-low">
                     <button onClick={handelclick}>
