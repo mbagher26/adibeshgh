@@ -36,8 +36,8 @@ export default function Footer() {
                     </svg>
                 </div>
                 <div className="Newsletters">
-                    <input type="button" value="ارسال"/>
-                    <input type="text" placeholder="خبرنامه"/>
+                    <input className="input-botton" type="button" value="ارسال"/>
+                    <input className="input-text" type="text" placeholder="خبرنامه"/>
                 </div>
             </section>
         </div>
