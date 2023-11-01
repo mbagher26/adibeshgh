@@ -58,8 +58,8 @@ export default function Search(){
 
     return(
         <>           
-            <input type='text'  name='phrase'/>
-            <input type='button' value='جستجو' onClick={search}/>
+            <input className='input-search' type='text'  name='phrase'/>
+            <input className='input-button-search' type='button' value='جستجو' onClick={search}/>
             {/* {Selector.ID}
             {Selector.Title} */}
             <br/>
