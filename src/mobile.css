@@ -71,6 +71,27 @@
         margin: 10px auto; 
     }
 
-    
+    /* for footer */
+
+    .section-one{
+        
+        display: none;
+        width: 0%;
+        margin: 0;
+    }
+
+    .navlink{
+        display: none;
+    }
+
+    .section-two{
+        width: 500px;
+        
+    }
+
+    .icon, .Newsletters {
+        margin-left: auto;
+        margin-right: auto;
+    }
 
 };
