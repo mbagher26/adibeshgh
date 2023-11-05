@@ -1,6 +1,6 @@
 
+import { createContext, useContext } from 'react';
 import { Route, Routes , Navigate} from 'react-router-dom';
-import './App.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Adib from './components/pages/adib';
@@ -11,12 +11,15 @@ import Login from './components/pages/Login';
 import Publiclessens from './components/pages/Publiclessens';
 import AgeCategoryCourses from './components/pages/AgeCategoryCourses';
 import { Provider } from 'react-redux';
-import "./Login.css";
 import { store } from './store';
+import "./Login.css";
+import './App.css';
 import './mobile.css';
 import './tablet.css';
 import './normal.css';
 function App() {
+
+  const AppContext = createContext(null);
 
   return (
     <>
