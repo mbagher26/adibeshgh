@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import { useState, createContext, useContext } from 'react';
 import {api} from './adib.js';
 import Loading from './Loading.js';
-import {setSearchResult} from '../../searchSlice.js';
-import { useDispatch,useSelector } from 'react-redux';
-import { RootState } from '../../store.ts';
+// import {setSearchResult} from '../../searchSlice.js';
+// import { useDispatch,useSelector } from 'react-redux';
+// import { RootState } from '../../store.ts';
 import '../../App.css';
 interface SearchModel {
     /** Lesson id */
@@ -34,20 +34,21 @@ interface SearchModel {
 
 export default function Search(){
     
-    const dispatch = useDispatch();
-    // const Selector = useSelector((state:RootState)=> state.seatch);
-
     const [resultsearch,setResultsearch] = useState<SearchModel[]|undefined>([]);
+    // const dispatch = useDispatch();
+    // const Selector = useSelector((state:RootState)=> state.seatch);
+    
     const [loading,setLoading] = useState<boolean>(false);
-
-
+    
+    
     function search(){
         const phraseInput = (document.getElementsByName('phrase')[0] as HTMLInputElement).value;
         setLoading(true)
         api.c.search(phraseInput, 0, 10).then((res) => {
-
+            
             setResultsearch(res.data.result);
-            dispatch(setSearchResult(res.data.result));
+            // dispatch(setSearchResult(res.data.result));
+            // let SearchData = createContext<SearchModel[] | undefined>(res.data.result);
            
             setLoading(false);
             console.log('search:',res.data.result)
