@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import {SearchData} from './search';
 import { Api } from "../../api/adib-api";
 import { Link } from "react-router-dom";
 import SlideComponent from "./Slider";
@@ -6,11 +7,38 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+interface SearchModel {
+    /** Lesson id */
+    ID?: number |undefined;
+    /** Lesson Title */
+    Title?: string |undefined;
+    /** Lesson Date */
+    Date?: string |undefined;
+    /** Lesson Description */
+    Description?: string |undefined;
+    /** Content Title */
+    ContentTitle?: string |undefined;
+    /** Content Text */
+    ContentText?: string |undefined;
+    /** Section ID */
+    SectionID?: number |undefined;
+    /** Section Title */
+    SectionTitle?: string |undefined;
+    /** Section Description */
+    SectionDescription?: string |undefined;
+    /** Course ID */
+    CourseID?: number |undefined;
+    /** Course Title */
+    CourseTitle?: string |undefined;
+    /** Course Description */
+    CourseDescription?: string |undefined;
+}
 
 
 export const api = new Api({ baseUrl: "https://api.adibeshgh.com" })
 
 export default function Adib() {
+    const Data : SearchModel[] | undefined = useContext(SearchData);
 
     const [courselist, setCourselist] = useState<{
         ID?: number | undefined;
