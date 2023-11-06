@@ -10,8 +10,6 @@ import About from './components/pages/about';
 import Login from './components/pages/Login';
 import Publiclessens from './components/pages/Publiclessens';
 import AgeCategoryCourses from './components/pages/AgeCategoryCourses';
-import { Provider } from 'react-redux';
-import { store } from './store';
 import "./Login.css";
 import './App.css';
 import './mobile.css';
@@ -23,7 +21,7 @@ function App() {
 
   return (
     <>
-    <Provider store={store}>
+   
       <div>        
         <Header/>
       </div>
@@ -45,7 +43,7 @@ function App() {
       <div>
         <Footer/>
       </div>
-      </Provider>
+      
     </>
   )
 }
