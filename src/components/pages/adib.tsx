@@ -1,11 +1,11 @@
-import { useEffect, useState, useContext } from "react";
-import {SearchData} from './search';
+import { useEffect, useState} from "react";
 import { Api } from "../../api/adib-api";
 import { Link } from "react-router-dom";
 import SlideComponent from "./Slider";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+
 
 interface SearchModel {
     /** Lesson id */
@@ -38,7 +38,6 @@ interface SearchModel {
 export const api = new Api({ baseUrl: "https://api.adibeshgh.com" })
 
 export default function Adib() {
-    const Data : SearchModel[] | undefined = useContext(SearchData);
 
     const [courselist, setCourselist] = useState<{
         ID?: number | undefined;
@@ -102,7 +101,7 @@ export default function Adib() {
                     <SlideComponent />
                 </div>
                 <div style={{ clear: 'both' }}></div>
-                <>
+                
                     {
                         courselist.map((item) =>
                             <div className="parent-style">
@@ -136,7 +135,7 @@ export default function Adib() {
                             </div>
                         )
                     }
-                </>
+                
             </div>
         </section>
     )
