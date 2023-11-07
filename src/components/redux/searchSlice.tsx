@@ -1,4 +1,4 @@
-import {  createSlice } from '@reduxjs/toolkit'
+import {  PayloadAction, createSlice } from '@reduxjs/toolkit'
 
 export interface SearchState {
   
@@ -27,50 +27,44 @@ export interface SearchState {
         CourseDescription?: string|undefined;
 }
 
-const initialState:SearchState={
-  
-    ID: 0,
-    /** Lesson Title */
-    Title: "",
-    /** Lesson Date */
-    Date: "",
-    /** Lesson Description */
-    Description: "",
-    /** Content Title */
-    ContentTitle: "",
-    /** Content Text */
-    ContentText: "",
-    /** Section ID */
-    SectionID: 0,
-    /** Section Title */
-    SectionTitle: "",
-    /** Section Description */
-    SectionDescription: "",
-    /** Course ID */
-    CourseID: 0,
-    /** Course Title */
-    CourseTitle: "",
-    /** Course Description */
-    CourseDescription: "",
-}
+const initialState:SearchState[] | undefined =
+[
+
+
+  {
+    
+      ID: 0,
+      /** Lesson Title */
+      Title: "",
+      /** Lesson Date */
+      Date: "",
+      /** Lesson Description */
+      Description: "",
+      /** Content Title */
+      ContentTitle: "",
+      /** Content Text */
+      ContentText: "",
+      /** Section ID */
+      SectionID: 0,
+      /** Section Title */
+      SectionTitle: "",
+      /** Section Description */
+      SectionDescription: "",
+      /** Course ID */
+      CourseID: 0,
+      /** Course Title */
+      CourseTitle: "",
+      /** Course Description */
+      CourseDescription: "",
+  }
+]
 
 export const searchSlice = createSlice({
   name: "search",
   initialState,
   reducers:{
-    setSearchResult: (state, action) => {
-    state.ID = action.payload;
-    state.Title = action.payload;
-    state.Date = action.payload;
-    state.Description = action.payload;
-    state.ContentTitle = action.payload;
-    state.ContentText = action.payload;
-    state.SectionID = action.payload;
-    state.SectionTitle = action.payload;
-    state.SectionDescription = action.payload;
-    state.CourseID = action.payload;
-    state.CourseTitle = action.payload;
-    state.CourseDescription = action.payload;
+    setSearchResult: (state, action:PayloadAction<SearchState[]> | undefined) => {
+      state = action.payload
     }
   }
 
