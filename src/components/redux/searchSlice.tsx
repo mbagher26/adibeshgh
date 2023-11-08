@@ -29,10 +29,7 @@ export interface SearchState {
 
 const initialState:SearchState[] | undefined =
 [
-
-
   {
-    
       ID: 0,
       /** Lesson Title */
       Title: "",
@@ -63,32 +60,13 @@ export const searchSlice = createSlice({
   name: "search",
   initialState,
   reducers:{
-    setSearchResult: (state, action:PayloadAction<SearchState[]> | undefined) => {
-      state = action.payload
+    setSearchResult: (state, action:PayloadAction<SearchState[]>) => {
+      state = action.payload;
+      console.log({state});
     }
   }
-
 })
+
 
 export const { setSearchResult } = searchSlice.actions
 export default searchSlice.reducer
-
-
-
-// reducers: {
-//   setSearchResult: (state, action ) => {
-//     state.ID = action.payload;
-//     state.Title = action.payload;
-//     state.Date = action.payload;
-//     state.Description = action.payload;
-//     state.ContentTitle = action.payload;
-//     state.ContentText = action.payload;
-//     state.SectionID = action.payload;
-//     state.SectionTitle = action.payload;
-//     state.SectionDescription = action.payload;
-//     state.CourseID = action.payload;
-//     state.CourseTitle = action.payload;
-//     state.CourseDescription = action.payload;
-//   },
-// }
-
