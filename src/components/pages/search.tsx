@@ -22,7 +22,13 @@ export default function Search() {
 
                 const resultsearch= res.data.result;
                 console.log('search:', res.data.result)
-                dispatch(setSearchResult(resultsearch))
+                if(resultsearch){
+
+                    dispatch(setSearchResult(resultsearch))
+                }else{
+                    dispatch(setSearchResult([]))
+                }
+          
 
             }
         );
@@ -35,7 +41,7 @@ export default function Search() {
         <>
             <input className='input-search' type='text' name='phrase' />
             <input className='input-button-search' type='button' value='جستجو' onClick={search} />
-            {selector}
+            {/* {selector} */}
             
 
         </>
