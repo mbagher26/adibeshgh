@@ -6,12 +6,12 @@ import '../../App.css';
 
 
 
+const selector = useSelector((state: RootState) => state.search);
 
 export default function Search() {
 
     const dispatch = useDispatch();
-    const selector = useSelector((state: RootState) => state.search);
-  
+    console.log({selector});
 
 
     function search() {
@@ -21,29 +21,31 @@ export default function Search() {
             (res) => {
 
                 const resultsearch= res.data.result;
-                console.log('search:', res.data.result)
+                console.log('search:', resultsearch)
                 if(resultsearch){
-
+                    console.log({resultsearch});
                     dispatch(setSearchResult(resultsearch))
                 }else{
                     dispatch(setSearchResult([]))
                 }
-          
-
             }
         );
     };
-
-
- 
 
     return (
         <>
             <input className='input-search' type='text' name='phrase' />
             <input className='input-button-search' type='button' value='جستجو' onClick={search} />
-            {/* {selector} */}
-            
-
+            {selector.map((item) => {
+                <div>
+                    <h1 style={{color: 'white'}}>{item.ContentText}</h1>
+                    <h1 style={{color:'white'}}>{item.ContentTitle}</h1>
+                    <h1>{item.CourseDescription}</h1>
+                    <h1>{item.CourseID}</h1>
+                    <h1 style={{color: 'white'}}>{item.CourseTitle}</h1>
+                </div>
+            })}
         </>
     )
 }
+
