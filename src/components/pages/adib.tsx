@@ -46,6 +46,7 @@ export default function Adib() {
         Records?: string | undefined;
     }[]>([])
 
+
     const setting = {
         dots: true,
         infinite: false,
@@ -104,8 +105,8 @@ export default function Adib() {
                 
                     {
                         courselist.map((item) =>
-                            <div className="parent-style">
-                                <div className="title-style" key={item.ID}>
+                            <div key={item.ID} className="parent-style">
+                                <div className="title-style">
                                     <p>{item.Title}</p>
 
                                 </div>
