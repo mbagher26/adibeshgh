@@ -28,18 +28,23 @@ export default function Search() {
 
     return (
         <>
+            
             <input className='input-search' type='text' name='phrase' />
             <input className='input-button-search' type='button' value='جستجو' onClick={search} />
             
-            {selector.map((item) => {
-                <div>
+            
+
+            {selector.map((item) => 
+                <div key={item.ID}>
+                    
                     <h1 style={{color: 'white'}}>{item.ContentText}</h1>
                     <h1 style={{color:'white'}}>{item.ContentTitle}</h1>
                     <h1>{item.CourseDescription}</h1>
                     <h1>{item.CourseID}</h1>
                     <h1 style={{color: 'white'}}>{item.CourseTitle}</h1>
                 </div>
-            })}
+            )}
+            
         </>
     )
 }
