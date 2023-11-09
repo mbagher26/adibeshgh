@@ -56,16 +56,6 @@ export default function Adib() {
         rtl: true
     }
 
-    // function setSliderSettings(itemscount:number){
-    //     return{
-    //             dots: true,
-    //             infinite: false,
-    //             speed: 500,
-    //             slidesToShow: itemscount <= 4 ? itemscount : 4 ,
-    //             slidesToScroll: 4
-    //           }
-    // }
-
     useEffect(() => {
 
         category();
@@ -112,7 +102,6 @@ export default function Adib() {
                                 </div>
                                 <div className="slider-style">
                                     <div style={{ clear: 'both' }}></div>
-                                    {/* <Slider {...setSliderSettings(item.Records && item.Records.length || 0)}> */}
                                     <Slider {...setting}>
 
                                         {
