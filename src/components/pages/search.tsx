@@ -2,17 +2,20 @@ import { api } from './adib.js';
 import { useAppDispatch, useAppSelector } from '../redux/hooks.ts';
 import { setSearchResult } from '../redux/searchSlice.tsx';
 import '../../App.css';
+import { useState } from 'react';
 
 
 
 export default function Search() {
     
     const dispatch = useAppDispatch();
-    const selector = useAppSelector((state) => state.search)
-    console.log('selector:',selector);
+    const selector = useAppSelector((state) => state.search);
+    const [phraseInput,setPhraseInput] = useState('');
+    const onChange = (event:any) => {
+        setPhraseInput(event.target.value)
+    }
     
     function search() {
-        const phraseInput = (document.getElementsByName('phrase')[0] as HTMLInputElement).value;
         api.c.search(phraseInput, 0, 10).then(
             
             (res) => {
@@ -29,7 +32,7 @@ export default function Search() {
     return (
         <>
             
-            <input className='input-search' type='text' name='phrase' />
+            <input className='input-search' type='text' value={phraseInput} onChange={onChange} />
             <input className='input-button-search' type='button' value='جستجو' onClick={search} />
             
             
