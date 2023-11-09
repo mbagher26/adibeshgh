@@ -1,5 +1,5 @@
 import {  PayloadAction, createSlice } from '@reduxjs/toolkit'
-
+import { RootState } from './store';
 export interface SearchState {
   
         ID?: number|undefined;
@@ -27,9 +27,7 @@ export interface SearchState {
         CourseDescription?: string|undefined;
 }
 
-const initialState:SearchState[] | undefined =
-[
-  {
+const initialState: SearchState[]=[{
       ID: 0,
       /** Lesson Title */
       Title: "",
@@ -53,20 +51,18 @@ const initialState:SearchState[] | undefined =
       CourseTitle: "",
       /** Course Description */
       CourseDescription: "",
-  }
-]
+}]
 
 export const searchSlice = createSlice({
   name: "search",
   initialState,
   reducers:{
-    setSearchResult: (state, action:PayloadAction<SearchState[]>) => {
-      state = action.payload;
-      console.log({state});
+    setSearchResult: (state, action: PayloadAction<SearchState[]>) => {
+      return action.payload;
     }
   }
 })
 
-
-export const { setSearchResult } = searchSlice.actions
+export const {setSearchResult} = searchSlice.actions
+export const selectSearch = (state: RootState) => state.search
 export default searchSlice.reducer
