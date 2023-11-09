@@ -28,7 +28,7 @@ export interface SearchState {
 }
 
 const initialState: SearchState[]=[{
-      ID: 0,
+      ID: undefined,
       /** Lesson Title */
       Title: "",
       /** Lesson Date */
@@ -40,13 +40,13 @@ const initialState: SearchState[]=[{
       /** Content Text */
       ContentText: "",
       /** Section ID */
-      SectionID: 0,
+      SectionID: undefined,
       /** Section Title */
       SectionTitle: "",
       /** Section Description */
       SectionDescription: "",
       /** Course ID */
-      CourseID: 0,
+      CourseID: undefined,
       /** Course Title */
       CourseTitle: "",
       /** Course Description */
