@@ -60,16 +60,18 @@ export default function Adib() {
 
         <section>
             <div className="rtl-container" >
-                {selector.map((item) =>
-                    <div key={item.ID}>
+                <section className="section-selector">
 
-                        <h1>{item.ContentText}</h1>
-                        <h1>{item.ContentTitle}</h1>
-                        <h1>{item.CourseDescription}</h1>
-                        <h1>{item.CourseID}</h1>
-                        <h1>{item.CourseTitle}</h1>
-                    </div>
-                )}
+                    {selector.map((item) =>
+                        <div className="div-selector" key={item.ID}>
+                            <h2>{item.Title}</h2>
+                            <h5>{item.Description}</h5>
+                            <Link to=''>{item.CourseTitle}</Link>
+                            <Link to=''>{item.SectionTitle}</Link>
+                        </div>
+                    )}
+
+                </section>
                 <div>
                     <SlideComponent />
                 </div>
