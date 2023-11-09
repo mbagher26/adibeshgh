@@ -7,33 +7,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useAppSelector } from "../redux/hooks";
 
-interface SearchModel {
-    /** Lesson id */
-    ID?: number | undefined;
-    /** Lesson Title */
-    Title?: string | undefined;
-    /** Lesson Date */
-    Date?: string | undefined;
-    /** Lesson Description */
-    Description?: string | undefined;
-    /** Content Title */
-    ContentTitle?: string | undefined;
-    /** Content Text */
-    ContentText?: string | undefined;
-    /** Section ID */
-    SectionID?: number | undefined;
-    /** Section Title */
-    SectionTitle?: string | undefined;
-    /** Section Description */
-    SectionDescription?: string | undefined;
-    /** Course ID */
-    CourseID?: number | undefined;
-    /** Course Title */
-    CourseTitle?: string | undefined;
-    /** Course Description */
-    CourseDescription?: string | undefined;
-}
-
 
 export const api = new Api({ baseUrl: "https://api.adibeshgh.com" })
 
