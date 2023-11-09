@@ -1,44 +1,44 @@
-import { useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import { Api } from "../../api/adib-api";
 import { Link } from "react-router-dom";
 import SlideComponent from "./Slider";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
+import { useAppSelector } from "../redux/hooks";
 
 interface SearchModel {
     /** Lesson id */
-    ID?: number |undefined;
+    ID?: number | undefined;
     /** Lesson Title */
-    Title?: string |undefined;
+    Title?: string | undefined;
     /** Lesson Date */
-    Date?: string |undefined;
+    Date?: string | undefined;
     /** Lesson Description */
-    Description?: string |undefined;
+    Description?: string | undefined;
     /** Content Title */
-    ContentTitle?: string |undefined;
+    ContentTitle?: string | undefined;
     /** Content Text */
-    ContentText?: string |undefined;
+    ContentText?: string | undefined;
     /** Section ID */
-    SectionID?: number |undefined;
+    SectionID?: number | undefined;
     /** Section Title */
-    SectionTitle?: string |undefined;
+    SectionTitle?: string | undefined;
     /** Section Description */
-    SectionDescription?: string |undefined;
+    SectionDescription?: string | undefined;
     /** Course ID */
-    CourseID?: number |undefined;
+    CourseID?: number | undefined;
     /** Course Title */
-    CourseTitle?: string |undefined;
+    CourseTitle?: string | undefined;
     /** Course Description */
-    CourseDescription?: string |undefined;
+    CourseDescription?: string | undefined;
 }
 
 
 export const api = new Api({ baseUrl: "https://api.adibeshgh.com" })
 
 export default function Adib() {
-
+    const selector = useAppSelector((state) => state.search);
     const [courselist, setCourselist] = useState<{
         ID?: number | undefined;
         Count?: number | undefined;
@@ -87,45 +87,54 @@ export default function Adib() {
 
         <section>
             <div className="rtl-container" >
+                {selector.map((item) =>
+                    <div key={item.ID}>
 
+                        <h1>{item.ContentText}</h1>
+                        <h1>{item.ContentTitle}</h1>
+                        <h1>{item.CourseDescription}</h1>
+                        <h1>{item.CourseID}</h1>
+                        <h1>{item.CourseTitle}</h1>
+                    </div>
+                )}
                 <div>
                     <SlideComponent />
                 </div>
                 <div style={{ clear: 'both' }}></div>
-                
-                    {
-                        courselist.map((item) =>
-                            <div key={item.ID} className="parent-style">
-                                <div className="title-style">
-                                    <p>{item.Title}</p>
 
-                                </div>
-                                <div className="slider-style">
-                                    <div style={{ clear: 'both' }}></div>
-                                    <Slider {...setting}>
+                {
+                    courselist.map((item) =>
+                        <div key={item.ID} className="parent-style">
+                            <div className="title-style">
+                                <p>{item.Title}</p>
 
-                                        {
-                                            item.Records?.split('|||').map((record) =>
-                                                <div key={JSON.parse(record).id}>
-
-                                                    <Link to={`/course/${JSON.parse(record).id}`}>
-                                                        <div className="items-style">
-                                                            <img alt={JSON.parse(record).title}
-                                                                src={returnPictureUrl(JSON.parse(record).cover)}
-                                                            />
-                                                            <div>{JSON.parse(record).title}</div>
-                                                        </div>
-                                                    </Link>
-                                                </div>
-
-                                            )
-                                        }
-                                    </Slider>
-                                </div>
                             </div>
-                        )
-                    }
-                
+                            <div className="slider-style">
+                                <div style={{ clear: 'both' }}></div>
+                                <Slider {...setting}>
+
+                                    {
+                                        item.Records?.split('|||').map((record) =>
+                                            <div key={JSON.parse(record).id}>
+
+                                                <Link to={`/course/${JSON.parse(record).id}`}>
+                                                    <div className="items-style">
+                                                        <img alt={JSON.parse(record).title}
+                                                            src={returnPictureUrl(JSON.parse(record).cover)}
+                                                        />
+                                                        <div>{JSON.parse(record).title}</div>
+                                                    </div>
+                                                </Link>
+                                            </div>
+
+                                        )
+                                    }
+                                </Slider>
+                            </div>
+                        </div>
+                    )
+                }
+
             </div>
         </section>
     )
