@@ -4,7 +4,7 @@ export default function Footer() {
 
 
     return (
-        <div className="container">
+        <div className="footer-container">
             <section className="section-one">
                 <NavLink className="navlink" to=''>
                     در محضرِ حافظِ قرآن(ادیب عشق)
