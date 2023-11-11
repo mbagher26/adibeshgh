@@ -30,27 +30,27 @@ export interface SearchState {
 const initialState: SearchState[]=[{
       ID: undefined,
       /** Lesson Title */
-      Title: "",
+      Title: undefined,
       /** Lesson Date */
-      Date: "",
+      Date: undefined,
       /** Lesson Description */
-      Description: "",
+      Description: undefined,
       /** Content Title */
-      ContentTitle: "",
+      ContentTitle: undefined,
       /** Content Text */
-      ContentText: "",
+      ContentText: undefined,
       /** Section ID */
       SectionID: undefined,
       /** Section Title */
-      SectionTitle: "",
+      SectionTitle: undefined,
       /** Section Description */
-      SectionDescription: "",
+      SectionDescription: undefined,
       /** Course ID */
       CourseID: undefined,
       /** Course Title */
-      CourseTitle: "",
+      CourseTitle: undefined,
       /** Course Description */
-      CourseDescription: "",
+      CourseDescription: undefined,
 }]
 
 export const searchSlice = createSlice({
