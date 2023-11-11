@@ -12,6 +12,7 @@ export const api = new Api({ baseUrl: "https://api.adibeshgh.com" })
 
 export default function Adib() {
     const selector = useAppSelector((state) => state.search);
+    console.log('selector:',selector);
     const [courselist, setCourselist] = useState<{
         ID?: number | undefined;
         Count?: number | undefined;
@@ -60,18 +61,24 @@ export default function Adib() {
 
         <section>
             <div className="rtl-container" >
-                <section className="section-selector">
+
+                {<section className="section-selector">
 
                     {selector.map((item) =>
                         <div className="div-selector" key={item.ID}>
-                            <h2>{item.Title}</h2>
+                            <h2 className="">{item.Title}</h2>
                             <h5>{item.Description}</h5>
-                            <Link to=''>{item.CourseTitle}</Link>
-                            <Link to=''>{item.SectionTitle}</Link>
+                            <div className="div-link">
+                                <Link className="link" to=''>{item.CourseTitle}</Link>
+                                <Link className="link" to=''>{item.SectionTitle}</Link>
+                            </div>
+                            <hr/>
                         </div>
-                    )}
-
+                    )
+                    }
+                    
                 </section>
+                }
                 <div>
                     <SlideComponent />
                 </div>
