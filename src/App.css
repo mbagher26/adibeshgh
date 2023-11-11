@@ -219,14 +219,38 @@
 .rtl-container{
   direction: rtl;
 } */
-.section-selector{
-  overflow-x: scroll;
+
+/* css for display search data in adib.tsx */
+.section-selector {
+  direction: rtl;
+  height: 400px;
+  overflow-y: scroll;
+}
+
+.div-selector {
+  display: flex;
+  flex-direction: column;
+}
+
+.div-selector h2, h5 {
+  margin-left: auto;
+}
+
+.div-link {
+  display: flex;
+  flex-direction: row;
+}
+
+.link{
+  border-radius: 3px;
+  margin-left: 10px;
+  color: white;
+  background-color: blue;
 }
 
 .parent-style{
   background-color: #fff;
 }
-
 
 .title-style{
   margin-top: 50px;
