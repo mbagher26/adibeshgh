@@ -8,7 +8,7 @@ export default function Login(){
     useEffect(() =>{
         Mobilelogin();
     },[])
-    
+     
     const handelInput = (event:any) => {
         setMobile(event.target.value);
     }
@@ -17,7 +17,6 @@ export default function Login(){
     function Mobilelogin(){
         
         console.log(mobile);
-        // const Input =(document.getElementsByName('EM') [0] as HTMLInputElement).value
         api.login.login(mobile).then((res) =>{
             console.log(res);
         })
