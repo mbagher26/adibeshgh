@@ -33,7 +33,7 @@ export default function Login(){
                 <input type="text" placeholder="شماره تلفن  یا ایمیل" value={mobile} onChange={handelInput}/>
                 <input type="submit" value='ارسال' onClick={Mobilelogin}/>
                 <div>
-                    <Link to=''>ثبت نام</Link>
+                    <Link to='/register'>ثبت نام</Link>
                 </div>
             </div>
             <div className="imagelogin">
