@@ -10,6 +10,7 @@ import About from './components/pages/about';
 import Login from './components/pages/Login';
 import Publiclessens from './components/pages/Publiclessens';
 import AgeCategoryCourses from './components/pages/AgeCategoryCourses';
+import Register from './components/pages/Register';
 import "./Login.css";
 import './App.css';
 import './mobile.css';
@@ -17,7 +18,6 @@ import './tablet.css';
 import './normal.css';
 function App() {
 
-  const AppContext = createContext(null);
 
   return (
     <>
@@ -37,6 +37,7 @@ function App() {
             
           </Route>
           <Route path='/login' element={<Login/>}/>
+          <Route path='/register' element={<Register/>}/>
           <Route path='/ageCategoryCourses/:categoryId' element={<AgeCategoryCourses/>}/>
         </Routes>       
       </div>
