@@ -50,7 +50,7 @@ export default function Register() {
             </label>
             <input className="inp" id="city" value={values?.city} onChange={handleChange} />
             <br />
-            {/* <input className="inp" type="submit" value='ثبت نام رایگان' /> */}
+            <input className="inp" type="submit" value='ثبت نام رایگان' />
         </form>
     )
 }
