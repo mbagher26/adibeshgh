@@ -2,12 +2,22 @@ import { useState } from "react"
 
 export default function Register() {
 
-    const [values, setValues] = useState<{ fname?: string | undefined, lname?: string | undefined, mobile?: number | undefined, date?: number | undefined, shire?: string | undefined, city?: string | undefined }>();
+    interface valModel {
+        fname?: string | undefined, 
+        lname?: string | undefined, 
+        mobile?: number | undefined, 
+        date?: number | undefined, 
+        shire?: string | undefined, 
+        city?: string | undefined 
+    }
+    // const [values, setValues] = useState<{ fname?: string | undefined, lname?: string | undefined, mobile?: number | undefined, date?: number | undefined, shire?: string | undefined, city?: string | undefined }>();
+    const [values, setValues] = useState<valModel>();
 
-    function handleChange(e: any) {
+    function handleChange(e:any) {
         setValues({ ...values, [e.target.value]: e.target.value });
     };
     console.log({ values });
+
     return (
         <form className="register-form">
             <label className="label" htmlFor='fname' >
@@ -40,7 +50,7 @@ export default function Register() {
             </label>
             <input className="inp" id="city" value={values?.city} onChange={handleChange} />
             <br />
-            <input className="inp" type="submit" value='ثبت نام رایگان' />
+            {/* <input className="inp" type="submit" value='ثبت نام رایگان' /> */}
         </form>
     )
 }
