@@ -10,7 +10,6 @@ export default function Register() {
         shire?: string | undefined, 
         city?: string | undefined 
     }
-    // const [values, setValues] = useState<{ fname?: string | undefined, lname?: string | undefined, mobile?: number | undefined, date?: number | undefined, shire?: string | undefined, city?: string | undefined }>();
     const [values, setValues] = useState<valModel>();
 
     function handleChange(e:any) {
