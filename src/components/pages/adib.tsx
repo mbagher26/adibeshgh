@@ -8,11 +8,11 @@ import "slick-carousel/slick/slick-theme.css";
 import { useAppSelector } from "../redux/hooks";
 
 
-export const api = new Api({ baseUrl: "https://api.adibeshgh.com" })
+export const api = new Api({ baseUrl: "https://api.adibeshgh.com" });
 
 export default function Adib() {
     const selector = useAppSelector((state) => state.search);
-    console.log('selector:',selector);
+    console.log('selector:', selector);
     const [courselist, setCourselist] = useState<{
         ID?: number | undefined;
         Count?: number | undefined;
@@ -72,11 +72,11 @@ export default function Adib() {
                                 <Link className="link" to=''>{item.CourseTitle}</Link>
                                 <Link className="link" to=''>{item.SectionTitle}</Link>
                             </div>
-                            <hr/>
+                            <hr />
                         </div>
                     )
                     }
-                    
+
                 </section>
                 }
                 <div>
@@ -116,12 +116,7 @@ export default function Adib() {
                         </div>
                     )
                 }
-
             </div>
         </section>
     )
 }
-
-
-
-
