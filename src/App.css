@@ -223,7 +223,8 @@
 /* css for display search data in adib.tsx */
 .section-selector {
   direction: rtl;
-  height: 400px;
+  min-height: 0;
+  max-height: 400px;
   overflow-y: scroll;
 }
 
