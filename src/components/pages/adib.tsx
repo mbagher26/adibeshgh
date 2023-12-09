@@ -64,7 +64,8 @@ export default function Adib() {
 
                 {<section className="section-selector">
 
-                    {selector.map((item) =>
+                    {selector.length > 0 ? (selector.map((item) =>
+                         
                         <div className="div-selector" key={item.ID}>
                             <h2 className="">{item.Title}</h2>
                             <h5>{item.Description}</h5>
@@ -74,8 +75,11 @@ export default function Adib() {
                             </div>
                             <hr />
                         </div>
-                    )
-                    }
+                        )
+                        ):(
+                            <p>یافت نشد</p>
+                            )
+                        }
 
                 </section>
                 }
